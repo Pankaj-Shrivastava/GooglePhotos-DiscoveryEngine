@@ -8,6 +8,7 @@ const NAV_ITEMS = [
   { path: '/google-actions', icon: 'rocket_launch', label: 'Google Actions' },
   { path: '/segmentation', icon: 'pie_chart', label: 'Segmentation' },
   { path: '/interview-guide', icon: 'assignment', label: 'Interview Guide' },
+  { path: '/references', icon: 'link', label: 'References' },
 ];
 
 export default function Sidebar() {

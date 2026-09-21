@@ -9,6 +9,7 @@ import FrameworksPage from './pages/FrameworksPage';
 import GoogleActionsPage from './pages/GoogleActionsPage';
 import SegmentationPage from './pages/SegmentationPage';
 import InterviewGuidePage from './pages/InterviewGuidePage';
+import ReferencesPage from './pages/ReferencesPage';
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
             <Route path="google-actions" element={<GoogleActionsPage />} />
             <Route path="segmentation" element={<SegmentationPage />} />
             <Route path="interview-guide" element={<InterviewGuidePage />} />
+            <Route path="references" element={<ReferencesPage />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Route>
         </Routes>

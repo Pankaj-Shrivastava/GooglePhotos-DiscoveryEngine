@@ -1,36 +1,69 @@
-import { useState, useCallback, useMemo } from 'react';
+import { useState, useCallback, useMemo, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
 export function useFilters() {
+  const [searchParams, setSearchParams] = useSearchParams();
+  
+  // Initialize state from URL if present
   const [filters, setFilters] = useState({
-    geography: '',
-    severity: '',
-    source: '',
-    platform: '',
-    memoryCue: '',
+    geography: searchParams.get('geography') || '',
+    severity: searchParams.get('severity') || '',
+    source: searchParams.get('source') || '',
+    platform: searchParams.get('platform') || '',
+    memoryCue: searchParams.get('memoryCue') || '',
+    search: searchParams.get('search') || '',
   });
+
+  // Sync state to URL whenever it changes
+  useEffect(() => {
+    const params = new URLSearchParams();
+    Object.entries(filters).forEach(([key, value]) => {
+      if (value) params.set(key, value);
+    });
+    setSearchParams(params, { replace: true });
+  }, [filters, setSearchParams]);
 
   const setFilter = useCallback((key, value) => {
     setFilters((prev) => ({ ...prev, [key]: value }));
   }, []);
 
   const resetFilters = useCallback(() => {
-    setFilters({ geography: '', severity: '', source: '', platform: '', memoryCue: '' });
+    setFilters({ geography: '', severity: '', source: '', platform: '', memoryCue: '', search: '' });
   }, []);
 
-  const activeCount = useMemo(
-    () => Object.values(filters).filter(Boolean).length,
-    [filters]
-  );
+  // Exclude 'search' from the active dropdown count
+  const activeCount = useMemo(() => {
+    const { search, ...dropdownFilters } = filters;
+    return Object.values(dropdownFilters).filter(Boolean).length;
+  }, [filters]);
 
   const applyFilters = useCallback(
     (items) => {
       if (!items || !Array.isArray(items)) return items;
       return items.filter((item) => {
+        // Apply categorical filters
         if (filters.geography && !item.geographies?.includes(filters.geography)) return false;
         if (filters.severity && item.severity !== filters.severity) return false;
         if (filters.source && item.source !== filters.source) return false;
         if (filters.platform && item.platform !== filters.platform) return false;
         if (filters.memoryCue && !item.memory_cues?.includes(filters.memoryCue)) return false;
+        
+        // Apply text search filter
+        if (filters.search) {
+          const q = filters.search.toLowerCase();
+          // Check common fields across different JSON structures
+          const textToSearch = [
+            item.title, 
+            item.description, 
+            item.quote_excerpt, 
+            item.pain_point_id, 
+            item.problem_statement,
+            ...(item.quotes || []).map(q => q.text)
+          ].filter(Boolean).join(' ').toLowerCase();
+          
+          if (!textToSearch.includes(q)) return false;
+        }
+        
         return true;
       });
     },
