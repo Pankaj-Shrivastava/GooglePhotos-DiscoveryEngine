@@ -36,10 +36,30 @@ class GeminiEnricher:
         with open(in_path, "r", encoding="utf-8") as f:
             self.normalized_data = json.load(f)
             
+        # Check for existing enriched data to resume
+        out_path = ENRICHED_DIR / "all_enriched.json"
+        self.already_enriched = {}
+        if out_path.exists():
+            with open(out_path, "r", encoding="utf-8") as f:
+                try:
+                    existing = json.load(f)
+                    for item in existing:
+                        if "problem_type" in item:
+                            self.already_enriched[item["id"]] = item
+                except:
+                    pass
+        
+        # Filter out already enriched items from the batching pool, but we must keep them in self.enriched_data
+        # Actually, self.enriched_data should start with the already enriched ones.
+        self.enriched_data = list(self.already_enriched.values())
+        
+        # Keep only items not already enriched
+        self.normalized_data = [item for item in self.normalized_data if item["id"] not in self.already_enriched]
+            
         if self.limit:
             self.normalized_data = self.normalized_data[:self.limit]
             
-        logger.info(f"Loaded {len(self.normalized_data)} entries for enrichment.")
+        logger.info(f"Loaded {len(self.normalized_data)} NEW entries for enrichment (Skipping {len(self.already_enriched)} already enriched).")
 
     def build_prompt(self, batch):
         batch_json = json.dumps([{"id": item["id"], "text": item["text"]} for item in batch], ensure_ascii=False)

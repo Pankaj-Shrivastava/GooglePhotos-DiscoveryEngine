@@ -1,14 +1,14 @@
 {
   "severity_matrix": {
-    "critical": 5,
-    "high": 6,
-    "medium": 18,
-    "low": 0
+    "critical": 17,
+    "high": 51,
+    "medium": 51,
+    "low": 4
   },
   "retrieval_outcomes": {
     "success": 0,
     "partial": 0,
-    "failure": 29,
-    "abandonment": 5
+    "failure": 123,
+    "abandonment": 24
   }
 }

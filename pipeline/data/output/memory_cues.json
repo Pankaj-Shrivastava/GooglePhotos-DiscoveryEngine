@@ -1,1 +1,66 @@
-[]
+[
+  {
+    "cue": "people",
+    "count": 3
+  },
+  {
+    "cue": "brother",
+    "count": 1
+  },
+  {
+    "cue": "5 years ago",
+    "count": 1
+  },
+  {
+    "cue": "album title",
+    "count": 1
+  },
+  {
+    "cue": "photobook purchases",
+    "count": 1
+  },
+  {
+    "cue": "faces",
+    "count": 1
+  },
+  {
+    "cue": "moments",
+    "count": 1
+  },
+  {
+    "cue": "file format",
+    "count": 1
+  },
+  {
+    "cue": "location",
+    "count": 1
+  },
+  {
+    "cue": "time period",
+    "count": 1
+  },
+  {
+    "cue": "date taken",
+    "count": 1
+  },
+  {
+    "cue": "metadata",
+    "count": 1
+  },
+  {
+    "cue": "recent",
+    "count": 1
+  },
+  {
+    "cue": "subject",
+    "count": 1
+  },
+  {
+    "cue": "text",
+    "count": 1
+  },
+  {
+    "cue": "person",
+    "count": 1
+  }
+]

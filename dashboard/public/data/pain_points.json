@@ -491,5 +491,1624 @@
       "Why is the backup of one screenshot now taking 5 minutes. And please give an opt out to stacking photos!..."
     ],
     "addressed_by_google": false
+  },
+  {
+    "id": "pp30",
+    "title": "Unable to recover deleted media",
+    "severity": "medium",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "how to recover video and photos..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp31",
+    "title": "Requests updates to photo editing",
+    "severity": "low",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "can you please update photo editing..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp32",
+    "title": "Forced auto backup fills storage",
+    "severity": "critical",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "I hate this app. Constantly auto backs up photos with no way to stop it. now it is constantly loading photos I deleted off my phone back on to it. The auto back up is linked to their cloud storage whi..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp33",
+    "title": "Difficulty opening Google Photos app",
+    "severity": "high",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "it is too difficult to open my google photos please..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp34",
+    "title": "Forced camera app integration complaint",
+    "severity": "medium",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "It's ridiculous that the use of the Camera app requires this app. I don't need a social media platform and shouldn't have to have one just to edit the photos I take with the camera app. Google just ca..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp35",
+    "title": "Inappropriate automatic captions and music",
+    "severity": "high",
+    "frequency": 1,
+    "memory_cues": [
+      "brother",
+      "5 years ago"
+    ],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "bad updates. puts captions on photos and adds music that's wild to it. why ?? the photo is of my brother and I and captions put on it whats for dinner. my brother is passed away almost 5 years now. so..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp36",
+    "title": "Irregular thumbnail sizes break chronology",
+    "severity": "medium",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "Some photos randomly have a larger thumbnail in the main gallery view. This is very annoying and makes it impossible to see the photos in a chronological view. Please make an option to turn this off...."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp37",
+    "title": "Unblur feature creates visual artifacts",
+    "severity": "high",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "lines now appear across every picture when using unblur feature..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp38",
+    "title": "Cannot change memory background music",
+    "severity": "low",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "Google photos has always been an amazing gallery app, especially for the memories and moments. But I can't get over the fact that they made all the music in memories, vocal music and I can't change it..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp39",
+    "title": "Inability to access personal photos",
+    "severity": "high",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "Allow me to get access to my photo..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp40",
+    "title": "General distrust calling app scam",
+    "severity": "medium",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp41",
+    "title": "Need help finding Google account",
+    "severity": "medium",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp42",
+    "title": "Cannot retrieve deleted media files",
+    "severity": "medium",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "Handy to have but it also pays to have more than one form of backup. The ads you see claiming to retrieve deleted files or pictures don't work, you can't do it with this app either..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp43",
+    "title": "Poor print quality and service",
+    "severity": "high",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "new way thru Fiji printing is nightmare. web page hard to use, printvquality of photos was almost dark black on every photo, poor customer service and I passed on to many people with no resolutions..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp44",
+    "title": "Slow photo download speed",
+    "severity": "high",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "sabse ghatya hai Googlephoto b.c 6 day se download ho raha hai sab photos device me speed nahi hai..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp45",
+    "title": "Unintended upload and deletion sync",
+    "severity": "high",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "likes to turn on randomly and upload photos. I'm currently seeing the settings off, and it doesn't allow to delete the upload without deleting it from your device as well..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp46",
+    "title": "Search failing and broken sharing",
+    "severity": "high",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "sharing photos to Gemini or Signal or other app doesn't work - literally nothing happens. Search is useless - it doesn't come up with anything on first attempt, sometimes never..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp47",
+    "title": "Uploaded photos and photobooks missing",
+    "severity": "critical",
+    "frequency": 1,
+    "memory_cues": [
+      "album title",
+      "photobook purchases"
+    ],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "Where are my missing album pictures that I uploaded from my Galaxy phone !Still missing!!! Also all the pictures I purchased from you in your photo book Gone! Titled albums do me no good when my pictu..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp48",
+    "title": "Deletes original photos from device",
+    "severity": "critical",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "this app will also delete you orig photos in your device. It supposed to be just backup not file manager. It will only make your storage full in google and suggest you to buy additional storage and ev..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp49",
+    "title": "Magic Eraser editing degraded",
+    "severity": "medium",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "This Photo app, used to be the absolute best, hands down the most incredible app for viewing and altering photos. AND THEN, They changed it on us ALL. I haven't the slightest inkling why they did it, ..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp50",
+    "title": "Difficulty transferring and accessing photos",
+    "severity": "high",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "I am just wanting to get my photos back that you stole from me. I just want to take pictures from my celll and put them on my computer not have to chase them down and pay a reasom to get them back. Al..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp51",
+    "title": "Slow photo deletion performance",
+    "severity": "high",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "I'm a long time, heavy user of Google Photos & an Alphabet stockholder. Until yesterday Photos took <1 second to delete photos. Last night I downloaded the latest update. Now it takes 20 seconds per p..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp52",
+    "title": "Cannot access photos before backup",
+    "severity": "high",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "the fact that I can't even access the photos on my phone that I just took until they are backed up is beyond ridiculous. Google stuff just keeps getting worse and worse these days......"
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp53",
+    "title": "Removal of grid view option",
+    "severity": "high",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "Why did you remove grid view?! There are so many things going wrong with this app in the last couple of years. 'Improvements' seem to cater to mindless users who want less choices. I'll be migrating m..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp54",
+    "title": "Cannot view media offline without data",
+    "severity": "medium",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "the app is nice but I can't watch my old picture and video without data..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp55",
+    "title": "Widget lacks custom album selection",
+    "severity": "medium",
+    "frequency": 1,
+    "memory_cues": [
+      "moments",
+      "faces"
+    ],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "The widget has no album option. it kind of feels like a major oversight because it seems like the most obvious option, but for some reason you're not really given any control of the photos that go up ..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp56",
+    "title": "AI features missing on device",
+    "severity": "high",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "all Ai features are missing on Motorola Razr Fold, no eraser etc nothing, even though I have a Google One subscription (soon to be cancelled now ) edit: I have over 300Gb of free space on my device..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp57",
+    "title": "Cannot find all stored photos",
+    "severity": "medium",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "I can't seem to find all my photos..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp58",
+    "title": "AI search quality degraded after update",
+    "severity": "high",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "The latest update is horrible. Photos used to have the most amazing AI search. The search in this version is HORRIBLE. You keep becoming more like Apple and iPhone every day..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp59",
+    "title": "Save copy feature creates clutter",
+    "severity": "medium",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "KINDLY TAKE OFF : SAVE COPY. It's cluttering and placing pics in the beginning. I need easy organization to be able to go back to finding and making videos. Thank you..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp60",
+    "title": "App update corrupted SD card photos",
+    "severity": "critical",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "Latest update applied (9/17/[REDACTED_PHONE]) has corrupted my SD card in my Android phone. All was working fine until the update was installed today. Opening Google Photos caused my SD card images to..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp61",
+    "title": "Magic eraser fails to save changes",
+    "severity": "high",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "Magic eraser stopped working across all my devices: the other day it would erase but then was 'unable to save changes' and today it just spreads the whole picture out into a wide screen squashed forma..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp62",
+    "title": "Photos saved to multiple accounts unintentionally",
+    "severity": "medium",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "Photos are saving In Boath The Account's After Closing The Back-up..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp63",
+    "title": "App deleting photos without permission",
+    "severity": "critical",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "to invasive .. I never gave permission to delete photos ,especially older photos . I was saving them forever . not any apps chose . they are my photos , my phone ,I paid for the service . who gave you..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp64",
+    "title": "Cannot share edited photos directly",
+    "severity": "medium",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "Lord, I now can't share edited photos by selecting them. I can share the original images, but for edited ones the share icon is not there. Insane. After restarting the phone everything works fine agai..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp65",
+    "title": "Inaccurate search requires visual inspection",
+    "severity": "high",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "Google Photos is one of the most poorly designed apps that I've ever used. The search feature is very inaccurate, and you'll get a migraine before you locate what you're looking for through visual ins..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp66",
+    "title": "Cannot restore backup photos after reset",
+    "severity": "high",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "Need to retrieve my photos after reset cell phone...kept backups..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp67",
+    "title": "App icon missing from device",
+    "severity": "medium",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "I can't see the icon.of.google photos. this was before...."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp68",
+    "title": "Missing cellular data backup option",
+    "severity": "medium",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "I am not able to backup photos using cellular data. Also there's no option to even enable or disable it. They probably have removed that...."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp69",
+    "title": "Search performance degraded over time",
+    "severity": "high",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "This was the gold standard for the better part of a decade but as with all things Google it's been getting worse and worse the last few years, especially as they try to shoehorn more AI into it. Searc..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp70",
+    "title": "Cannot delete multiple photos simultaneously",
+    "severity": "high",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "awful storage is full but can't delete multiple pictures forcing me to do one at a time this is bs Google sucks maybe I need to switch..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp71",
+    "title": "Photos failing to share to email",
+    "severity": "medium",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "many photos and videos don't share correctly to my email address...."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp72",
+    "title": "Forced storage purchase despite cleanup",
+    "severity": "high",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "You suck blackmailing me into buying more storage for my photod after I cleared most my of photos my junk mail out..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp73",
+    "title": "Lost photos and unwanted charges",
+    "severity": "critical",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "it would be ok if it stopped taking money from my bank account I put money in turn around and Google's got it also I've lost my photos don't know how to retrieve them..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp74",
+    "title": "Non-camera folders not auto tagged",
+    "severity": "medium",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "not tagging photos in folders which are not the camera folder e.g my pictures from WhatsApp. Great automatic uploading for cloud backup of photos.love the automatic videos, gifs and photo effects...."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp75",
+    "title": "Storage full warning persists after deletion",
+    "severity": "high",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "I've been getting notifications that my storage is full and will no longer get emails. The graphics show it was Google Photos taking up the majority of the storage. I deleted the Google Photos app and..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp76",
+    "title": "RAW files not showing in app",
+    "severity": "high",
+    "frequency": 1,
+    "memory_cues": [
+      "file format"
+    ],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "Don't know what's going on now. I used to be able to move RAW files to my phone and see them on Google Photos. It does not show up anymore. I have to go on my files to see the photos. Even if I move t..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp77",
+    "title": "Cannot add multiple locations daily",
+    "severity": "medium",
+    "frequency": 1,
+    "memory_cues": [
+      "location"
+    ],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "What happened with adding locations to photos, nowadays you can only add one location per day...."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp78",
+    "title": "Difficult photo download and capture",
+    "severity": "medium",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "p if it was easier man why don't you make it more easier to download or to take photos what is the problem here \ud83e\udd14 take over my life free man it's only a photo give me a freaking choice okay thank you ..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp79",
+    "title": "Cannot view or access photos",
+    "severity": "critical",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "I. can't. not. see. my. photos..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp80",
+    "title": "App permission prompt loop issue",
+    "severity": "high",
+    "frequency": 1,
+    "memory_cues": [
+      "time period"
+    ],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "besides seeing pictures I haven't seen in years,(and didn't want to) today I can't even get into my photos, it keeps telling me to give Google permission to access my photos? I have done that....4'x's..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp81",
+    "title": "Album photos sorted out of order",
+    "severity": "high",
+    "frequency": 1,
+    "memory_cues": [
+      "date taken",
+      "metadata"
+    ],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "Google has had issues with properly syncing photos to the app for years and has done absolutely nothing to address it. all photos in albums are out of order regardless of date taken/Metadata in the ap..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp82",
+    "title": "Recent photos missing from library",
+    "severity": "medium",
+    "frequency": 1,
+    "memory_cues": [
+      "recent"
+    ],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "Sometimes a recent photo is not showing..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp83",
+    "title": "Photos and videos automatically deleted",
+    "severity": "critical",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "automatically delete my photos and video..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp84",
+    "title": "Insufficient free storage space limit",
+    "severity": "medium",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "Bestest app of google. I appreciate your team . You're doing very well, editing college, making photo cinematic and making animation by this app is truly awesome. But Storage problem is something whic..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp85",
+    "title": "Unexpected automatic photo deletion issue",
+    "severity": "high",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp86",
+    "title": "Object eraser photo editing fails",
+    "severity": "medium",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "As a photo storage app, it's fine. However if you want it for the editing element then I would look elsewhere. i rarely find it works effectively, such as removing unwanted items in a picture, which i..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp87",
+    "title": "Difficulty finding specific photos",
+    "severity": "medium",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp88",
+    "title": "Edited photos fail external upload",
+    "severity": "high",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "I have issues uploading pics to an app, if I edit the image at all (for example, I'll take a pic and my phone likes to rotate it the wrong way) I'll rotate the image upright, but if I do that, it wont..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp89",
+    "title": "Removed photo editing transform features",
+    "severity": "medium",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "at some point this year google removed like half of their features, replaced them with ai or they dont exist anymore, and the app runs slower. all you have done is worsen this app. let me frame and wa..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp90",
+    "title": "Free space feature deletes unbacked photos",
+    "severity": "critical",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "It deleted photos other than the ones that are backed up on using the free up space on this device feature...."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp91",
+    "title": "Cannot bulk delete cloud backups mobile",
+    "severity": "high",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "Please make it so that we can delete all backup photos from the cloud storage ONLY on mobile. Because all these old photos are just trash and I want to choose myself which one to backup. And deleting ..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp92",
+    "title": "Difficult to find and share photos",
+    "severity": "high",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "harder than hell to get up the photos I want, and send them via email...."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp93",
+    "title": "DCIM photos mixed with other media",
+    "severity": "medium",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "please import slot of camare/DCIM folder, not mix with other picture..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp94",
+    "title": "Privacy concern with shared photos",
+    "severity": "high",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "I prefer access to my own photos and not anyone else..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp95",
+    "title": "No tool to delete duplicate photos",
+    "severity": "medium",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "how do I delete all my duplicate and triplicate photos..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp96",
+    "title": "Edited photos invisible to third party",
+    "severity": "high",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "this app worked great until recently. now anytime I crop or edit a picture in anyway, it no longer shows up on my camera, recent photos, or any other album in other apps to post. I thought it was a Fa..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp97",
+    "title": "Inconsistent Magic Eraser feature availability",
+    "severity": "medium",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "why did you have to screw up the magic eraser? there were many features that were great and you add them in and then take them away guess it depends on which Android model you have like if you have th..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp98",
+    "title": "Downloaded web images appear blank",
+    "severity": "high",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "the last update broke the app the app used to let me download images off of Google but now every time I try to download a image off of Google or another website it just a blank white image \ud83d\ude44..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp99",
+    "title": "Automatic photo upload without consent",
+    "severity": "high",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "suddenly decided to upload all my photos to my google drive without asking me first then demanded money from me cause my drive was almost full...."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp100",
+    "title": "Difficult to access stored pictures",
+    "severity": "medium",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "pain to access my pictures..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp101",
+    "title": "Photos hidden in obscure folders",
+    "severity": "high",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "See all the reasons above and below my review. Pictures are hidden in folders and hard to locate. Limited storage sucks and you get 1 star for that. Don't expect much. the ai now catalogs all your pic..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp102",
+    "title": "Photo printing partner service changed",
+    "severity": "medium",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "One of the redeeming qualities of this app used to be that you can get your photos printed from Walmart. All you had to do was open up Google photos and it would send it to Walmart. well they recently..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp103",
+    "title": "Missing manual face tagging option",
+    "severity": "high",
+    "frequency": 1,
+    "memory_cues": [
+      "people"
+    ],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "How did I just discover Google Photos now \ud83d\ude43 but I do have some complaints 1: alot of photos/videos are misfiled cuz you can't modify who is tagged in it. You should be able to manually box and tag. Es..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp104",
+    "title": "Text and subject search failure",
+    "severity": "critical",
+    "frequency": 1,
+    "memory_cues": [
+      "text",
+      "subject"
+    ],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "Pixel 10. Forced Updates. TEXT/SUBJECT search is FAIL. \"Car Engine\" - have 100s of repair photos But Only 15 Show? Often AI says \"none\"or wonky/useless \"results\" includes ALOT (100s +) irrelevant resu..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp105",
+    "title": "Unable to view full image",
+    "severity": "low",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp106",
+    "title": "AI image editing feature restrictions",
+    "severity": "high",
+    "frequency": 1,
+    "memory_cues": [
+      "people"
+    ],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "I DON'T CARE FOR GOOGS TAKING OVER HOW I TAKE, STORE OR LAY OUT MY VISUAL MEDIA! IM OVER 13 FOR GOOGLE'S HYPOCRITICAL CHILD PROTOCOLS TO KICK IN. YET GOOG ARBITRARILY TAKES ACTION, LIKE WITH PHOTO MED..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp107",
+    "title": "UI layout and editing preferences",
+    "severity": "medium",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "it's a good app but can you make it more like the iPhone please I just hate the big pictures and have it say library idk and like idk just make it better especially with the editing options..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp108",
+    "title": "Poor support for digital art",
+    "severity": "high",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "Not intuitive for digital art, which most of my pictures are. The Memories and Face Recognition and such only pay attention to the (very few) actual photos and thus are not helpful. AI tools are trash..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp109",
+    "title": "Image search quality degraded over time",
+    "severity": "high",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "The image search feature has actually gotten worse...."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp110",
+    "title": "Cannot select specific folder backup",
+    "severity": "high",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "Won't let me choose which folders I see in the app. For some reason it started showing stuff that are not photos taken by me like WhatsApp media and also backing them up. And I can't for the life of m..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp111",
+    "title": "Failed to send selected photos",
+    "severity": "high",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "Fix the bad side. When I select more than one or two photos or select many photos and think of sending them to someone, only one, two, or five photos are sent to them...."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp112",
+    "title": "Aggressive prompts to enable backup",
+    "severity": "high",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "Uninstalled. I turned Backup OFF because I do not want Google backing up my photos. Google Photos keeps nagging me to turn it back on and presents the option in a way that feels deliberately designed ..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp113",
+    "title": "Unable to download photos",
+    "severity": "high",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "Why can't I download my picture. Even after updating the app...."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp114",
+    "title": "Repeated photo permission requests",
+    "severity": "high",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "Asking for full permission to access photos of phone, limited access not working, forcefully taking to permission again and again...."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp115",
+    "title": "App crashes on launch",
+    "severity": "critical",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "This comes up every time I open my Google Photos app. (App Error Detection showed that Photos crashed for its own reasons. You can check whether the app is up to date or submit feedback through in-app..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp116",
+    "title": "Unwanted syncing of PC downloads",
+    "severity": "medium",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "There is a sense of redundancy that I can't put my finger on, but overall it's a good app. It would be cool though, if there was a \"Google Videos\" app. I'm sure Drive is the culprit, but I don't like ..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp117",
+    "title": "Forced wait to access photos",
+    "severity": "high",
+    "frequency": 1,
+    "memory_cues": [
+      "person"
+    ],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "At this stage I can not just go to my photos, I must wait for memory to be to see my photos or to get to a specific person. Not happy!!!!!!!..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp118",
+    "title": "Cannot group albums into folders",
+    "severity": "medium",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "I like the whole timeline idea and a few of the other features. I would really like to see a folder option to group up similar albums. Instead of having one family album with 500+ photos, being able t..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp119",
+    "title": "Unclear how to save photos",
+    "severity": "low",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "I wish to save my photos in this Google account..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp120",
+    "title": "Inconvenient face tagging workflow",
+    "severity": "medium",
+    "frequency": 1,
+    "memory_cues": [
+      "people"
+    ],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "I need to be able to add peoples names directly under their pictures. I don't want to go to a pool of faces and start selecting as that makes me spend a lot of time. Please look into this;..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp121",
+    "title": "Cannot edit photos in app",
+    "severity": "high",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "I can't edit photos in Google photos..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp122",
+    "title": "Search requires backup enabled",
+    "severity": "critical",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "You can no longer search your photos without turning on Backup. Time for a new App, goodbye Photos. Update: Google Dark Patterns and Prevent Uninstallation. Actually Photos pretends you can uninstall ..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp123",
+    "title": "Cannot move photos to gallery",
+    "severity": "high",
+    "frequency": 1,
+    "memory_cues": [],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "Can't easily move MY OWN photos from the app to my gallery on my phone???????..."
+    ],
+    "addressed_by_google": false
   }
 ]

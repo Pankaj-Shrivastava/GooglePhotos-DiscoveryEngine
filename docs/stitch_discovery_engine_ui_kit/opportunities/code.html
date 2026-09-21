@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-primary-fixed-variant": "#004493", "on-secondary": "#ffffff", "secondary-fixed": "#dbe3f1", "primary-container": "#1a73e8", "tertiary": "#805600", "secondary-container": "#dbe3f1", "on-secondary-fixed": "#141c26", "surface-container-highest": "#e3e2e6", "on-error": "#ffffff", "on-primary-container": "#ffffff", "on-error-container": "#93000a", "tertiary-fixed-dim": "#ffba45", "surface": "#faf9fd", "secondary-fixed-dim": "#bfc7d4", "on-tertiary-fixed": "#281800", "surface-bright": "#faf9fd", "surface-container-high": "#e9e7eb", "primary-fixed": "#d8e2ff", "background": "#faf9fd", "tertiary-container": "#a06d00", "error": "#ba1a1a", "on-background": "#1a1b1e", "on-tertiary": "#ffffff", "on-surface": "#1a1b1e", "on-surface-variant": "#414754", "inverse-on-surface": "#f1f0f4", "surface-container-lowest": "#ffffff", "outline": "#727785", "error-container": "#ffdad6", "on-secondary-container": "#5d6571", "surface-variant": "#e3e2e6", "primary": "#005bbf", "on-primary-fixed": "#001a41", "primary-fixed-dim": "#adc7ff", "secondary": "#575f6b", "outline-variant": "#c1c6d6", "inverse-surface": "#2f3033", "on-primary": "#ffffff", "surface-dim": "#dbd9dd", "on-tertiary-container": "#0a0400", "surface-container": "#efedf1", "inverse-primary": "#adc7ff", "on-secondary-fixed-variant": "#3f4752", "surface-tint": "#005bc0", "surface-container-low": "#f4f3f7", "tertiary-fixed": "#ffddb0", "on-tertiary-fixed-variant": "#614000" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-md": "1rem", "space-lg": "1.5rem", "space-sm": "0.5rem", "gutter-mobile": "0.75rem", "space-xs": "0.25rem", "margin-mobile": "1rem", "gutter": "1rem", "margin": "1.5rem", "space-xl": "2rem" }, "fontFamily": { "title-md": ["Inter"], "body-md": ["Inter"], "body-lg": ["Inter"], "headline-md": ["Inter"], "metric-display": ["Inter"], "label-sm": ["Inter"], "headline-sm": ["Inter"], "title-lg": ["Inter"], "body-sm": ["Inter"], "display-lg": ["Inter"], "label-md": ["Inter"], "display-lg-mobile": ["Inter"] }, "fontSize": { "title-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }], "body-md": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "body-lg": ["15px", { "lineHeight": "22px", "fontWeight": "400" }], "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "metric-display": ["28px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "500" }], "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "title-lg": ["16px", { "lineHeight": "22px", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500" }], "display-lg-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "600" }] } } } };</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="group/sidebar fixed left-0 top-0 h-screen w-[72px] hover:w-60 bg-surface-container-lowest border-r border-outline-variant z-50 flex flex-col transition-all duration-300 ease-in-out overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.08)]"><div class="h-14 flex items-center px-4 gap-3 border-b border-outline-variant shrink-0"><img alt="Discovery Engine Logo" class="h-8 w-8 object-contain shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1XbIbq2h4__E4bk3FjBayIjiZxgiO1spsKcIpadP8Nt5bvPpnXyLwWryaLyhn0QvouzCKfI7whgg67h-dCXbILHQx8h62xS7l-4XjfNKoUSrFA6jw5HHG4yDyQlVR82HMpot3SfnLG_VboZXwYPv47pf6ajA1gpRaZxZ00lUD8NUUtGKr0bNXRZTp3q4mA2JBHQ4zfgDgZjfz10p1KL318hvyyzDuz97swsGixFb8ERC2L5LXxm3rPXGrjf"/><div class="opacity-0 group-hover/sidebar:opacity-100 transition-opacity duration-200 whitespace-nowrap overflow-hidden flex flex-col"><span class="font-title-md text-title-md text-on-surface leading-tight tracking-tight">Discovery Engine</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-none">Google Photos Intel</span></div></div><nav class="flex-1 flex flex-col gap-space-xs p-space-sm overflow-y-auto" data-active-classes="bg-secondary-container text-primary font-title-md rounded-xl shadow-sm"><a class="flex items-center h-11 px-3 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all gap-space-md group" data-path="overview" href="#"><span class="material-symbols-outlined text-[20px] shrink-0">dashboard</span><span class="opacity-0 group-hover/sidebar:opacity-100 transition-opacity duration-200 font-body-md text-body-md whitespace-nowrap">Overview</span></a><a class="flex items-center h-11 px-3 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all gap-space-md group" data-path="pain-points" href="#"><span class="material-symbols-outlined text-[20px] shrink-0">warning</span><span class="opacity-0 group-hover/sidebar:opacity-100 transition-opacity duration-200 font-body-md text-body-md whitespace-nowrap">Pain Points</span></a><a aria-current="page" class="flex items-center h-11 px-3 transition-all gap-space-md group bg-secondary-container text-primary font-title-md rounded-xl shadow-sm" data-path="opportunities" href="#"><span class="material-symbols-outlined text-[20px] shrink-0">lightbulb</span><span class="opacity-0 group-hover/sidebar:opacity-100 transition-opacity duration-200 font-body-md text-body-md whitespace-nowrap">Opportunities</span></a><a class="flex items-center h-11 px-3 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all gap-space-md group" data-path="frameworks" href="#"><span class="material-symbols-outlined text-[20px] shrink-0">bar_chart</span><span class="opacity-0 group-hover/sidebar:opacity-100 transition-opacity duration-200 font-body-md text-body-md whitespace-nowrap">Frameworks</span></a><a class="flex items-center h-11 px-3 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all gap-space-md group" data-path="google-actions" href="#"><span class="material-symbols-outlined text-[20px] shrink-0">rocket_launch</span><span class="opacity-0 group-hover/sidebar:opacity-100 transition-opacity duration-200 font-body-md text-body-md whitespace-nowrap">Google Actions</span></a><a class="flex items-center h-11 px-3 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all gap-space-md group" data-path="segmentation" href="#"><span class="material-symbols-outlined text-[20px] shrink-0">pie_chart</span><span class="opacity-0 group-hover/sidebar:opacity-100 transition-opacity duration-200 font-body-md text-body-md whitespace-nowrap">Segmentation</span></a><a class="flex items-center h-11 px-3 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all gap-space-md group" data-path="interview-guide" href="#"><span class="material-symbols-outlined text-[20px] shrink-0">assignment</span><span class="opacity-0 group-hover/sidebar:opacity-100 transition-opacity duration-200 font-body-md text-body-md whitespace-nowrap">Interview Guide</span></a></nav><div class="p-space-sm border-t border-outline-variant shrink-0"><div class="flex items-center px-3 py-2 rounded-xl text-on-surface-variant hover:bg-surface-container transition-colors gap-space-md"><span class="material-symbols-outlined text-[20px] shrink-0">help_outline</span><span class="opacity-0 group-hover/sidebar:opacity-100 transition-opacity duration-200 font-label-md text-label-md whitespace-nowrap">Research Spec v2.4</span></div></div></aside><div class="pl-[72px]"><header class="fixed top-0 left-[72px] right-0 h-14 bg-surface-container-lowest border-b border-outline-variant z-40 px-space-lg flex items-center justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-md flex-1 max-w-xl"><div class="relative w-full max-w-md"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span><input class="w-full h-9 pl-9 pr-3 text-body-sm font-body-sm bg-surface-container-low border border-outline-variant rounded-lg placeholder-on-surface-variant text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="Search feedback, synthesis tags, verbatim quotes..." type="text"/></div></div><div class="flex items-center gap-space-sm"><button class="inline-flex items-center gap-space-xs h-9 px-3 rounded-lg border border-outline-variant bg-surface-container-lowest hover:bg-surface-container-low text-on-surface-variant font-label-md text-label-md transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">tune</span><span>Filters</span><span class="inline-flex items-center justify-center px-1.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm ml-1">4 active</span></button><button class="inline-flex items-center gap-space-xs h-9 px-space-md rounded-lg bg-primary-container hover:bg-primary text-on-primary-container font-label-md text-label-md transition-all shadow-sm" type="button"><span class="material-symbols-outlined text-[18px]">ios_share</span><span>Export</span><span class="material-symbols-outlined text-[16px]">expand_more</span></button><div class="h-5 w-[1px] bg-outline-variant mx-1"></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover border border-outline-variant cursor-pointer hover:ring-2 hover:ring-primary/20 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRrhVdpcobLQil9YZfiihnsKqBt749RlNy9A_3gd9NPRAbY1qFPiD2z553HRlg2Fc7quXCPJGIOplQywoGwS0oRwT1wyCCSdbbKSPyijP3YBvOwlyhkt44n3Yapm9U8oN_ExOJWFvql2gc0TmzFfQWxo0LbSXONCZlSkJxSYbUwrOpA1SqNOIKsLR-zt88V6lBP2mcg21zxMvjBDSUdkJoBQJsa3Nnq8Odst8LqNvbWoZcyb1cxNbJqA"/></div></header><div class="sticky top-14 left-[72px] right-0 z-30 bg-surface-container-lowest border-b border-outline-variant px-space-lg py-2 flex items-center justify-between shadow-[0_1px_4px_rgba(0,0,0,0.02)]"><div class="flex items-center gap-2 overflow-x-auto"><button class="inline-flex items-center gap-1.5 h-7 px-3 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm font-medium shadow-sm shrink-0" type="button"><span class="material-symbols-outlined text-[14px]">public</span><span>Geography: All</span><span class="material-symbols-outlined text-[14px]">close</span></button><button class="inline-flex items-center gap-1.5 h-7 px-3 rounded-full bg-secondary-container text-on-secondary-container hover:bg-surface-container-high hover:text-on-surface font-label-sm text-label-sm transition-colors shrink-0" type="button"><span>Severity</span><span class="material-symbols-outlined text-[14px]">arrow_drop_down</span></button><button class="inline-flex items-center gap-1.5 h-7 px-3 rounded-full bg-secondary-container text-on-secondary-container hover:bg-surface-container-high hover:text-on-surface font-label-sm text-label-sm transition-colors shrink-0" type="button"><span>Source</span><span class="material-symbols-outlined text-[14px]">arrow_drop_down</span></button><button class="inline-flex items-center gap-1.5 h-7 px-3 rounded-full bg-secondary-container text-on-secondary-container hover:bg-surface-container-high hover:text-on-surface font-label-sm text-label-sm transition-colors shrink-0" type="button"><span>Platform</span><span class="material-symbols-outlined text-[14px]">arrow_drop_down</span></button><button class="inline-flex items-center gap-1.5 h-7 px-3 rounded-full bg-secondary-container text-on-secondary-container hover:bg-surface-container-high hover:text-on-surface font-label-sm text-label-sm transition-colors shrink-0" type="button"><span>Memory Cue</span><span class="material-symbols-outlined text-[14px]">arrow_drop_down</span></button></div><button class="text-primary hover:text-on-primary-fixed-variant font-label-sm text-label-sm font-semibold transition-colors shrink-0 ml-4" type="button">Reset All</button></div><main class="relative pt-14 bg-background min-h-[calc(100vh-3.5rem)] px-space-lg py-space-lg"><div class="flex flex-col w-full gap-space-lg">
+<div class="relative overflow-hidden rounded-xl bg-surface-container-lowest p-space-lg shadow-sm">
+<div class="absolute -right-16 -top-16 h-64 w-64 rounded-full bg-primary-fixed/30 blur-3xl pointer-events-none"></div>
+<div class="absolute right-48 -bottom-20 h-48 w-48 rounded-full bg-tertiary-fixed/40 blur-2xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col md:flex-row md:items-center md:justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs max-w-3xl">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm uppercase tracking-wider">
+<span class="material-symbols-outlined text-[14px]">psychology_alt</span>
+            Strategic Synthesis
+          </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Sprint Q3-R4 Roadmap Analysis</span>
+</div>
+<h1 class="font-headline-md text-headline-md text-on-surface tracking-tight">Opportunity Landscape & Strategic Interventions</h1>
+<p class="font-body-lg text-body-lg text-secondary">
+<span class="font-title-lg text-primary font-semibold">28 Opportunities</span> identified across 
+          <span class="font-title-lg text-on-surface font-semibold">142 pain points</span>. 
+          Top 3 represent <span class="font-title-lg text-tertiary font-semibold">42% of total user friction</span>.
+        </p>
+</div>
+<div class="flex items-center gap-space-md shrink-0 bg-surface-container-low px-space-md py-space-sm rounded-xl">
+<div class="flex flex-col items-start pr-space-md">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Prioritization Model</span>
+<span class="font-title-md text-title-md text-on-surface font-semibold">RICE + Semantic Weight</span>
+</div>
+<button class="inline-flex items-center gap-1 h-8 px-3 rounded-lg bg-surface-container-highest text-on-surface hover:bg-secondary-fixed text-label-md font-label-md transition-colors" id="toggle-filter">
+<span class="material-symbols-outlined text-[16px]">sort</span>
+<span>By Composite Value</span>
+</button>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-space-md">
+<div class="relative rounded-xl bg-surface-container-lowest p-space-lg shadow-sm hover:shadow-md transition-shadow">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-tertiary-fixed-dim rounded-l-xl"></div>
+<div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-space-lg">
+<div class="flex items-start gap-space-md flex-1 min-w-0">
+<div class="flex items-center justify-center w-11 h-11 rounded-full bg-tertiary-fixed text-on-tertiary-fixed shrink-0 font-title-lg text-title-lg shadow-sm">
+            #1
+          </div>
+<div class="flex flex-col gap-space-xs flex-1 min-w-0">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm">
+                Primary Recommendation
+              </span>
+<span class="font-label-sm text-label-sm text-secondary">ID: OPP-GEMINI-01</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold leading-tight">
+              Natural Episodic Memory Query Synthesis (Gemini-Assisted Retrieval)
+            </h2>
+<p class="font-body-md text-body-md text-secondary line-clamp-2">
+              Users express search queries using rich autobiographical narrative anchors that classical keyword matching truncates or fragments.
+            </p>
+<div class="flex items-center gap-1.5 flex-wrap pt-1">
+<span class="font-label-sm text-label-sm text-secondary mr-1">Traced Friction:</span>
+<button class="inline-flex items-center px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed hover:bg-primary hover:text-on-primary font-label-sm text-label-sm transition-colors" type="button">
+                Semantic Query Breakdown #1
+              </button>
+<button class="inline-flex items-center px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed hover:bg-primary hover:text-on-primary font-label-sm text-label-sm transition-colors" type="button">
+                Date-Location Desync #4
+              </button>
+<button class="inline-flex items-center px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed hover:bg-primary hover:text-on-primary font-label-sm text-label-sm transition-colors" type="button">
+                Event Co-reference #12
+              </button>
+</div>
+<div class="mt-space-sm p-3 rounded-lg bg-surface-container-low flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">lightbulb</span>
+<div class="flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-primary font-semibold uppercase tracking-wider">Suggested Product Direction</span>
+<p class="font-body-sm text-body-sm text-on-surface leading-snug">
+                  Integrate conversational query refinement dialog that confirms ambiguous temporal and relational constraints before displaying gallery grid.
+                </p>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-row lg:flex-col items-center justify-center p-space-md rounded-xl bg-surface-container-low/50 lg:w-44 shrink-0 gap-2 self-stretch lg:self-auto">
+<div class="relative w-20 h-20 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 72 72">
+<circle class="text-surface-container-highest" cx="36" cy="36" fill="transparent" r="30" stroke="currentColor" stroke-width="6"></circle>
+<circle class="text-primary" cx="36" cy="36" fill="transparent" r="30" stroke="currentColor" stroke-dasharray="188.5" stroke-dashoffset="7.5" stroke-linecap="round" stroke-width="6"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="font-title-lg text-title-lg text-on-surface font-semibold tracking-tight">9.6</span>
+<span class="font-label-sm text-label-sm text-secondary text-[9px] -mt-1">/ 10</span>
+</div>
+</div>
+<div class="flex flex-col items-center text-center">
+<span class="font-label-md text-label-md text-on-surface font-medium">Impact Score</span>
+<span class="font-label-sm text-label-sm text-secondary">Confidence: 94%</span>
+</div>
+</div>
+</div>
+</div>
+<div class="relative rounded-xl bg-surface-container-lowest p-space-lg shadow-sm hover:shadow-md transition-shadow">
+<div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-space-lg">
+<div class="flex items-start gap-space-md flex-1 min-w-0">
+<div class="flex items-center justify-center w-11 h-11 rounded-full bg-secondary-container text-on-secondary-fixed shrink-0 font-title-lg text-title-lg shadow-sm">
+            #2
+          </div>
+<div class="flex flex-col gap-space-xs flex-1 min-w-0">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm">
+                High Velocity Target
+              </span>
+<span class="font-label-sm text-label-sm text-secondary">ID: OPP-HYGIENE-06</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold leading-tight">
+              Intelligent Gallery Hygiene & Auto-Curation of Ephemeral Media
+            </h2>
+<p class="font-body-md text-body-md text-secondary line-clamp-2">
+              Screenshots, receipts, and chat-forwarded media overwhelm personal life milestones and distort automatic highlight reels.
+            </p>
+<div class="flex items-center gap-1.5 flex-wrap pt-1">
+<span class="font-label-sm text-label-sm text-secondary mr-1">Traced Friction:</span>
+<button class="inline-flex items-center px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed hover:bg-primary hover:text-on-primary font-label-sm text-label-sm transition-colors" type="button">
+                Screenshot Clutter #3
+              </button>
+<button class="inline-flex items-center px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed hover:bg-primary hover:text-on-primary font-label-sm text-label-sm transition-colors" type="button">
+                Duplicate Receipt Ingestion #8
+              </button>
+</div>
+<div class="mt-space-sm p-3 rounded-lg bg-surface-container-low flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">lightbulb</span>
+<div class="flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-primary font-semibold uppercase tracking-wider">Suggested Product Direction</span>
+<p class="font-body-sm text-body-sm text-on-surface leading-snug">
+                  Automated quarantine drawer with one-tap weekly bulk prune recommendations and smart OCR tagging.
+                </p>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-row lg:flex-col items-center justify-center p-space-md rounded-xl bg-surface-container-low/50 lg:w-44 shrink-0 gap-2 self-stretch lg:self-auto">
+<div class="relative w-20 h-20 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 72 72">
+<circle class="text-surface-container-highest" cx="36" cy="36" fill="transparent" r="30" stroke="currentColor" stroke-width="6"></circle>
+<circle class="text-primary" cx="36" cy="36" fill="transparent" r="30" stroke="currentColor" stroke-dasharray="188.5" stroke-dashoffset="20.7" stroke-linecap="round" stroke-width="6"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="font-title-lg text-title-lg text-on-surface font-semibold tracking-tight">8.9</span>
+<span class="font-label-sm text-label-sm text-secondary text-[9px] -mt-1">/ 10</span>
+</div>
+</div>
+<div class="flex flex-col items-center text-center">
+<span class="font-label-md text-label-md text-on-surface font-medium">Impact Score</span>
+<span class="font-label-sm text-label-sm text-secondary">Confidence: 89%</span>
+</div>
+</div>
+</div>
+</div>
+<div class="relative rounded-xl bg-surface-container-lowest p-space-lg shadow-sm hover:shadow-md transition-shadow">
+<div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-space-lg">
+<div class="flex items-start gap-space-md flex-1 min-w-0">
+<div class="flex items-center justify-center w-11 h-11 rounded-full bg-secondary-container text-on-secondary-fixed shrink-0 font-title-lg text-title-lg shadow-sm">
+            #3
+          </div>
+<div class="flex flex-col gap-space-xs flex-1 min-w-0">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm">
+                Collaborative Retention
+              </span>
+<span class="font-label-sm text-label-sm text-secondary">ID: OPP-SOCIAL-11</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold leading-tight">
+              Multi-User Collaborative Album Memory Reconstruction
+            </h2>
+<p class="font-body-md text-body-md text-secondary line-clamp-2">
+              Shared family event albums suffer from timeline fragmentation due to mismatched device timezones and missing location tags.
+            </p>
+<div class="flex items-center gap-1.5 flex-wrap pt-1">
+<span class="font-label-sm text-label-sm text-secondary mr-1">Traced Friction:</span>
+<button class="inline-flex items-center px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed hover:bg-primary hover:text-on-primary font-label-sm text-label-sm transition-colors" type="button">
+                Shared Album Chronology #9
+              </button>
+<button class="inline-flex items-center px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed hover:bg-primary hover:text-on-primary font-label-sm text-label-sm transition-colors" type="button">
+                Timezone Offset Glitch #15
+              </button>
+</div>
+<div class="mt-space-sm p-3 rounded-lg bg-surface-container-low flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">lightbulb</span>
+<div class="flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-primary font-semibold uppercase tracking-wider">Suggested Product Direction</span>
+<p class="font-body-sm text-body-sm text-on-surface leading-snug">
+                  Auto-align timestamps using shared anchor photos and machine-learned event grouping.
+                </p>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-row lg:flex-col items-center justify-center p-space-md rounded-xl bg-surface-container-low/50 lg:w-44 shrink-0 gap-2 self-stretch lg:self-auto">
+<div class="relative w-20 h-20 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 72 72">
+<circle class="text-surface-container-highest" cx="36" cy="36" fill="transparent" r="30" stroke="currentColor" stroke-width="6"></circle>
+<circle class="text-primary" cx="36" cy="36" fill="transparent" r="30" stroke="currentColor" stroke-dasharray="188.5" stroke-dashoffset="35.8" stroke-linecap="round" stroke-width="6"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="font-title-lg text-title-lg text-on-surface font-semibold tracking-tight">8.1</span>
+<span class="font-label-sm text-label-sm text-secondary text-[9px] -mt-1">/ 10</span>
+</div>
+</div>
+<div class="flex flex-col items-center text-center">
+<span class="font-label-md text-label-md text-on-surface font-medium">Impact Score</span>
+<span class="font-label-sm text-label-sm text-secondary">Confidence: 82%</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">analytics</span>
+<h3 class="font-title-lg text-title-lg text-on-surface font-semibold">
+            Opportunity Impact vs. Engineering Feasibility Matrix
+          </h3>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">
+          Comparative horizontal distribution ranking the top 6 opportunities by composite viability score.
+        </p>
+</div>
+<div class="flex items-center gap-space-md text-label-sm font-label-sm">
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-full bg-primary"></span>
+<span class="text-secondary">Impact Weight (60%)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-full bg-secondary-fixed-dim"></span>
+<span class="text-secondary">Feasibility Weight (40%)</span>
+</div>
+</div>
+</div>
+<div class="relative pt-4 pb-2">
+<div class="absolute top-0 bottom-0 left-[75%] w-px bg-tertiary-fixed-dim/70 z-0">
+<span class="absolute -top-3 -translate-x-1/2 bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-[10px] px-1.5 py-0.5 rounded shadow-sm">
+          Target Viability Threshold (7.5)
+        </span>
+</div>
+<div class="flex flex-col gap-space-md relative z-10">
+<div class="grid grid-cols-12 gap-2 items-center">
+<div class="col-span-12 md:col-span-4 flex flex-col">
+<span class="font-title-md text-title-md text-on-surface font-semibold truncate">#1 Episodic Query Synthesis</span>
+<span class="font-label-sm text-label-sm text-secondary">Retrieval Engine • Gemini Core</span>
+</div>
+<div class="col-span-10 md:col-span-7 flex items-center">
+<div class="w-full bg-surface-container-high h-6 rounded-lg overflow-hidden flex">
+<div class="bg-primary h-full rounded-l-lg transition-all duration-500" style="width: 58%;"></div>
+<div class="bg-secondary-fixed-dim h-full rounded-r-lg transition-all duration-500" style="width: 38%;"></div>
+</div>
+</div>
+<div class="col-span-2 md:col-span-1 text-right">
+<span class="font-title-md text-title-md text-primary font-bold">9.6</span>
+</div>
+</div>
+<div class="grid grid-cols-12 gap-2 items-center">
+<div class="col-span-12 md:col-span-4 flex flex-col">
+<span class="font-title-md text-title-md text-on-surface font-semibold truncate">#2 Gallery Hygiene & Auto-Prune</span>
+<span class="font-label-sm text-label-sm text-secondary">Client Storage • Heuristic ML</span>
+</div>
+<div class="col-span-10 md:col-span-7 flex items-center">
+<div class="w-full bg-surface-container-high h-6 rounded-lg overflow-hidden flex">
+<div class="bg-primary h-full rounded-l-lg transition-all duration-500" style="width: 53%;"></div>
+<div class="bg-secondary-fixed-dim h-full rounded-r-lg transition-all duration-500" style="width: 36%;"></div>
+</div>
+</div>
+<div class="col-span-2 md:col-span-1 text-right">
+<span class="font-title-md text-title-md text-primary font-bold">8.9</span>
+</div>
+</div>
+<div class="grid grid-cols-12 gap-2 items-center">
+<div class="col-span-12 md:col-span-4 flex flex-col">
+<span class="font-title-md text-title-md text-on-surface font-semibold truncate">#3 Collaborative Album Sync</span>
+<span class="font-label-sm text-label-sm text-secondary">Sync Pipeline • Spatial Metadata</span>
+</div>
+<div class="col-span-10 md:col-span-7 flex items-center">
+<div class="w-full bg-surface-container-high h-6 rounded-lg overflow-hidden flex">
+<div class="bg-primary h-full rounded-l-lg transition-all duration-500" style="width: 48%;"></div>
+<div class="bg-secondary-fixed-dim h-full rounded-r-lg transition-all duration-500" style="width: 33%;"></div>
+</div>
+</div>
+<div class="col-span-2 md:col-span-1 text-right">
+<span class="font-title-md text-title-md text-primary font-bold">8.1</span>
+</div>
+</div>
+<div class="grid grid-cols-12 gap-2 items-center">
+<div class="col-span-12 md:col-span-4 flex flex-col">
+<span class="font-title-md text-title-md text-on-surface font-semibold truncate">#4 Cross-Device Face Clustering Repair</span>
+<span class="font-label-sm text-label-sm text-secondary">Edge Vision • Private Enclaves</span>
+</div>
+<div class="col-span-10 md:col-span-7 flex items-center">
+<div class="w-full bg-surface-container-high h-6 rounded-lg overflow-hidden flex">
+<div class="bg-primary h-full rounded-l-lg transition-all duration-500" style="width: 46%;"></div>
+<div class="bg-secondary-fixed-dim h-full rounded-r-lg transition-all duration-500" style="width: 31%;"></div>
+</div>
+</div>
+<div class="col-span-2 md:col-span-1 text-right">
+<span class="font-title-md text-title-md text-primary font-bold">7.7</span>
+</div>
+</div>
+<div class="grid grid-cols-12 gap-2 items-center">
+<div class="col-span-12 md:col-span-4 flex flex-col">
+<span class="font-title-md text-title-md text-on-surface font-semibold truncate">#5 Offline Raw Search Indexing</span>
+<span class="font-label-sm text-label-sm text-secondary">Local Vector Store • SQLite FTS</span>
+</div>
+<div class="col-span-10 md:col-span-7 flex items-center">
+<div class="w-full bg-surface-container-high h-6 rounded-lg overflow-hidden flex">
+<div class="bg-primary h-full rounded-l-lg transition-all duration-500" style="width: 42%;"></div>
+<div class="bg-secondary-fixed-dim h-full rounded-r-lg transition-all duration-500" style="width: 30%;"></div>
+</div>
+</div>
+<div class="col-span-2 md:col-span-1 text-right">
+<span class="font-title-md text-title-md text-primary font-bold">7.2</span>
+</div>
+</div>
+<div class="grid grid-cols-12 gap-2 items-center">
+<div class="col-span-12 md:col-span-4 flex flex-col">
+<span class="font-title-md text-title-md text-on-surface font-semibold truncate">#6 Semantic Print Book Export Engine</span>
+<span class="font-label-sm text-label-sm text-secondary">Layout GenAI • Commercial Partner API</span>
+</div>
+<div class="col-span-10 md:col-span-7 flex items-center">
+<div class="w-full bg-surface-container-high h-6 rounded-lg overflow-hidden flex">
+<div class="bg-primary h-full rounded-l-lg transition-all duration-500" style="width: 38%;"></div>
+<div class="bg-secondary-fixed-dim h-full rounded-r-lg transition-all duration-500" style="width: 28%;"></div>
+</div>
+</div>
+<div class="col-span-2 md:col-span-1 text-right">
+<span class="font-title-md text-title-md text-primary font-bold">6.6</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-sm border-t border-surface-container-high">
+<span class="font-label-sm text-label-sm text-secondary">Benchmark updated today based on telemetry correlation</span>
+<div class="flex items-center gap-2">
+<button class="font-label-md text-label-md text-primary hover:text-on-primary-fixed-variant font-semibold flex items-center gap-1" type="button">
+<span>View Scoring Methodology</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const filterBtn = document.getElementById('toggle-filter');
+    if (filterBtn) {
+      filterBtn.addEventListener('click', () => {
+        const textSpan = filterBtn.querySelector('span:not(.material-symbols-outlined)');
+        if (textSpan) {
+          textSpan.textContent = textSpan.textContent.includes('Composite') 
+            ? 'By Engineering Feasibility' 
+            : 'By Composite Value';
+        }
+      });
+    }
+  });
+</script></main></div></body></html>

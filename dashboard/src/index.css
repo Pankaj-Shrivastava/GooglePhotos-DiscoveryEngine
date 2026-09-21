@@ -1,15 +1,70 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-500: #aa3bff;
-  /* Add more theme customizations here as needed */
+  /* ─── Material You Color Tokens ─── */
+  --color-primary: #005BBF;
+  --color-primary-container: #1A73E8;
+  --color-on-primary: #FFFFFF;
+  --color-on-primary-container: #FFFFFF;
+  --color-primary-fixed: #D8E2FF;
+  --color-on-primary-fixed: #001A41;
+
+  --color-secondary: #575F6B;
+  --color-secondary-container: #DBE3F1;
+  --color-on-secondary-container: #5D6571;
+
+  --color-tertiary: #805600;
+  --color-tertiary-container: #A06D00;
+  --color-tertiary-fixed: #FFDDB0;
+  --color-tertiary-fixed-dim: #FFBA45;
+
+  --color-error: #BA1A1A;
+  --color-error-container: #FFDAD6;
+  --color-on-error: #FFFFFF;
+
+  --color-surface: #FAF9FD;
+  --color-surface-container: #EFEDF1;
+  --color-surface-container-low: #F4F3F7;
+  --color-surface-container-high: #E9E7EB;
+  --color-surface-container-highest: #E3E2E6;
+  --color-surface-container-lowest: #FFFFFF;
+  --color-surface-dim: #DBD9DD;
+
+  --color-on-surface: #1A1B1E;
+  --color-on-surface-variant: #414754;
+  --color-outline: #727785;
+  --color-outline-variant: #C1C6D6;
+  --color-background: #FAF9FD;
+
+  /* ─── Spacing Tokens ─── */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+
+  /* ─── Font Family ─── */
+  --font-sans: 'Inter', system-ui, sans-serif;
+
+  /* ─── Border Radius ─── */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-full: 9999px;
 }
 
 @layer base {
   html, body {
     @apply h-full w-full m-0 p-0;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   #root {
-    @apply min-h-screen flex flex-col;
+    @apply min-h-screen;
   }
+  /* Hide scrollbar globally like Stitch UI */
+  ::-webkit-scrollbar { display: none; }
+  * { scrollbar-width: none; }
 }

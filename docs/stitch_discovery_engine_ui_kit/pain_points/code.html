@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-primary-fixed-variant": "#004493", "on-secondary": "#ffffff", "secondary-fixed": "#dbe3f1", "primary-container": "#1a73e8", "tertiary": "#805600", "secondary-container": "#dbe3f1", "on-secondary-fixed": "#141c26", "surface-container-highest": "#e3e2e6", "on-error": "#ffffff", "on-primary-container": "#ffffff", "on-error-container": "#93000a", "tertiary-fixed-dim": "#ffba45", "surface": "#faf9fd", "secondary-fixed-dim": "#bfc7d4", "on-tertiary-fixed": "#281800", "surface-bright": "#faf9fd", "surface-container-high": "#e9e7eb", "primary-fixed": "#d8e2ff", "background": "#faf9fd", "tertiary-container": "#a06d00", "error": "#ba1a1a", "on-background": "#1a1b1e", "on-tertiary": "#ffffff", "on-surface": "#1a1b1e", "on-surface-variant": "#414754", "inverse-on-surface": "#f1f0f4", "surface-container-lowest": "#ffffff", "outline": "#727785", "error-container": "#ffdad6", "on-secondary-container": "#5d6571", "surface-variant": "#e3e2e6", "primary": "#005bbf", "on-primary-fixed": "#001a41", "primary-fixed-dim": "#adc7ff", "secondary": "#575f6b", "outline-variant": "#c1c6d6", "inverse-surface": "#2f3033", "on-primary": "#ffffff", "surface-dim": "#dbd9dd", "on-tertiary-container": "#0a0400", "surface-container": "#efedf1", "inverse-primary": "#adc7ff", "on-secondary-fixed-variant": "#3f4752", "surface-tint": "#005bc0", "surface-container-low": "#f4f3f7", "tertiary-fixed": "#ffddb0", "on-tertiary-fixed-variant": "#614000" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-md": "1rem", "space-lg": "1.5rem", "space-sm": "0.5rem", "gutter-mobile": "0.75rem", "space-xs": "0.25rem", "margin-mobile": "1rem", "gutter": "1rem", "margin": "1.5rem", "space-xl": "2rem" }, "fontFamily": { "title-md": ["Inter"], "body-md": ["Inter"], "body-lg": ["Inter"], "headline-md": ["Inter"], "metric-display": ["Inter"], "label-sm": ["Inter"], "headline-sm": ["Inter"], "title-lg": ["Inter"], "body-sm": ["Inter"], "display-lg": ["Inter"], "label-md": ["Inter"], "display-lg-mobile": ["Inter"] }, "fontSize": { "title-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }], "body-md": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "body-lg": ["15px", { "lineHeight": "22px", "fontWeight": "400" }], "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "metric-display": ["28px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "500" }], "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "title-lg": ["16px", { "lineHeight": "22px", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500" }], "display-lg-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "600" }] } } } };</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="group/sidebar fixed left-0 top-0 h-screen w-[72px] hover:w-60 bg-surface-container-lowest border-r border-outline-variant z-50 flex flex-col transition-all duration-300 ease-in-out overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.08)]"><div class="h-14 flex items-center px-4 gap-3 border-b border-outline-variant shrink-0"><img alt="Discovery Engine Logo" class="h-8 w-8 object-contain shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1XbIbq2h4__E4bk3FjBayIjiZxgiO1spsKcIpadP8Nt5bvPpnXyLwWryaLyhn0QvouzCKfI7whgg67h-dCXbILHQx8h62xS7l-4XjfNKoUSrFA6jw5HHG4yDyQlVR82HMpot3SfnLG_VboZXwYPv47pf6ajA1gpRaZxZ00lUD8NUUtGKr0bNXRZTp3q4mA2JBHQ4zfgDgZjfz10p1KL318hvyyzDuz97swsGixFb8ERC2L5LXxm3rPXGrjf"/><div class="opacity-0 group-hover/sidebar:opacity-100 transition-opacity duration-200 whitespace-nowrap overflow-hidden flex flex-col"><span class="font-title-md text-title-md text-on-surface leading-tight tracking-tight">Discovery Engine</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-none">Google Photos Intel</span></div></div><nav class="flex-1 flex flex-col gap-space-xs p-space-sm overflow-y-auto" data-active-classes="bg-secondary-container text-primary font-title-md rounded-xl shadow-sm"><a class="flex items-center h-11 px-3 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all gap-space-md group" data-path="overview" href="#"><span class="material-symbols-outlined text-[20px] shrink-0">dashboard</span><span class="opacity-0 group-hover/sidebar:opacity-100 transition-opacity duration-200 font-body-md text-body-md whitespace-nowrap">Overview</span></a><a aria-current="page" class="flex items-center h-11 px-3 transition-all gap-space-md group bg-secondary-container text-primary font-title-md rounded-xl shadow-sm" data-path="pain-points" href="#"><span class="material-symbols-outlined text-[20px] shrink-0">warning</span><span class="opacity-0 group-hover/sidebar:opacity-100 transition-opacity duration-200 font-body-md text-body-md whitespace-nowrap">Pain Points</span></a><a class="flex items-center h-11 px-3 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all gap-space-md group" data-path="opportunities" href="#"><span class="material-symbols-outlined text-[20px] shrink-0">lightbulb</span><span class="opacity-0 group-hover/sidebar:opacity-100 transition-opacity duration-200 font-body-md text-body-md whitespace-nowrap">Opportunities</span></a><a class="flex items-center h-11 px-3 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all gap-space-md group" data-path="frameworks" href="#"><span class="material-symbols-outlined text-[20px] shrink-0">bar_chart</span><span class="opacity-0 group-hover/sidebar:opacity-100 transition-opacity duration-200 font-body-md text-body-md whitespace-nowrap">Frameworks</span></a><a class="flex items-center h-11 px-3 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all gap-space-md group" data-path="google-actions" href="#"><span class="material-symbols-outlined text-[20px] shrink-0">rocket_launch</span><span class="opacity-0 group-hover/sidebar:opacity-100 transition-opacity duration-200 font-body-md text-body-md whitespace-nowrap">Google Actions</span></a><a class="flex items-center h-11 px-3 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all gap-space-md group" data-path="segmentation" href="#"><span class="material-symbols-outlined text-[20px] shrink-0">pie_chart</span><span class="opacity-0 group-hover/sidebar:opacity-100 transition-opacity duration-200 font-body-md text-body-md whitespace-nowrap">Segmentation</span></a><a class="flex items-center h-11 px-3 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all gap-space-md group" data-path="interview-guide" href="#"><span class="material-symbols-outlined text-[20px] shrink-0">assignment</span><span class="opacity-0 group-hover/sidebar:opacity-100 transition-opacity duration-200 font-body-md text-body-md whitespace-nowrap">Interview Guide</span></a></nav><div class="p-space-sm border-t border-outline-variant shrink-0"><div class="flex items-center px-3 py-2 rounded-xl text-on-surface-variant hover:bg-surface-container transition-colors gap-space-md"><span class="material-symbols-outlined text-[20px] shrink-0">help_outline</span><span class="opacity-0 group-hover/sidebar:opacity-100 transition-opacity duration-200 font-label-md text-label-md whitespace-nowrap">Research Spec v2.4</span></div></div></aside><div class="pl-[72px]"><header class="fixed top-0 left-[72px] right-0 h-14 bg-surface-container-lowest border-b border-outline-variant z-40 px-space-lg flex items-center justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-md flex-1 max-w-xl"><div class="relative w-full max-w-md"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span><input class="w-full h-9 pl-9 pr-3 text-body-sm font-body-sm bg-surface-container-low border border-outline-variant rounded-lg placeholder-on-surface-variant text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="Search feedback, synthesis tags, verbatim quotes..." type="text"/></div></div><div class="flex items-center gap-space-sm"><button class="inline-flex items-center gap-space-xs h-9 px-3 rounded-lg border border-outline-variant bg-surface-container-lowest hover:bg-surface-container-low text-on-surface-variant font-label-md text-label-md transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">tune</span><span>Filters</span><span class="inline-flex items-center justify-center px-1.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm ml-1">4 active</span></button><button class="inline-flex items-center gap-space-xs h-9 px-space-md rounded-lg bg-primary-container hover:bg-primary text-on-primary-container font-label-md text-label-md transition-all shadow-sm" type="button"><span class="material-symbols-outlined text-[18px]">ios_share</span><span>Export</span><span class="material-symbols-outlined text-[16px]">expand_more</span></button><div class="h-5 w-[1px] bg-outline-variant mx-1"></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover border border-outline-variant cursor-pointer hover:ring-2 hover:ring-primary/20 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRrhVdpcobLQil9YZfiihnsKqBt749RlNy9A_3gd9NPRAbY1qFPiD2z553HRlg2Fc7quXCPJGIOplQywoGwS0oRwT1wyCCSdbbKSPyijP3YBvOwlyhkt44n3Yapm9U8oN_ExOJWFvql2gc0TmzFfQWxo0LbSXONCZlSkJxSYbUwrOpA1SqNOIKsLR-zt88V6lBP2mcg21zxMvjBDSUdkJoBQJsa3Nnq8Odst8LqNvbWoZcyb1cxNbJqA"/></div></header><div class="sticky top-14 left-[72px] right-0 z-30 bg-surface-container-lowest border-b border-outline-variant px-space-lg py-2 flex items-center justify-between shadow-[0_1px_4px_rgba(0,0,0,0.02)]"><div class="flex items-center gap-2 overflow-x-auto"><button class="inline-flex items-center gap-1.5 h-7 px-3 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm font-medium shadow-sm shrink-0" type="button"><span class="material-symbols-outlined text-[14px]">public</span><span>Geography: All</span><span class="material-symbols-outlined text-[14px]">close</span></button><button class="inline-flex items-center gap-1.5 h-7 px-3 rounded-full bg-secondary-container text-on-secondary-container hover:bg-surface-container-high hover:text-on-surface font-label-sm text-label-sm transition-colors shrink-0" type="button"><span>Severity</span><span class="material-symbols-outlined text-[14px]">arrow_drop_down</span></button><button class="inline-flex items-center gap-1.5 h-7 px-3 rounded-full bg-secondary-container text-on-secondary-container hover:bg-surface-container-high hover:text-on-surface font-label-sm text-label-sm transition-colors shrink-0" type="button"><span>Source</span><span class="material-symbols-outlined text-[14px]">arrow_drop_down</span></button><button class="inline-flex items-center gap-1.5 h-7 px-3 rounded-full bg-secondary-container text-on-secondary-container hover:bg-surface-container-high hover:text-on-surface font-label-sm text-label-sm transition-colors shrink-0" type="button"><span>Platform</span><span class="material-symbols-outlined text-[14px]">arrow_drop_down</span></button><button class="inline-flex items-center gap-1.5 h-7 px-3 rounded-full bg-secondary-container text-on-secondary-container hover:bg-surface-container-high hover:text-on-surface font-label-sm text-label-sm transition-colors shrink-0" type="button"><span>Memory Cue</span><span class="material-symbols-outlined text-[14px]">arrow_drop_down</span></button></div><button class="text-primary hover:text-on-primary-fixed-variant font-label-sm text-label-sm font-semibold transition-colors shrink-0 ml-4" type="button">Reset All</button></div><main class="relative pt-14 bg-background min-h-[calc(100vh-3.5rem)] px-space-lg py-space-lg"><div class="flex flex-col w-full">
+<!-- Analytics Bar / Header Context -->
+<div class="flex flex-wrap items-center justify-between gap-space-md mb-space-lg">
+<div class="flex items-baseline gap-3">
+<h1 class="font-headline-md text-headline-md text-on-surface tracking-tight">Active Pain Points Synthesis</h1>
+<span class="font-label-md text-label-md text-on-surface-variant bg-surface-container-high px-2.5 py-1 rounded-full">142 Total Identified Issues</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-surface-container-lowest shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">sync</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Live Pipeline: Synced 12m ago</span>
+</div>
+<button class="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl bg-surface-container-lowest hover:bg-surface-container-low text-primary font-label-md text-label-md shadow-sm transition-all" type="button">
+<span class="material-symbols-outlined text-[16px]">download</span>
+<span>CSV Extract</span>
+</button>
+</div>
+</div>
+<!-- Main Grid: Left Panel (320px fixed) + Right Feed -->
+<div class="grid grid-cols-1 lg:grid-cols-[320px_minmax(0,1fr)] gap-space-lg items-start">
+<!-- LEFT PANEL: Filters & Sort Sidebar -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-lg sticky top-28">
+<!-- Panel Header -->
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">tune</span>
+<span class="font-title-lg text-title-lg text-on-surface">Filters & Sort</span>
+</div>
+<button class="p-1 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors" title="Reset Filters" type="button">
+<span class="material-symbols-outlined text-[18px]">restart_alt</span>
+</button>
+</div>
+<!-- Sort Dropdown -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Sort By</label>
+<div class="relative w-full">
+<div class="h-10 px-3 rounded-lg bg-surface-container-low flex items-center justify-between text-on-surface font-label-md text-label-md cursor-pointer hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-error">priority_high</span>
+<span>Severity (High to Low)</span>
+</div>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">arrow_drop_down</span>
+</div>
+</div>
+</div>
+<!-- Accordion Section 1: Severity -->
+<div class="flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-title-md text-on-surface">Severity</span>
+<span class="font-label-sm text-label-sm text-primary font-medium">62 selected</span>
+</div>
+<div class="flex flex-col gap-2 pl-0.5">
+<!-- Critical -->
+<label class="flex items-center justify-between group cursor-pointer">
+<div class="flex items-center gap-2.5">
+<div class="w-4 h-4 rounded bg-primary-container text-on-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<span class="w-2.5 h-2.5 rounded-full bg-error shrink-0"></span>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Critical</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">(19)</span>
+</label>
+<!-- High -->
+<label class="flex items-center justify-between group cursor-pointer">
+<div class="flex items-center gap-2.5">
+<div class="w-4 h-4 rounded bg-primary-container text-on-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary-fixed-dim shrink-0"></span>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">High</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">(43)</span>
+</label>
+<!-- Medium -->
+<label class="flex items-center justify-between group cursor-pointer">
+<div class="flex items-center gap-2.5">
+<div class="w-4 h-4 rounded bg-surface-container-high flex items-center justify-center group-hover:bg-secondary-container transition-colors"></div>
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary-fixed shrink-0"></span>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Medium</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">(58)</span>
+</label>
+<!-- Low -->
+<label class="flex items-center justify-between group cursor-pointer">
+<div class="flex items-center gap-2.5">
+<div class="w-4 h-4 rounded bg-surface-container-high flex items-center justify-center group-hover:bg-secondary-container transition-colors"></div>
+<span class="w-2.5 h-2.5 rounded-full bg-outline shrink-0"></span>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Low</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">(22)</span>
+</label>
+</div>
+</div>
+<!-- Accordion Section 2: Geography -->
+<div class="flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-title-md text-on-surface">Geography</span>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant cursor-pointer">expand_less</span>
+</div>
+<div class="flex flex-col gap-2 pl-0.5">
+<!-- US -->
+<label class="flex items-center justify-between group cursor-pointer">
+<div class="flex items-center gap-2.5">
+<div class="w-4 h-4 rounded bg-primary-container text-on-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">US</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">(64)</span>
+</label>
+<!-- India -->
+<label class="flex items-center justify-between group cursor-pointer">
+<div class="flex items-center gap-2.5">
+<div class="w-4 h-4 rounded bg-primary-container text-on-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">India</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">(52)</span>
+</label>
+<!-- Global -->
+<label class="flex items-center justify-between group cursor-pointer">
+<div class="flex items-center gap-2.5">
+<div class="w-4 h-4 rounded bg-surface-container-high flex items-center justify-center group-hover:bg-secondary-container transition-colors"></div>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Global</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">(18)</span>
+</label>
+<!-- Unknown -->
+<label class="flex items-center justify-between group cursor-pointer">
+<div class="flex items-center gap-2.5">
+<div class="w-4 h-4 rounded bg-surface-container-high flex items-center justify-center group-hover:bg-secondary-container transition-colors"></div>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Unknown</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">(8)</span>
+</label>
+</div>
+</div>
+<!-- Accordion Section 3: Source -->
+<div class="flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-title-md text-on-surface">Source</span>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant cursor-pointer">expand_less</span>
+</div>
+<div class="flex flex-col gap-2 pl-0.5">
+<!-- Play Store -->
+<label class="flex items-center justify-between group cursor-pointer">
+<div class="flex items-center gap-2.5">
+<div class="w-4 h-4 rounded bg-primary-container text-on-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Play Store Reviews</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">(88)</span>
+</label>
+<!-- Reddit -->
+<label class="flex items-center justify-between group cursor-pointer">
+<div class="flex items-center gap-2.5">
+<div class="w-4 h-4 rounded bg-primary-container text-on-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Reddit r/googlephotos</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">(34)</span>
+</label>
+<!-- Google Actions Feedback -->
+<label class="flex items-center justify-between group cursor-pointer">
+<div class="flex items-center gap-2.5">
+<div class="w-4 h-4 rounded bg-surface-container-high flex items-center justify-center group-hover:bg-secondary-container transition-colors"></div>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Google Actions Feedback</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">(20)</span>
+</label>
+</div>
+</div>
+<!-- Accordion Section 4: Memory Cue Type -->
+<div class="flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-title-md text-on-surface">Memory Cue Type</span>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant cursor-pointer">expand_less</span>
+</div>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-fixed text-label-sm font-label-sm cursor-pointer hover:bg-primary-fixed transition-colors">Location</span>
+<span class="px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-fixed text-label-sm font-label-sm cursor-pointer hover:bg-primary-fixed transition-colors">People</span>
+<span class="px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-fixed text-label-sm font-label-sm cursor-pointer hover:bg-primary-fixed transition-colors">Time</span>
+<span class="px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-fixed text-label-sm font-label-sm cursor-pointer hover:bg-primary-fixed transition-colors">Visual</span>
+</div>
+</div>
+<!-- Visual Metric Spark in Sidebar -->
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Resolution Rate</span>
+<span class="font-title-md text-title-md text-on-surface">18.4%</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-1.5 overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 18.4%"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">11 of 62 active pain points under dev</span>
+</div>
+</div>
+<!-- RIGHT MAIN FEED: Scrolling List of Pain Point Cards -->
+<div class="flex flex-col gap-space-md">
+<!-- CARD 1: Semantic Query Breakdown -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow flex flex-col gap-space-md">
+<!-- Top Row -->
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2">
+<div class="flex-1">
+<div class="flex items-center gap-2 mb-1">
+<span class="font-label-sm text-label-sm text-primary font-mono uppercase tracking-wider">ISSUE-4091</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">• Reported by 3 cohorts</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-snug">
+              Semantic Query Breakdown on Co-occurring People & Temporal Cues
+            </h2>
+</div>
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-error text-on-error font-label-sm text-label-sm font-semibold shrink-0 shadow-sm self-start">
+<span class="material-symbols-outlined text-[14px]">error</span>
+<span>Critical</span>
+</span>
+</div>
+<!-- Memory Cue Tags -->
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-medium">#Location</span>
+<span class="px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-medium">#People</span>
+<span class="px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-medium">#Time</span>
+</div>
+<!-- Metadata Row -->
+<div class="flex flex-wrap items-center gap-y-2 gap-x-4 py-2 px-3 bg-surface-container-low rounded-lg font-body-sm text-body-sm text-on-surface-variant">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary">trending_up</span>
+<span class="font-medium text-on-surface">Frequency:</span>
+<span>88 mentions (Play Store 62, Reddit 26)</span>
+</div>
+<div class="h-3.5 w-px bg-outline-variant"></div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">public</span>
+<span class="font-medium text-on-surface">Geography:</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container-highest text-on-surface font-label-sm text-label-sm">US</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container-highest text-on-surface font-label-sm text-label-sm">India</span>
+</div>
+<div class="h-3.5 w-px bg-outline-variant"></div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">group</span>
+<span class="font-medium text-on-surface">Segment:</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-mono">power_user</span>
+</div>
+</div>
+<!-- User Quotes Section -->
+<div class="flex flex-col gap-2.5">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">format_quote</span>
+<span class="font-title-md text-title-md text-on-surface">Synthesized User Verbatims</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-sm">
+<!-- Quote 1 -->
+<div class="relative bg-surface-container-low p-3.5 rounded-r-xl rounded-l-sm border-l-[3px] border-primary flex flex-col justify-between gap-3">
+<p class="font-body-md text-body-md text-on-surface italic leading-relaxed">
+                “I typed ‘Dad at the lake 2019’ and it returned random photos of lakes and random pictures of my dad from last week. Completely useless.”
+              </p>
+<div class="flex justify-end">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[12px]">shop</span>
+                  Play Store • Dec 2025
+                </span>
+</div>
+</div>
+<!-- Quote 2 -->
+<div class="relative bg-surface-container-low p-3.5 rounded-r-xl rounded-l-sm border-l-[3px] border-primary flex flex-col justify-between gap-3">
+<p class="font-body-md text-body-md text-on-surface italic leading-relaxed">
+                “Why can’t Photos understand simple combo queries anymore? If I combine two nouns and a date range it defaults to recent uploads.”
+              </p>
+<div class="flex justify-end">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[12px]">forum</span>
+                  Reddit r/googlephotos
+                </span>
+</div>
+</div>
+</div>
+</div>
+<!-- Qualitative Sample Snapshot (Image Placeholder) -->
+<div class="flex items-center gap-3 p-2.5 bg-surface-container-low rounded-lg">
+<img alt="Query results analysis screenshot" class="w-16 h-12 object-cover rounded-md shadow-sm shrink-0" data-alt="A clean modern high-clarity screenshot of a mobile photo library search results grid displaying misclassified family photos next to an alpine lake, high resolution UI analysis rendering with soft shadow in white and cool blue palette" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZnIzLdvInWIfmGfofQGdMG0ZTb3JekjnG9mgfhz3yNtHlPmqfm2Ou3It7YctAu975cFSvRe36Z-GM9nnB3htB_6coo2XJwFoNqkbklmvqW0z3v_oBG_quum8o8z0Vm4TuiJcmMIzOlkSmkggznajQKY58lUrmhnlZKDm-n28gfdAi8nO6MixNWfdN7l6eV0vDI9muhX0Ku1xKvpw671Fvp9lP42xwP84FW_r7J_zrpwwDzU1fW_M78g"/>
+<div class="flex flex-col min-w-0">
+<span class="font-title-md text-title-md text-on-surface truncate">Visual Inspection Artifact: Lake Query Disambiguation Log</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Entity confidence rating: Person 0.94, BodyOfWater 0.32, Timestamp mismatch flagged</span>
+</div>
+</div>
+<!-- Card Footer Divider & Status -->
+<div class="pt-3 flex flex-wrap items-center justify-between gap-2">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px] text-emerald-700">check_circle</span>
+<span>Addressed by Google: 2026 Q1 Gemini Query Update</span>
+</span>
+<div class="flex items-center gap-2">
+<button class="text-on-surface-variant hover:text-primary font-label-sm text-label-sm font-medium flex items-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">bookmark_border</span>
+              Track
+            </button>
+<button class="text-on-surface-variant hover:text-primary font-label-sm text-label-sm font-medium flex items-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+              PRD Reference
+            </button>
+</div>
+</div>
+</div>
+<!-- CARD 2: Automatic Backup Stalling -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow flex flex-col gap-space-md">
+<!-- Top Row -->
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2">
+<div class="flex-1">
+<div class="flex items-center gap-2 mb-1">
+<span class="font-label-sm text-label-sm text-error font-mono uppercase tracking-wider">ISSUE-3890</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">• Critical Background Service Failure</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-snug">
+              Automatic Backup Stalling & Silent Cloud Sync Desync
+            </h2>
+</div>
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-error text-on-error font-label-sm text-label-sm font-semibold shrink-0 shadow-sm self-start">
+<span class="material-symbols-outlined text-[14px]">error</span>
+<span>Critical</span>
+</span>
+</div>
+<!-- Tags -->
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-medium">#SystemSync</span>
+<span class="px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-medium">#Storage</span>
+<span class="px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-medium">#BackgroundTasks</span>
+</div>
+<!-- Metadata Row -->
+<div class="flex flex-wrap items-center gap-y-2 gap-x-4 py-2 px-3 bg-surface-container-low rounded-lg font-body-sm text-body-sm text-on-surface-variant">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary">trending_up</span>
+<span class="font-medium text-on-surface">Frequency:</span>
+<span>74 mentions</span>
+</div>
+<div class="h-3.5 w-px bg-outline-variant"></div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">public</span>
+<span class="font-medium text-on-surface">Geography:</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container-highest text-on-surface font-label-sm text-label-sm">US</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container-highest text-on-surface font-label-sm text-label-sm">Global</span>
+</div>
+<div class="h-3.5 w-px bg-outline-variant"></div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">group</span>
+<span class="font-medium text-on-surface">Segment:</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-mono">casual</span>
+</div>
+</div>
+<!-- User Quotes Section -->
+<div class="flex flex-col gap-2.5">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">format_quote</span>
+<span class="font-title-md text-title-md text-on-surface">Synthesized User Verbatims</span>
+</div>
+<div class="relative bg-surface-container-low p-3.5 rounded-r-xl rounded-l-sm border-l-[3px] border-error flex flex-col justify-between gap-3">
+<p class="font-body-md text-body-md text-on-surface italic leading-relaxed">
+              “My photos stopped backing up for 3 weeks and there was no notification. I only realized when I lost my phone.”
+            </p>
+<div class="flex justify-end">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[12px]">shop</span>
+                Play Store
+              </span>
+</div>
+</div>
+</div>
+<!-- Inline Data Sparkline Graphic -->
+<div class="p-3 bg-surface-container-low rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px] text-error">cloud_off</span>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface">Silent Sync Failure Velocity</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">+31% incident report trajectory over last 30 days</span>
+</div>
+</div>
+<!-- Compact SVG trend visual -->
+<svg class="w-24 h-6 text-error shrink-0" fill="none" viewbox="0 0 100 24">
+<path d="M0 20 L25 18 L50 14 L75 9 L100 2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+</div>
+<!-- Card Footer Divider & Status -->
+<div class="pt-3 flex flex-wrap items-center justify-between gap-2">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px] text-error">report_problem</span>
+<span>Unaddressed</span>
+</span>
+<div class="flex items-center gap-2">
+<button class="text-on-surface-variant hover:text-primary font-label-sm text-label-sm font-medium flex items-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">priority_high</span>
+              Escalate to Eng Lead
+            </button>
+</div>
+</div>
+</div>
+<!-- CARD 3: Facial Recognition Merging -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow flex flex-col gap-space-md">
+<!-- Top Row -->
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2">
+<div class="flex-1">
+<div class="flex items-center gap-2 mb-1">
+<span class="font-label-sm text-label-sm text-tertiary font-mono uppercase tracking-wider">ISSUE-3712</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">• Clustering Algorithm Drift</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-snug">
+              Facial Recognition Merging Unrelated Individuals in Low Light
+            </h2>
+</div>
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-tertiary-fixed-dim text-on-tertiary-fixed font-label-sm text-label-sm font-semibold shrink-0 shadow-sm self-start">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+<span>High</span>
+</span>
+</div>
+<!-- Tags -->
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-medium">#People</span>
+<span class="px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-medium">#Visual</span>
+<span class="px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-medium">#FaceGrouping</span>
+</div>
+<!-- Metadata Row -->
+<div class="flex flex-wrap items-center gap-y-2 gap-x-4 py-2 px-3 bg-surface-container-low rounded-lg font-body-sm text-body-sm text-on-surface-variant">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary">trending_up</span>
+<span class="font-medium text-on-surface">Frequency:</span>
+<span>52 mentions</span>
+</div>
+<div class="h-3.5 w-px bg-outline-variant"></div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">public</span>
+<span class="font-medium text-on-surface">Geography:</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container-highest text-on-surface font-label-sm text-label-sm">India</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container-highest text-on-surface font-label-sm text-label-sm">US</span>
+</div>
+<div class="h-3.5 w-px bg-outline-variant"></div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">group</span>
+<span class="font-medium text-on-surface">Segment:</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-mono">family</span>
+</div>
+</div>
+<!-- User Quotes Section -->
+<div class="flex flex-col gap-2.5">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">format_quote</span>
+<span class="font-title-md text-title-md text-on-surface">Synthesized User Verbatims</span>
+</div>
+<div class="relative bg-surface-container-low p-3.5 rounded-r-xl rounded-l-sm border-l-[3px] border-tertiary-container flex flex-col justify-between gap-3">
+<p class="font-body-md text-body-md text-on-surface italic leading-relaxed">
+              “It merged my two nephews into one person group and now untangling 400 photos is a nightmare.”
+            </p>
+<div class="flex justify-end">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[12px]">forum</span>
+                Reddit
+              </span>
+</div>
+</div>
+</div>
+<!-- Visual Cluster Disambiguation Thumbnail -->
+<div class="flex items-center gap-3 p-2.5 bg-surface-container-low rounded-lg">
+<img alt="Face clustering comparison thumbnail" class="w-16 h-12 object-cover rounded-md shadow-sm shrink-0" data-alt="A side by side user face recognition cluster grid mockup comparing two similar looking young children in evening outdoor illumination, subtle bounding boxes highlighting algorithmic confusion points, analytical modern UI tone with minimalist aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHiBpHSccZ3VIJYnMYMaxmYQ9R00hYkkyneDJwUt-2zaXh5oB5XGKX-lmj5kQLhAKpPerOySBH6VUfwEaI80eT-XYcf0--dYKjwmkAcTRuXTy_65WFG-w0dPXoPzJlDFfeBAXW6HNgx_wb-AfIb_TroB7Btbnmlfwp-88LVWpRq2JIs9pohydQo1wL9eaUnw8eG6-Oi3IgmMtj44gYi6PUpR_yoNJaNOgbrEcIuLAOa2uAnUK3NSZ6oQ"/>
+<div class="flex flex-col min-w-0">
+<span class="font-title-md text-title-md text-on-surface truncate">Cluster Disambiguation: Subject ID #982 vs #984</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Euclidean distance vector 0.38 in low lux lighting scenarios</span>
+</div>
+</div>
+<!-- Card Footer Divider & Status -->
+<div class="pt-3 flex flex-wrap items-center justify-between gap-2">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px] text-error">report_problem</span>
+<span>Unaddressed</span>
+</span>
+<div class="flex items-center gap-2">
+<button class="text-on-surface-variant hover:text-primary font-label-sm text-label-sm font-medium flex items-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+              View Diagnostic Matrix
+            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></main></div></body></html>
