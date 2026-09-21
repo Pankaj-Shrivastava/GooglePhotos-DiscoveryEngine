@@ -70,10 +70,11 @@ def step_clean():
     print("STEP 2: CLEANING & DEDUPLICATION")
     print("=" * 60)
 
-    # TODO: Implement in M2
-    # from processing.cleaner import Cleaner
-    print("  → Cleaner: Not yet implemented (M2)")
-    print("✓ Cleaning step complete (skeleton)")
+    from processing.cleaner import Cleaner
+    cleaner = Cleaner()
+    cleaner.run()
+    
+    print("✓ Cleaning step complete")
 
 
 def step_normalize():
@@ -82,10 +83,11 @@ def step_normalize():
     print("STEP 3: NORMALIZATION")
     print("=" * 60)
 
-    # TODO: Implement in M2
-    # from processing.normalizer import Normalizer
-    print("  → Normalizer: Not yet implemented (M2)")
-    print("✓ Normalization step complete (skeleton)")
+    from processing.normalizer import Normalizer
+    normalizer = Normalizer()
+    normalizer.run()
+
+    print("✓ Normalization step complete")
 
 
 def step_enrich():
@@ -94,10 +96,12 @@ def step_enrich():
     print("STEP 4: AI ENRICHMENT (Gemini)")
     print("=" * 60)
 
-    # TODO: Implement in M3
-    # from processing.enricher import GeminiEnricher
-    print("  → Enricher: Not yet implemented (M3)")
-    print("✓ Enrichment step complete (skeleton)")
+    from processing.enricher import GeminiEnricher
+    # Process all normalized entries
+    enricher = GeminiEnricher()
+    enricher.run()
+
+    print("✓ Enrichment step complete")
 
 
 def step_aggregate():
@@ -106,10 +110,11 @@ def step_aggregate():
     print("STEP 5: AGGREGATION & INSIGHT GENERATION")
     print("=" * 60)
 
-    # TODO: Implement in M4
-    # from analysis.aggregator import Aggregator
-    print("  → Aggregator: Not yet implemented (M4)")
-    print("✓ Aggregation step complete (skeleton)")
+    from analysis.aggregator import DataAggregator
+    aggregator = DataAggregator()
+    aggregator.run()
+
+    print("✓ Aggregation step complete")
 
 
 def copy_to_dashboard():

@@ -23,13 +23,13 @@ class PlayStoreCollector(BaseCollector):
         for country in self.countries:
             logger.info(f"Fetching Play Store reviews for country: {country.upper()}")
             try:
-                # Fetching 4000 reviews per country to reach 8000 total
+                # Fetching 6000 reviews per country to reach 12000 total
                 result, _ = reviews(
                     self.app_id,
                     lang='en',
                     country=country,
                     sort=Sort.NEWEST,
-                    count=4000
+                    count=6000
                 )
 
                 for review in result:
