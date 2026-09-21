@@ -137,7 +137,7 @@ Trigger → Search Attempt → Failure Point → Workaround → Outcome
 
 ## 6. UI Sections
 
-The web application provides the following dashboard sections:
+The web application provides the following dashboard sections. A **full dashboard export** (PDF and CSV) is available to download all insights at once.
 
 ### 6.1 📚 References Section
 - Links to original sources (reviews, threads, posts) where key pain points were identified
@@ -164,15 +164,24 @@ The web application provides the following dashboard sections:
 - Each opportunity includes: problem statement, supporting evidence, estimated impact, and suggested direction
 - Comparison matrix to evaluate and rank opportunities
 
-### 6.6 🗣️ Interview Guide Generator
+### 6.6 📊 Analytical Frameworks Dashboard
+- **Interactive visualizations** of all six analytical frameworks (see Section 5)
+- Impact severity heatmap showing pain point distribution
+- Memory cue taxonomy breakdown with pie/bar charts
+- Retrieval success vs. failure funnel visualization
+- User journey flow diagrams (trigger → attempt → failure → workaround → outcome)
+- Gap analysis matrix: what users remember vs. what Google Photos supports
+- Frequency of mention trend charts across sources
+
+### 6.7 🗣️ Interview Guide Generator
 - Auto-generated user interview discussion guides
 - Open-ended questions organized by pain point and opportunity area
 - Includes probes, follow-up questions, and scenario-based prompts
 - Designed for qualitative user research sessions
 
-### 6.7 📊 Export & Reports
-- PDF report generation for stakeholder presentations
-- CSV data export for further analysis
+### 6.8 📥 Full Dashboard Export
+- **Combined PDF report** with all sections for stakeholder presentations
+- **Combined CSV export** of all data for further analysis in spreadsheets
 - Pre-formatted summaries suitable for PRDs and design briefs
 
 ---
@@ -200,29 +209,39 @@ These are the **core discovery questions** this engine is designed to help answe
 | Layer | Technology |
 |---|---|
 | **Frontend** | Vite + React (SPA) |
-| **Styling** | Vanilla CSS (modern, premium design) |
+| **Styling** | Tailwind CSS |
 | **AI/LLM** | Google Gemini API (free tier available) |
 | **Data Collection** | Python scripts (pre-collection phase) |
+| **Data Cleaning & Normalization** | Python pipeline (dedup, normalize, classify, enrich) |
 | **Data Storage** | JSON/structured files (local-first) |
 | **Export** | PDF generation (client-side), CSV export |
+| **Deployment** | Vercel (production) |
 
 ### Architecture Principles
-- **Local-first**: Runs on local machine, no cloud dependencies required
-- **Deployable**: Architected so it can be deployed later (e.g., to Vercel, Netlify)
-- **Pre-collected data**: Scripts collect and structure data; the UI analyzes the stored dataset
+- **Local-first**: Runs on local machine during development
+- **Vercel-deployed**: Production deployment on Vercel for team sharing
+- **Pre-collected data**: Scripts collect, clean, normalize, and structure data; the UI analyzes the stored dataset
 - **AI-augmented analysis**: Gemini API powers the insight extraction, taxonomy classification, and interview guide generation
+- **Data quality first**: Robust pipeline ensures clean, deduplicated, normalized data so insights are trustworthy and lead to the right problem framing
 
 ### High-Level Flow
 ```
-[Data Collection Scripts]     →  [Structured Dataset (JSON)]
-                                        ↓
-                              [Gemini API Analysis]
-                                        ↓
-                              [Insights & Taxonomies]
-                                        ↓
-                              [Vite + React Dashboard]
-                                        ↓
-                              [PM views insights, filters, exports]
+[Data Collection Scripts]  →  [Raw Data (JSON per source)]
+            ↓
+[Cleaning & Deduplication]  →  [Deduplicated Data]
+            ↓
+[Normalization & Schema Mapping]  →  [Normalized Data (unified schema)]
+            ↓
+[AI Classification & Enrichment (Gemini)]  →  [Enriched Dataset]
+  - Memory vs. search classification
+  - Pain point categorization
+  - Memory cue taxonomy tagging
+  - Severity scoring
+  - Geography & segment tagging
+            ↓
+[Aggregation & Framework Analysis]  →  [Insights & Taxonomies (JSON)]
+            ↓
+[Vite + React Dashboard]  →  [PM views insights, filters, exports]
 ```
 
 ---
@@ -239,11 +258,14 @@ These are the **core discovery questions** this engine is designed to help answe
 ### In Scope
 - Memory-based retrieval problems
 - User feedback analysis from public sources
+- Robust data pipeline (scraping, cleaning, deduplication, normalization, enrichment)
 - Pain point discovery, categorization, and prioritization
+- Analytical framework visualizations in the dashboard
 - Geographic and behavioral segmentation (US, India)
 - Tracking Google Photos 2026 feature launches
 - Interview guide generation
-- PDF/CSV export
+- Full dashboard PDF/CSV export
+- Vercel deployment for team sharing
 
 ### Out of Scope
 - Search-related improvements (keyword matching, indexing, ranking)
@@ -261,12 +283,78 @@ The engine is successful if a Product Manager can:
 1. **Identify** the top 10 unaddressed memory-based retrieval pain points within 30 minutes
 2. **Compare** pain points across geographies and user segments
 3. **Trace** each insight back to real user quotes and source links
-4. **Generate** a user interview discussion guide for deeper discovery
-5. **Export** a stakeholder-ready report with prioritized opportunities
-6. **Understand** what Google Photos has already done in 2026 and what gaps remain
+4. **Explore** analytical frameworks visually to understand the problem space deeply
+5. **Generate** a user interview discussion guide for deeper discovery
+6. **Export** any section or the full dashboard as a stakeholder-ready PDF/CSV report
+7. **Understand** what Google Photos has already done in 2026 and what gaps remain
+8. **Frame** the right problem statement by having confidence that the data is clean, normalized, and insights are evidence-backed
 
 ---
 
-*Document Version: 1.0*
-*Created: September 21, 2026*
+## 12. Data Pipeline — Scraping, Cleaning & Normalization
+
+> [!IMPORTANT]
+> The quality of insights is only as good as the quality of the underlying data. A robust data pipeline is critical to framing the right problem statement and ensuring we solve the most pressing user problem.
+
+### 12.1 Data Collection (Scraping)
+- Python scripts per source (Play Store, App Store, Reddit, YouTube, forums, etc.)
+- Rate-limited and respectful of platform ToS
+- Raw data stored as JSON per source with full metadata (date, source, author, text, rating, URL)
+- Configurable date filters (2026 only)
+- Idempotent: re-running scripts doesn't create duplicates
+
+### 12.2 Data Cleaning
+- **Deduplication**: Remove exact and near-duplicate entries (same user, similar text, same date)
+- **Spam filtering**: Remove bot-generated, promotional, or irrelevant content
+- **Language filtering**: Focus on English-language content (primary markets: US, India)
+- **Relevance filtering**: Remove reviews/posts not related to photo retrieval or memory-based problems
+- **PII scrubbing**: Strip any personally identifiable information from user posts
+
+### 12.3 Data Normalization
+- **Unified schema**: All sources mapped to a common data structure:
+  ```json
+  {
+    "id": "unique-id",
+    "source": "play_store | app_store | reddit | youtube | forum | twitter",
+    "source_url": "https://...",
+    "date": "2026-MM-DD",
+    "text": "cleaned user feedback text",
+    "rating": null | 1-5,
+    "geography": "US | India | Unknown",
+    "platform": "android | ios | web | unknown",
+    "raw_metadata": { ... }
+  }
+  ```
+- **Date normalization**: All dates converted to ISO 8601 format
+- **Geography inference**: Inferred from language cues, currency mentions, location references, and platform metadata
+- **Platform normalization**: Map to standard categories (Android, iOS, Web)
+
+### 12.4 AI-Powered Enrichment (Gemini)
+After cleaning and normalization, each entry is enriched via Gemini API:
+- **Memory vs. Search classification**: Is this a memory problem or a search problem? (Only memory problems kept in scope)
+- **Pain point categorization**: Which pain point cluster does this belong to?
+- **Memory cue tagging**: What memory cues does the user mention? (people, places, events, time, emotions, objects, etc.)
+- **Severity scoring**: How severe is the retrieval failure described?
+- **Journey stage tagging**: What stage of the retrieval journey does this feedback describe?
+- **Behavioral segment inference**: Casual user, power user, family, professional?
+
+### 12.5 Aggregation & Framework Analysis
+- Pain points aggregated across sources with frequency counts
+- Severity scores averaged across mentions
+- Memory cue distribution calculated
+- Geographic and behavioral segment breakdowns computed
+- User journey stage distribution mapped
+- Gap analysis matrix generated (user memory cues vs. Google Photos capabilities)
+
+### 12.6 Data Quality Checks
+- **Coverage report**: Are all sources represented? Any source with zero entries?
+- **Date distribution**: Is data evenly distributed across 2026 or skewed to certain months?
+- **Classification confidence**: Flag entries where Gemini's classification confidence is low
+- **Outlier detection**: Flag unusual patterns that may indicate data quality issues
+
+---
+
+*Document Version: 1.1*
+*Updated: September 21, 2026*
+*Changelog: Added Analytical Frameworks UI section, Tailwind CSS, Vercel deployment, comprehensive data pipeline section, section-level exports, problem framing emphasis*
 *Author: AI Discovery Engine Project*

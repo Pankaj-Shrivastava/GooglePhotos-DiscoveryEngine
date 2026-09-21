@@ -20,15 +20,16 @@ This document records all key architectural, design, and scope decisions made du
 
 ## Decision 002: Frontend Technology Stack
 **Date:** September 21, 2026
-**Decision:** Vite + React (SPA) with Vanilla CSS
+**Decision:** Vite + React (SPA) with Tailwind CSS
 **Options Considered:**
 1. Simple HTML/CSS/JS
-2. Vite + React
-3. Next.js
+2. Vite + React with Vanilla CSS
+3. Vite + React with Tailwind CSS
+4. Next.js
 
-**Rationale:** Vite + React offers a modern component architecture ideal for a dashboard with multiple interactive sections, filters, and drill-downs. Vanilla CSS provides maximum design flexibility for a premium UI. Next.js is overkill for a local-first dashboard that doesn't need SSR.
+**Rationale:** Vite + React offers a modern component architecture ideal for a dashboard with multiple interactive sections, filters, and drill-downs. Tailwind CSS enables rapid UI development with utility classes, consistent design tokens, and responsive layouts out of the box — ideal for a data-dense dashboard. Next.js is overkill since we don't need SSR.
 
-**Trade-offs:** Slightly higher initial setup compared to vanilla HTML, but pays off in maintainability and component reusability.
+**Trade-offs:** Tailwind adds a build dependency but dramatically accelerates UI development. The utility-first approach keeps the CSS footprint small and the design system consistent.
 
 ---
 
@@ -122,29 +123,31 @@ This document records all key architectural, design, and scope decisions made du
 
 ## Decision 009: Deployment Model
 **Date:** September 21, 2026
-**Decision:** Local-first, deployable architecture
+**Decision:** Vercel deployment
 **Options Considered:**
 1. Local only
-2. Deployable from the start
-3. Local-first, deployable later
+2. Vercel
+3. Netlify
+4. Self-hosted
 
-**Rationale:** Starting local reduces infrastructure complexity during development. Architecting for deployment (e.g., environment variables, build configuration) ensures smooth transition when sharing with the team becomes necessary.
+**Rationale:** Vercel provides first-class support for Vite + React SPAs, automatic preview deployments for PRs, free tier for personal projects, and seamless GitHub integration. Starting with local development, deploying to Vercel when ready to share with team.
 
-**Trade-offs:** Some deployment concerns (auth, hosting, API key management) deferred. Acceptable for MVP phase.
+**Trade-offs:** Vendor dependency on Vercel. Mitigated by the fact that the app is a static SPA — can be deployed anywhere that serves static files.
 
 ---
 
 ## Decision 010: Export Capabilities
 **Date:** September 21, 2026
-**Decision:** Full PDF and CSV export support
+**Decision:** Full dashboard PDF/CSV export (no individual section export)
 **Options Considered:**
-1. Full PDF/CSV export
-2. No export (dashboard only)
-3. Optional/nice-to-have
+1. Full dashboard-level PDF/CSV export only
+2. Section-level export per section
+3. Both section-level and full dashboard export
+4. No export (dashboard only)
 
-**Rationale:** User explicitly requires exportable reports for stakeholder presentations. PDF provides formatted reports; CSV enables further analysis in spreadsheets.
+**Rationale:** User explicitly requires exportable reports for stakeholder presentations. A single combined PDF export provides a comprehensive, stakeholder-ready report. CSV enables further analysis in spreadsheets. Individual section export adds unnecessary UI complexity without proportional value.
 
-**Trade-offs:** PDF generation adds frontend complexity. Will use client-side generation libraries to avoid backend dependencies.
+**Trade-offs:** PMs cannot export a single section in isolation. Mitigated by the combined export including all sections in a well-structured format.
 
 ---
 
@@ -163,6 +166,48 @@ This document records all key architectural, design, and scope decisions made du
 **Implication for Data Processing:** All analysis prompts and classification logic will include explicit instructions to distinguish between:
 - **Memory problem** (user can't formulate what to search for) ← IN SCOPE
 - **Search problem** (user searches correctly but system returns wrong results) ← OUT OF SCOPE
+
+---
+
+## Decision 013: Analytical Frameworks as UI Section
+**Date:** September 21, 2026
+**Decision:** Dedicate a full dashboard section to interactive analytical framework visualizations
+**Options Considered:**
+1. Analytical frameworks drive backend logic only, results shown in other sections
+2. Dedicated UI section with interactive visualizations of all frameworks
+3. Split framework views across multiple sections
+
+**Rationale:** The user wants analytical frameworks visible in the UI to help understand the problem space deeply. A dedicated section with interactive charts (heatmaps, funnels, flow diagrams, gap matrices) makes the analytical reasoning transparent and explorable. This section is also exportable as PDF/CSV.
+
+**Trade-offs:** Adds a data-dense section requiring charting libraries (e.g., Recharts, Chart.js). Worth the complexity because it directly supports problem framing.
+
+---
+
+## Decision 014: Data Pipeline — Scraping, Cleaning & Normalization
+**Date:** September 21, 2026
+**Decision:** Build a robust multi-stage data pipeline: scrape → clean → deduplicate → normalize → enrich → aggregate
+**Options Considered:**
+1. Minimal pipeline (scrape + basic filtering)
+2. Full pipeline with cleaning, dedup, normalization, and AI enrichment
+3. Use a third-party ETL tool
+
+**Rationale:** The quality of insights depends entirely on the quality of the data. A comprehensive pipeline ensures:
+- No duplicate entries inflating frequency counts
+- No spam or irrelevant content skewing pain point analysis
+- A unified schema so data from Play Store, Reddit, YouTube, etc. are comparable
+- AI-powered enrichment to classify memory vs. search problems, tag memory cues, and score severity
+- Clear provenance: every insight traces back to a clean, normalized source
+
+**Trade-offs:** More upfront development time for the pipeline. Strongly justified because bad data → wrong problem framing → solving the wrong problem.
+
+---
+
+## Decision 015: Problem Framing Focus
+**Date:** September 21, 2026
+**Decision:** Entire engine is oriented toward framing the right problem statement, not just listing pain points
+**Rationale:** The ultimate output of this engine is not a list of complaints — it's a clearly framed problem statement that tells the Google Photos team exactly which memory-retrieval problem is most pressing and why. Every design decision (robust data pipeline, analytical frameworks, severity scoring, gap analysis) serves this goal. The dashboard should give a PM confidence that the data is clean, the analysis is sound, and the top opportunity area is the right one to invest in.
+
+**Implication:** The Opportunity Areas section should culminate in a recommended "primary problem to solve" backed by evidence from all frameworks.
 
 ---
 
