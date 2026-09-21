@@ -48,20 +48,20 @@ def step_collect(source: str = "all"):
     print("STEP 1: DATA COLLECTION")
     print("=" * 60)
 
-    # TODO: Implement in M1
-    # from collectors.reddit import RedditCollector
-    # from collectors.play_store import PlayStoreCollector
+    from collectors.reddit import RedditCollector
+    from collectors.play_store import PlayStoreCollector
+    from collectors.google_actions import GoogleActionsCollector
 
     if source in ("all", "reddit"):
-        print("  → Reddit collector: Not yet implemented (M1)")
+        RedditCollector().run()
 
     if source in ("all", "play_store"):
-        print("  → Play Store collector: Not yet implemented (M1)")
+        PlayStoreCollector().run()
 
     if source in ("all", "google_actions"):
-        print("  → Google Actions collector: Not yet implemented (M1)")
+        GoogleActionsCollector().run()
 
-    print("✓ Collection step complete (skeleton)")
+    print("✓ Collection step complete")
 
 
 def step_clean():
