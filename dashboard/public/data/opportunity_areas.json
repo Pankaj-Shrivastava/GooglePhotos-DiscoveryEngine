@@ -1,0 +1,13 @@
+[
+  {
+    "id": "opp1",
+    "title": "Enhanced Contextual Search",
+    "problem_statement": "Users struggle to combine temporal and spatial cues.",
+    "impact_score": 9,
+    "supporting_pain_points": 3,
+    "geographies": ["US", "India"],
+    "segments": ["All"],
+    "direction": "Allow complex queries like 'photos from my sister's wedding in Paris'.",
+    "is_primary_recommendation": true
+  }
+]

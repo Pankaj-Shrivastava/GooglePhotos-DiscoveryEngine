@@ -1,0 +1,14 @@
+[
+  {
+    "pain_point_id": "pp1",
+    "title": "Finding photos from specific life events",
+    "context": "Users frequently fail to retrieve photos when they only remember the event, but not exact dates.",
+    "questions": [
+      {
+        "question": "Tell me about the last time you tried to find a photo from a specific event.",
+        "probes": ["What made it difficult?"]
+      }
+    ],
+    "scenarios": ["Imagine you are looking for a photo from your 2021 birthday. Show me how you'd find it."]
+  }
+]

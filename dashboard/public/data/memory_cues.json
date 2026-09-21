@@ -1,0 +1,5 @@
+[
+  { "type": "Location", "count": 400, "severity": "medium", "quotes": [] },
+  { "type": "People", "count": 350, "severity": "high", "quotes": [] },
+  { "type": "Timeframe", "count": 200, "severity": "medium", "quotes": [] }
+]

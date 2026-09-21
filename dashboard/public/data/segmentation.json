@@ -1,0 +1,4 @@
+{
+  "geography": { "US": 600, "India": 400, "Unknown": 200 },
+  "behavioral": { "casual": 500, "power_user": 300, "family": 250, "professional": 150 }
+}

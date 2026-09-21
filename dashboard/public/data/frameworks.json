@@ -1,0 +1,4 @@
+{
+  "severity_matrix": { "critical": 50, "high": 150, "medium": 300, "low": 200 },
+  "retrieval_outcomes": { "success": 200, "partial": 150, "failure": 400, "abandonment": 100 }
+}

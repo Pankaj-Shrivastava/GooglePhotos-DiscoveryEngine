@@ -1,0 +1,7 @@
+[
+  { "stage": "trigger", "count": 100 },
+  { "stage": "search_attempt", "count": 95 },
+  { "stage": "failure", "count": 60 },
+  { "stage": "workaround", "count": 40 },
+  { "stage": "outcome", "count": 15 }
+]

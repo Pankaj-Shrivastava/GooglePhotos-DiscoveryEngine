@@ -1,0 +1,14 @@
+# Pipeline data (except output)
+pipeline/data/raw/
+pipeline/data/cleaned/
+pipeline/data/normalized/
+pipeline/data/enriched/
+
+# Environment
+.env
+__pycache__/
+
+# Node
+node_modules/
+dist/
+.DS_Store

@@ -1,0 +1,24 @@
+[
+  {
+    "id": "pp1",
+    "title": "Finding photos from specific life events",
+    "severity": "high",
+    "frequency": 250,
+    "memory_cues": ["Location", "Timeframe"],
+    "geographies": ["US", "India"],
+    "segments": ["casual", "power_user"],
+    "quotes": ["I can't find photos from my sister's wedding 3 years ago."],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp2",
+    "title": "Finding a photo by how it looked",
+    "severity": "medium",
+    "frequency": 120,
+    "memory_cues": ["Visual Attribute"],
+    "geographies": ["US"],
+    "segments": ["power_user"],
+    "quotes": ["Searching for the red car I saw last week."],
+    "addressed_by_google": true
+  }
+]
