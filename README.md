@@ -7,6 +7,7 @@ An interactive, AI-driven discovery engine and analytical dashboard built to syn
 The Google Photos Discovery Engine is designed to help Product Managers, Designers, and Engineers make data-driven decisions. By analyzing simulated user verbatims and feedback, this dashboard categorizes and visualizes:
 - **Pain Points:** Ranked by severity and frequency.
 - **Memory Cues:** How users naturally remember and search for their photos (e.g., by date, subject, or event).
+- **Opportunity Areas:** Synthesized, high-ROI product recommendations derived directly from clustered pain points.
 - **Google Actions:** Tracking which issues Google has already addressed versus which remain as open opportunities.
 
 ## ✨ Key Features
