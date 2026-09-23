@@ -61,7 +61,14 @@ export default function Layout() {
       <div className="pl-0 md:pl-[72px]">
         {/* Top Header */}
         <header className="print-hide fixed top-0 left-0 md:left-[72px] right-0 h-14 bg-surface-container-lowest border-b border-outline-variant z-40 px-4 lg:px-6 flex items-center justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
-          <div className="flex-1"></div>
+          <div className="flex-1 flex items-center gap-2">
+            <div className="md:hidden flex items-center gap-2">
+              <div className="w-7 h-7 shrink-0 flex items-center justify-center">
+                <img src="/logo.svg" alt="Discovery Engine Logo" className="w-full h-full object-contain drop-shadow-sm" />
+              </div>
+              <span className="text-sm font-semibold text-on-surface leading-tight">Discovery Engine</span>
+            </div>
+          </div>
           <div className="flex items-center gap-2">
             {isFilterablePage && (
               <button 
