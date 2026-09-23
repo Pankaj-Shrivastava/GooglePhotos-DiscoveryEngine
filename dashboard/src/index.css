@@ -70,8 +70,8 @@
   /* Export print mode (Native) */
   @media print {
     .print-hide { display: none !important; }
-    .group\\/sidebar { display: none !important; }
-    .md\\:pl-\\[72px\\] { padding-left: 0 !important; }
+    .group\/sidebar { display: none !important; }
+    .md\:pl-\[72px\] { padding-left: 0 !important; }
     
     /* Ensure background colors and charts render in PDF */
     body {
@@ -82,5 +82,12 @@
     
     /* Optional: Hide scrollbars in print */
     ::-webkit-scrollbar { display: none; }
+  }
+  
+  /* Recharts Focus Outline Removal */
+  .recharts-wrapper, 
+  .recharts-surface, 
+  .recharts-wrapper * {
+    outline: none !important;
   }
 }

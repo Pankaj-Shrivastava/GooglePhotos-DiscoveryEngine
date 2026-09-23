@@ -34,7 +34,7 @@ export default function FrameworksPage() {
             <BarChart data={severityData} layout="vertical" margin={{ left: 60 }}>
               <XAxis type="number" tick={{ fontSize: 11 }} />
               <YAxis type="category" dataKey="name" tick={{ fontSize: 11 }} width={60} />
-              <Tooltip />
+              <Tooltip cursor={{ fill: 'transparent' }} />
               <Bar dataKey="count" radius={[0, 6, 6, 0]}>
                 {severityData.map((entry) => (
                   <Cell key={entry.name} fill={SEVERITY_COLORS[entry.name] || '#1A73E8'} />
@@ -50,7 +50,7 @@ export default function FrameworksPage() {
             <BarChart data={memoryCues.slice(0, 6)} layout="vertical" margin={{ left: 60 }}>
               <XAxis type="number" tick={{ fontSize: 11 }} />
               <YAxis type="category" dataKey="cue" tick={{ fontSize: 11 }} width={60} />
-              <Tooltip />
+              <Tooltip cursor={{ fill: 'transparent' }} />
               <Bar dataKey="count" fill="#1A73E8" radius={[0, 6, 6, 0]} />
             </BarChart>
           </ResponsiveContainer>
@@ -65,7 +65,7 @@ export default function FrameworksPage() {
                   <Cell key={entry.name} fill={['#1E8E3E', '#1A73E8', '#F9AB00', '#BA1A1A'][i] || '#727785'} />
                 ))}
               </Pie>
-              <Tooltip />
+              <Tooltip cursor={{ fill: 'transparent' }} />
             </PieChart>
           </ResponsiveContainer>
           <div className="flex justify-center gap-4 mt-2">
@@ -84,7 +84,7 @@ export default function FrameworksPage() {
             <BarChart data={freqData} layout="vertical" margin={{ left: 120 }}>
               <XAxis type="number" tick={{ fontSize: 11 }} />
               <YAxis type="category" dataKey="name" tick={{ fontSize: 10 }} width={120} />
-              <Tooltip />
+              <Tooltip cursor={{ fill: 'transparent' }} />
               <Bar dataKey="count" fill="#1A73E8" radius={[0, 6, 6, 0]} />
             </BarChart>
           </ResponsiveContainer>

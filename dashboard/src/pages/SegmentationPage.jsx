@@ -28,7 +28,7 @@ export default function SegmentationPage() {
             <BarChart data={geoData}>
               <XAxis dataKey="name" tick={{ fontSize: 11 }} />
               <YAxis tick={{ fontSize: 11 }} />
-              <Tooltip />
+              <Tooltip cursor={{ fill: 'transparent' }} />
               <Bar dataKey="count" fill="#1A73E8" radius={[6, 6, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
@@ -42,7 +42,7 @@ export default function SegmentationPage() {
             <BarChart data={platformData}>
               <XAxis dataKey="name" tick={{ fontSize: 11 }} />
               <YAxis tick={{ fontSize: 11 }} />
-              <Tooltip />
+              <Tooltip cursor={{ fill: 'transparent' }} />
               <Bar dataKey="count" fill="#F9AB00" radius={[6, 6, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>

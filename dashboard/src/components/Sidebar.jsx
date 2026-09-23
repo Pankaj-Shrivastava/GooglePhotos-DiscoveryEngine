@@ -8,7 +8,6 @@ const NAV_ITEMS = [
   { path: '/google-actions', icon: 'rocket_launch', label: 'Google Actions' },
   { path: '/segmentation', icon: 'pie_chart', label: 'Segmentation' },
   { path: '/interview-guide', icon: 'assignment', label: 'Interview Guide' },
-  { path: '/references', icon: 'link', label: 'References' },
 ];
 
 export default function Sidebar() {
@@ -48,15 +47,6 @@ export default function Sidebar() {
         ))}
       </nav>
 
-      {/* Footer */}
-      <div className="p-2 border-t border-outline-variant shrink-0">
-        <div className="flex items-center px-3 py-2 rounded-xl text-on-surface-variant hover:bg-surface-container transition-colors gap-4">
-          <span className="material-symbols-outlined text-xl shrink-0">help_outline</span>
-          <span className="opacity-0 group-hover/sidebar:opacity-100 transition-opacity duration-200 text-xs font-medium whitespace-nowrap">
-            Research Spec v2.4
-          </span>
-        </div>
-      </div>
     </aside>
   );
 }
