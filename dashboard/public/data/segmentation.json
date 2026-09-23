@@ -1,8 +1,12 @@
 {
   "geography": {
-    "US": 123
+    "us": 3,
+    "US": 17,
+    "unknown": 2
   },
   "platform": {
-    "android": 123
+    "ios": 3,
+    "android": 17,
+    "unknown": 2
   }
 }

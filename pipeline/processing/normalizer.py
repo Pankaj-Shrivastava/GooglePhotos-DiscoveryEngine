@@ -60,13 +60,29 @@ class Normalizer:
                 norm_item["text"] = item.get("content", "")
                 norm_item["score"] = item.get("score")
                 
-            elif source == "reddit":
-                norm_item["id"] = f"reddit_{item.get('id', '')}"
-                norm_item["platform"] = "android" if "android" in item.get("subreddit", "").lower() else ("ios" if "ios" in item.get("subreddit", "").lower() else "unknown")
-                norm_item["geography"] = "unknown"
-                norm_item["date"] = self._normalize_date(item.get("created_utc"))
-                norm_item["text"] = f"{item.get('title', '')} \n {item.get('body', '')}"
+            elif source == "app_store":
+                norm_item["id"] = f"appstore_{item.get('id', '')}"
+                norm_item["platform"] = "ios"
+                norm_item["geography"] = "us" # default to US storefront
+                norm_item["date"] = self._normalize_date(item.get("date"))
+                norm_item["text"] = f"{item.get('title', '')} \n {item.get('content', '')}"
                 norm_item["score"] = item.get("score")
+                
+            elif source == "google_community":
+                norm_item["id"] = f"community_{item.get('id', '')}"
+                norm_item["platform"] = "web"
+                norm_item["geography"] = "global"
+                norm_item["date"] = self._normalize_date(item.get("date"))
+                norm_item["text"] = item.get("content", "")
+                norm_item["score"] = None
+                
+            elif source == "synthetic_memory":
+                norm_item["id"] = item.get("id", "")
+                norm_item["platform"] = "unknown"
+                norm_item["geography"] = "unknown"
+                norm_item["date"] = self._normalize_date(item.get("date"))
+                norm_item["text"] = item.get("content", "")
+                norm_item["score"] = item.get("score", 1)
                 
             elif source == "google_actions":
                 url = item.get("url", "")

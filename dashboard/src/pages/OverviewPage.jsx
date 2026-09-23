@@ -25,6 +25,8 @@ export default function OverviewPage() {
     severity: pp.severity,
   }));
 
+  const totalAnalyzed = frameworks.total_analyzed_entries || 837;
+
   return (
     <div className="flex flex-col gap-6">
       <PageGuide
@@ -38,7 +40,7 @@ export default function OverviewPage() {
         <MetricCard icon="report_problem" iconBg="bg-primary-fixed" iconColor="text-primary" label="Total Pain Points" value={totalPainPoints} sub="+12% MoM" subColor="text-primary" />
         <MetricCard icon="crisis_alert" iconBg="bg-error-container" iconColor="text-error" label="Critical Severity" value={criticalCount} sub={`${criticalCount} critical issues`} subColor="text-error" />
         <MetricCard icon="lightbulb" iconBg="bg-tertiary-fixed" iconColor="text-tertiary" label="Opportunity Areas" value={oppCount} sub={`${oppCount} synthesized`} subColor="text-tertiary" />
-        <MetricCard icon="auto_awesome" iconBg="bg-surface-container-high" iconColor="text-primary" label="Entries Analyzed" value="837" sub="99.2% confidence" subColor="text-on-surface-variant" />
+        <MetricCard icon="auto_awesome" iconBg="bg-surface-container-high" iconColor="text-primary" label="Entries Analyzed" value={totalAnalyzed} sub="99.2% confidence" subColor="text-on-surface-variant" />
       </section>
 
       {/* Charts Row */}

@@ -1,8 +1,8 @@
 [
   {
     "id": "opp1",
-    "title": "Improve Photos disappearing from created albums",
-    "problem_statement": "Users frequently struggle with photos disappearing from created albums.",
+    "title": "Improve Incorrect photo date metadata",
+    "problem_statement": "Users frequently struggle with incorrect photo date metadata.",
     "impact_score": 10,
     "is_primary_recommendation": true,
     "supported_by": [
@@ -11,8 +11,8 @@
   },
   {
     "id": "opp2",
-    "title": "Improve App automatically moving photo files",
-    "problem_statement": "Users frequently struggle with app automatically moving photo files.",
+    "title": "Improve Missing photos from past",
+    "problem_statement": "Users frequently struggle with missing photos from past.",
     "impact_score": 9,
     "is_primary_recommendation": false,
     "supported_by": [
@@ -21,8 +21,8 @@
   },
   {
     "id": "opp3",
-    "title": "Improve Deleting cloud photos deletes local copies",
-    "problem_statement": "Users frequently struggle with deleting cloud photos deletes local copies.",
+    "title": "Improve Can't recall correct word",
+    "problem_statement": "Users frequently struggle with can't recall correct word.",
     "impact_score": 8,
     "is_primary_recommendation": false,
     "supported_by": [

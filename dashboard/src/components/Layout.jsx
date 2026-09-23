@@ -59,28 +59,7 @@ export default function Layout() {
       <div className="pl-0 md:pl-[72px]">
         {/* Top Header */}
         <header className="print-hide fixed top-0 left-0 md:left-[72px] right-0 h-14 bg-surface-container-lowest border-b border-outline-variant z-40 px-4 lg:px-6 flex items-center justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
-          <div className="flex items-center gap-4 flex-1 max-w-xl">
-            <div className="relative w-full max-w-md">
-              <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-lg">
-                search
-              </span>
-              <input
-                className="w-full h-9 pl-9 pr-3 text-xs bg-surface-container-low border border-outline-variant rounded-lg placeholder-on-surface-variant text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"
-                placeholder="Search feedback, synthesis tags, verbatim quotes..."
-                type="text"
-                value={filters.search || ''}
-                onChange={(e) => setFilter('search', e.target.value)}
-              />
-              {filters.search && (
-                <button 
-                  onClick={() => setFilter('search', '')}
-                  className="absolute right-2 top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-on-surface flex items-center"
-                >
-                  <span className="material-symbols-outlined text-sm">close</span>
-                </button>
-              )}
-            </div>
-          </div>
+          <div className="flex-1"></div>
           <div className="flex items-center gap-2">
             <button 
               onClick={() => setShowFilters(!showFilters)}

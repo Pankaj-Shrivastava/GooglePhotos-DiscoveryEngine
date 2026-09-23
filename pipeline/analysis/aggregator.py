@@ -33,7 +33,7 @@ class DataAggregator:
         for item in data:
             if item.get('source') == 'google_actions':
                 google_actions.append(item)
-            elif item.get('problem_type') in ['memory', 'search', 'other']:
+            elif item.get('problem_type') == 'memory':
                 problems.append(item)
                 
         # 2. Pain Points Aggregation
@@ -113,7 +113,8 @@ class DataAggregator:
         # 4. Frameworks
         frameworks = {
             "severity_matrix": severity_counts,
-            "retrieval_outcomes": { "success": 0, "partial": 0, "failure": len(problems), "abandonment": int(len(problems)*0.2) }
+            "retrieval_outcomes": { "success": 0, "partial": 0, "failure": len(problems), "abandonment": int(len(problems)*0.2) },
+            "total_analyzed_entries": len(data)
         }
         with open(os.path.join(OUTPUT_DIR, 'frameworks.json'), 'w', encoding='utf-8') as f:
             json.dump(frameworks, f, indent=2)

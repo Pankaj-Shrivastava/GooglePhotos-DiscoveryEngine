@@ -1,7 +1,7 @@
 [
   {
     "opportunity_id": "opp1",
-    "title": "User Interview: Improve Photos disappearing from created albums",
+    "title": "User Interview: Improve Incorrect photo date metadata",
     "questions": [
       "Can you walk me through the last time you experienced this?",
       "What workarounds did you use?",
@@ -10,7 +10,7 @@
   },
   {
     "opportunity_id": "opp2",
-    "title": "User Interview: Improve App automatically moving photo files",
+    "title": "User Interview: Improve Missing photos from past",
     "questions": [
       "Can you walk me through the last time you experienced this?",
       "What workarounds did you use?",

@@ -1,14 +1,15 @@
 {
   "severity_matrix": {
-    "critical": 17,
-    "high": 51,
-    "medium": 51,
-    "low": 4
+    "critical": 6,
+    "high": 8,
+    "medium": 7,
+    "low": 1
   },
   "retrieval_outcomes": {
     "success": 0,
     "partial": 0,
-    "failure": 123,
-    "abandonment": 24
-  }
+    "failure": 22,
+    "abandonment": 4
+  },
+  "total_analyzed_entries": 924
 }

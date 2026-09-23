@@ -20,9 +20,6 @@ DATE_TO = "2026-09-21"
 # API Keys (loaded from .env)
 # ─────────────────────────────────────────────
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
-REDDIT_CLIENT_ID = os.getenv("REDDIT_CLIENT_ID", "")
-REDDIT_CLIENT_SECRET = os.getenv("REDDIT_CLIENT_SECRET", "")
-REDDIT_USER_AGENT = os.getenv("REDDIT_USER_AGENT", "DiscoveryEngine/1.0")
 
 # ─────────────────────────────────────────────
 # File Paths
@@ -39,27 +36,15 @@ OUTPUT_DIR = DATA_DIR / "output"
 DASHBOARD_DATA_DIR = PIPELINE_DIR.parent / "dashboard" / "public" / "data"
 
 # ─────────────────────────────────────────────
-# Reddit Configuration
+# Apple App Store Configuration
 # ─────────────────────────────────────────────
-REDDIT_SUBREDDITS = [
-    "googlephotos",
-    "google",
-    "Android",
-    "ios",
-    "photography",
-]
+APP_STORE_APP_ID = "962194608"  # Google Photos iOS App ID
+APP_STORE_MAX_PAGES = 10        # Max pages to fetch (50 items per page)
 
-REDDIT_SEARCH_QUERIES = [
-    "google photos find",
-    "google photos search",
-    "google photos remember",
-    "google photos lost photo",
-    "google photos missing",
-    "google photos album",
-    "google photos memory",
-    "google photos can't find",
-    "google photos old photo",
-]
+# ─────────────────────────────────────────────
+# Google Photos Help Community Configuration
+# ─────────────────────────────────────────────
+COMMUNITY_URL = "https://support.google.com/photos/threads"
 
 # ─────────────────────────────────────────────
 # Play Store Configuration

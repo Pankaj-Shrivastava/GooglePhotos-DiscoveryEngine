@@ -1,7 +1,7 @@
 [
   {
     "title": "Google Photos - 9to5Google ",
-    "date": "2026-09-21",
+    "date": "2026-09-23",
     "description": "Google Photos - 9to5Google \n Google Photos has updated its trash bin timeline, cutting the time from",
     "url": "https://blog.google/products/photos/",
     "addressed_pain_points": [
@@ -10,7 +10,7 @@
   },
   {
     "title": "Google Photos upgrades 'Photo to video' w/ custom ",
-    "date": "2026-09-21",
+    "date": "2026-09-23",
     "description": "Google Photos upgrades 'Photo to video' w/ custom prompts, audio \n After last year's introduction, \"",
     "url": "https://blog.google/products/photos/",
     "addressed_pain_points": [
@@ -19,7 +19,7 @@
   },
   {
     "title": "Google Photos adds setting to disable shimmer, AI ",
-    "date": "2026-09-21",
+    "date": "2026-09-23",
     "description": "Google Photos adds setting to disable shimmer, AI camera shortcut \n Google Photos for Android has ro",
     "url": "https://blog.google/products/photos/",
     "addressed_pain_points": [
@@ -27,17 +27,8 @@
     ]
   },
   {
-    "title": "Google Photos Wardrobe digitizes closets, helps fi",
-    "date": "2026-09-21",
-    "description": "Google Photos Wardrobe digitizes closets, helps find what to wear \n Motorola today announced its [RE",
-    "url": "https://blog.google/products/photos/",
-    "addressed_pain_points": [
-      "pp1"
-    ]
-  },
-  {
     "title": "Unlimited Google Photos storage dead again, as sub",
-    "date": "2026-09-21",
+    "date": "2026-09-23",
     "description": "Unlimited Google Photos storage dead again, as subscription ends \n Unlimited Google Photos storage w",
     "url": "https://blog.google/products/photos/",
     "addressed_pain_points": [
@@ -45,18 +36,18 @@
     ]
   },
   {
-    "title": "Google Photos adds 'AI Enhance' and video playback",
-    "date": "2026-09-21",
-    "description": "Google Photos adds 'AI Enhance' and video playback speed control \n Google announced two new addition",
+    "title": "Samsung Gallery starts rolling out Google Photos s",
+    "date": "2026-09-23",
+    "description": "Samsung Gallery starts rolling out Google Photos sync; key details \n As teased, Samsung Gallery is n",
     "url": "https://blog.google/products/photos/",
     "addressed_pain_points": [
       "pp1"
     ]
   },
   {
-    "title": "Google Photos is losing some of its editing shortc",
-    "date": "2026-09-21",
-    "description": "Google Photos is losing some of its editing shortcuts to 'reduce ... \n Google Photos is dropping som",
+    "title": "Google Photos Wardrobe digitizes closets, helps fi",
+    "date": "2026-09-23",
+    "description": "Google Photos Wardrobe digitizes closets, helps find what to wear \n Motorola today announced its [RE",
     "url": "https://blog.google/products/photos/",
     "addressed_pain_points": [
       "pp1"
@@ -64,7 +55,7 @@
   },
   {
     "title": "Google Photos rolls out floating bottom bar redesi",
-    "date": "2026-09-21",
+    "date": "2026-09-23",
     "description": "Google Photos rolls out floating bottom bar redesign on Android [U] \n Google Photos is finally rolli",
     "url": "https://blog.google/products/photos/",
     "addressed_pain_points": [
@@ -72,18 +63,27 @@
     ]
   },
   {
-    "title": "Google Photos adds touch-up tools for 'quick, subt",
-    "date": "2026-09-21",
-    "description": "Google Photos adds touch-up tools for 'quick, subtle' selfie fixes \n Google Photos is rolling out ne",
+    "title": "Google Photos is losing some of its editing shortc",
+    "date": "2026-09-23",
+    "description": "Google Photos is losing some of its editing shortcuts to 'reduce ... \n Google Photos is dropping som",
     "url": "https://blog.google/products/photos/",
     "addressed_pain_points": [
       "pp1"
     ]
   },
   {
-    "title": "Google Photos for Android improving crop tool with",
-    "date": "2026-09-21",
-    "description": "Google Photos for Android improving crop tool with these updates \n Google has acknowledged some shor",
+    "title": "What's new in Android's September 2026 Google Syst",
+    "date": "2026-09-23",
+    "description": "What's new in Android's September 2026 Google System Updates [U] \n The monthly \"Google System Releas",
+    "url": "https://blog.google/products/photos/",
+    "addressed_pain_points": [
+      "pp1"
+    ]
+  },
+  {
+    "title": "Google Photos adds 'AI Enhance' and video playback",
+    "date": "2026-09-23",
+    "description": "Google Photos adds 'AI Enhance' and video playback speed control \n Google announced two new addition",
     "url": "https://blog.google/products/photos/",
     "addressed_pain_points": [
       "pp1"
@@ -91,7 +91,7 @@
   },
   {
     "title": "Google Photos is coming to Samsung TVs in 2026 - T",
-    "date": "2026-09-21",
+    "date": "2026-09-23",
     "description": "Google Photos is coming to Samsung TVs in 2026 - The Verge \n This launch will be followed by Google ",
     "url": "https://blog.google/products/photos/",
     "addressed_pain_points": [
@@ -99,17 +99,8 @@
     ]
   },
   {
-    "title": "Made by Google 2026: all the Pixel news and announ",
-    "date": "2026-09-21",
-    "description": "Made by Google 2026: all the Pixel news and announcements \n Arguably the coolest new photo feature f",
-    "url": "https://blog.google/products/photos/",
-    "addressed_pain_points": [
-      "pp1"
-    ]
-  },
-  {
     "title": "Google Photos launches an AI try-on feature for cl",
-    "date": "2026-09-21",
+    "date": "2026-09-23",
     "description": "Google Photos launches an AI try-on feature for clothes you already ... \n Google Photos is launching",
     "url": "https://blog.google/products/photos/",
     "addressed_pain_points": [
@@ -117,9 +108,9 @@
     ]
   },
   {
-    "title": "Google Photos now lets you describe how to transfo",
-    "date": "2026-09-21",
-    "description": "Google Photos now lets you describe how to transform images into video \n Google is giving Photos use",
+    "title": "Google Photos now lets you \"remix\" your videos wit",
+    "date": "2026-09-23",
+    "description": "Google Photos now lets you \"remix\" your videos with AI. \n Google's Video Remix feature, running on G",
     "url": "https://blog.google/products/photos/",
     "addressed_pain_points": [
       "pp1"
@@ -127,7 +118,7 @@
   },
   {
     "title": "Gemini can now pull from Google Photos to generate",
-    "date": "2026-09-21",
+    "date": "2026-09-23",
     "description": "Gemini can now pull from Google Photos to generate personalized images \n Google's Personal Intellige",
     "url": "https://blog.google/products/photos/",
     "addressed_pain_points": [
@@ -135,8 +126,17 @@
     ]
   },
   {
+    "title": "Google Photos now lets you describe how to transfo",
+    "date": "2026-09-23",
+    "description": "Google Photos now lets you describe how to transform images into video \n Google is giving Photos use",
+    "url": "https://blog.google/products/photos/",
+    "addressed_pain_points": [
+      "pp1"
+    ]
+  },
+  {
     "title": "Google Photos adds subtle touch-up tools for faces",
-    "date": "2026-09-21",
+    "date": "2026-09-23",
     "description": "Google Photos adds subtle touch-up tools for faces - The Verge \n The Google Photos app on Android is",
     "url": "https://blog.google/products/photos/",
     "addressed_pain_points": [
@@ -144,9 +144,18 @@
     ]
   },
   {
-    "title": "Google Photos now lets you \"remix\" your videos wit",
-    "date": "2026-09-21",
-    "description": "Google Photos now lets you \"remix\" your videos with AI. \n Google's Video Remix feature, running on G",
+    "title": "Made by Google 2026: all the Pixel news and announ",
+    "date": "2026-09-23",
+    "description": "Made by Google 2026: all the Pixel news and announcements \n Arguably the coolest new photo feature f",
+    "url": "https://blog.google/products/photos/",
+    "addressed_pain_points": [
+      "pp1"
+    ]
+  },
+  {
+    "title": "The 13 biggest announcements at Google I/O 2026 - ",
+    "date": "2026-09-23",
+    "description": "The 13 biggest announcements at Google I/O 2026 - The Verge \n Google's I/O [REDACTED_PHONE] keynote ",
     "url": "https://blog.google/products/photos/",
     "addressed_pain_points": [
       "pp1"

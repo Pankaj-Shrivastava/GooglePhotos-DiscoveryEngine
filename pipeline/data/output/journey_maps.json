@@ -1,11 +1,11 @@
 [
   {
     "pain_point_id": "pp1",
-    "title": "Photos disappearing from created albums",
+    "title": "Incorrect photo date metadata",
     "stages": [
       {
         "stage": "Trigger",
-        "description": "User wants to find photos disappearing from created albums"
+        "description": "User wants to find incorrect photo date metadata"
       },
       {
         "stage": "Search Attempt",
@@ -19,11 +19,11 @@
   },
   {
     "pain_point_id": "pp2",
-    "title": "App automatically moving photo files",
+    "title": "Missing photos from past",
     "stages": [
       {
         "stage": "Trigger",
-        "description": "User wants to find app automatically moving photo files"
+        "description": "User wants to find missing photos from past"
       },
       {
         "stage": "Search Attempt",
@@ -37,11 +37,11 @@
   },
   {
     "pain_point_id": "pp3",
-    "title": "Deleting cloud photos deletes local copies",
+    "title": "Can't recall correct word",
     "stages": [
       {
         "stage": "Trigger",
-        "description": "User wants to find deleting cloud photos deletes local copies"
+        "description": "User wants to find can't recall correct word"
       },
       {
         "stage": "Search Attempt",

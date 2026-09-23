@@ -9,8 +9,10 @@ Usage:
     python run_pipeline.py --step normalize   # Run only normalization
     python run_pipeline.py --step enrich      # Run only enrichment
     python run_pipeline.py --step aggregate   # Run only aggregation
-    python run_pipeline.py --source reddit    # Collect from specific source
     python run_pipeline.py --source play_store
+    python run_pipeline.py --source app_store
+    python run_pipeline.py --source google_community
+    python run_pipeline.py --source synthetic_memory
     python run_pipeline.py --source all       # Collect from all sources (default)
 """
 
@@ -48,15 +50,23 @@ def step_collect(source: str = "all"):
     print("STEP 1: DATA COLLECTION")
     print("=" * 60)
 
-    from collectors.reddit import RedditCollector
     from collectors.play_store import PlayStoreCollector
     from collectors.google_actions import GoogleActionsCollector
-
-    if source in ("all", "reddit"):
-        RedditCollector().run()
+    from collectors.app_store import AppStoreCollector
+    from collectors.google_community import GoogleCommunityCollector
+    from collectors.synthetic_memory import SyntheticMemoryCollector
 
     if source in ("all", "play_store"):
         PlayStoreCollector().run()
+        
+    if source in ("all", "app_store"):
+        AppStoreCollector().run()
+        
+    if source in ("all", "google_community"):
+        GoogleCommunityCollector().run()
+        
+    if source in ("all", "synthetic_memory"):
+        SyntheticMemoryCollector().run()
 
     if source in ("all", "google_actions"):
         GoogleActionsCollector().run()
@@ -191,7 +201,7 @@ def main():
     )
     parser.add_argument(
         "--source",
-        choices=["reddit", "play_store", "google_actions", "all"],
+        choices=["play_store", "app_store", "google_community", "google_actions", "synthetic_memory", "all"],
         default="all",
         help="Which source to collect from (default: all)",
     )

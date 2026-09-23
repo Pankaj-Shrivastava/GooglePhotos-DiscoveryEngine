@@ -6,6 +6,7 @@ from pathlib import Path
 
 import google.generativeai as genai
 from google.generativeai.types import HarmCategory, HarmBlockThreshold
+from groq import Groq
 
 from config import NORMALIZED_DIR, ENRICHED_DIR
 
@@ -19,13 +20,22 @@ class GeminiEnricher:
         self.enriched_data = []
         
         api_key = os.getenv("GEMINI_API_KEY")
+        self.use_gemini = True
         if not api_key or api_key == "your_key_here":
-            logger.error("Invalid GEMINI_API_KEY in .env")
-            raise ValueError("Invalid GEMINI_API_KEY")
-            
-        genai.configure(api_key=api_key)
-        self.model = genai.GenerativeModel('gemini-3.6-flash',
-                                          generation_config={"response_mime_type": "application/json"})
+            logger.warning("Invalid GEMINI_API_KEY. Will only use Groq.")
+            self.use_gemini = False
+        else:
+            genai.configure(api_key=api_key)
+            self.model = genai.GenerativeModel('gemini-3.6-flash',
+                                              generation_config={"response_mime_type": "application/json"})
+                                              
+        groq_api_key = os.getenv("GROQ_API_KEY")
+        if groq_api_key and groq_api_key != "your_key_here":
+            self.groq_client = Groq(api_key=groq_api_key)
+        else:
+            self.groq_client = None
+            if not self.use_gemini:
+                raise ValueError("Both GEMINI_API_KEY and GROQ_API_KEY are missing.")
         
     def load_normalized(self):
         in_path = NORMALIZED_DIR / "all_normalized.json"
@@ -92,20 +102,46 @@ Return ONLY a valid JSON array of objects.
             try:
                 for attempt in range(3):
                     try:
-                        response = self.model.generate_content(
-                            prompt,
-                            safety_settings={
-                                HarmCategory.HARM_CATEGORY_HATE_SPEECH: HarmBlockThreshold.BLOCK_NONE,
-                                HarmCategory.HARM_CATEGORY_HARASSMENT: HarmBlockThreshold.BLOCK_NONE,
-                                HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT: HarmBlockThreshold.BLOCK_NONE,
-                                HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: HarmBlockThreshold.BLOCK_NONE,
-                            }
-                        )
-                        
+                        if self.use_gemini:
+                            try:
+                                response = self.model.generate_content(
+                                    prompt,
+                                    safety_settings={
+                                        HarmCategory.HARM_CATEGORY_HATE_SPEECH: HarmBlockThreshold.BLOCK_NONE,
+                                        HarmCategory.HARM_CATEGORY_HARASSMENT: HarmBlockThreshold.BLOCK_NONE,
+                                        HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT: HarmBlockThreshold.BLOCK_NONE,
+                                        HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: HarmBlockThreshold.BLOCK_NONE,
+                                    }
+                                )
+                                response_text = response.text
+                            except Exception as ge:
+                                if "429" in str(ge):
+                                    logger.warning("Gemini 429 Quota Exceeded. Switching to Groq fallback.")
+                                    self.use_gemini = False
+                                    raise  # trigger retry logic which will now use Groq
+                                else:
+                                    raise
+                        else:
+                            if not self.groq_client:
+                                raise ValueError("Groq client not initialized and Gemini is disabled.")
+                                
+                            response = self.groq_client.chat.completions.create(
+                                model="openai/gpt-oss-120b",
+                                messages=[{"role": "user", "content": prompt}],
+                                response_format={"type": "json_object"}
+                            )
+                            response_text = response.choices[0].message.content
+                            
                         try:
-                            results = json.loads(response.text)
+                            results = json.loads(response_text)
+                            # Llama sometimes wraps the array in a dict like {"results": [...]} or similar.
+                            if isinstance(results, dict):
+                                for key in results:
+                                    if isinstance(results[key], list):
+                                        results = results[key]
+                                        break
                         except json.JSONDecodeError:
-                            text = response.text
+                            text = response_text
                             if text.startswith("```json"):
                                 text = text[7:-3]
                             results = json.loads(text.strip())
@@ -128,8 +164,8 @@ Return ONLY a valid JSON array of objects.
             except Exception as e:
                  logger.error(f"Fatal error on batch: {e}")
                  
-            # Simple rate limiting pause (15 RPM limit for free tier -> 4s between requests)
-            time.sleep(5)
+            # Rate limit sleep
+            time.sleep(2)
 
     def save_enriched(self):
         logger.info("Saving enriched data...")

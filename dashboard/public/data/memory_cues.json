@@ -1,38 +1,14 @@
 [
   {
-    "cue": "people",
-    "count": 3
+    "cue": "date",
+    "count": 2
   },
   {
-    "cue": "brother",
+    "cue": "subject",
     "count": 1
   },
   {
-    "cue": "5 years ago",
-    "count": 1
-  },
-  {
-    "cue": "album title",
-    "count": 1
-  },
-  {
-    "cue": "photobook purchases",
-    "count": 1
-  },
-  {
-    "cue": "faces",
-    "count": 1
-  },
-  {
-    "cue": "moments",
-    "count": 1
-  },
-  {
-    "cue": "file format",
-    "count": 1
-  },
-  {
-    "cue": "location",
+    "cue": "relationship",
     "count": 1
   },
   {
@@ -40,27 +16,83 @@
     "count": 1
   },
   {
-    "cue": "date taken",
+    "cue": "word",
     "count": 1
   },
   {
-    "cue": "metadata",
+    "cue": "deleted files",
     "count": 1
   },
   {
-    "cue": "recent",
+    "cue": "album",
     "count": 1
   },
   {
-    "cue": "subject",
+    "cue": "Galaxy phone",
     "count": 1
   },
   {
-    "cue": "text",
+    "cue": "photo book",
     "count": 1
   },
   {
-    "cue": "person",
+    "cue": "cell phone",
+    "count": 1
+  },
+  {
+    "cue": "computer",
+    "count": 1
+  },
+  {
+    "cue": "cloud",
+    "count": 1
+  },
+  {
+    "cue": "photo type (dental)",
+    "count": 1
+  },
+  {
+    "cue": "device (phone)",
+    "count": 1
+  },
+  {
+    "cue": "people",
+    "count": 1
+  },
+  {
+    "cue": "event",
+    "count": 1
+  },
+  {
+    "cue": "device",
+    "count": 1
+  },
+  {
+    "cue": "type",
+    "count": 1
+  },
+  {
+    "cue": "green stage lights",
+    "count": 1
+  },
+  {
+    "cue": "friends",
+    "count": 1
+  },
+  {
+    "cue": "happiness",
+    "count": 1
+  },
+  {
+    "cue": "old couch",
+    "count": 1
+  },
+  {
+    "cue": "living room",
+    "count": 1
+  },
+  {
+    "cue": "apartment",
     "count": 1
   }
 ]
