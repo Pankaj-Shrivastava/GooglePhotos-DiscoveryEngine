@@ -15,8 +15,8 @@ export default function Sidebar() {
     <aside className="group/sidebar fixed left-0 top-0 h-screen w-[72px] hover:w-60 bg-surface-container-lowest border-r border-outline-variant z-50 flex flex-col transition-all duration-300 ease-in-out overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.08)] max-md:hidden">
       {/* Logo */}
       <div className="h-14 flex items-center px-4 gap-3 border-b border-outline-variant shrink-0">
-        <div className="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center shrink-0">
-          <span className="text-on-primary-container font-bold text-sm">DE</span>
+        <div className="w-8 h-8 shrink-0 flex items-center justify-center">
+          <img src="/logo.svg" alt="Discovery Engine Logo" className="w-full h-full object-contain drop-shadow-sm" />
         </div>
         <div className="opacity-0 group-hover/sidebar:opacity-100 transition-opacity duration-200 whitespace-nowrap overflow-hidden flex flex-col">
           <span className="text-sm font-semibold text-on-surface leading-tight">Discovery Engine</span>

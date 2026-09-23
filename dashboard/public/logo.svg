@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Soft shadow for clean elevation against light or colored backgrounds -->
+    <filter id="glass-shadow-transparent" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#0f172a" flood-opacity="0.16"/>
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#1a73e8" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+
+  <!-- Centered Composition without container tile -->
+  <g transform="translate(16, 16)">
+    <!-- Base Google Photos Pinwheel -->
+    <!-- Red Petal (Top) -->
+    <path d="M 240,240 L 240,105 C 281.42,105 315,138.58 315,180 L 315,240 Z" fill="#EA4335"/>
+    <!-- Yellow Petal (Right) -->
+    <path d="M 240,240 L 375,240 C 375,281.42 341.42,315 300,315 L 240,315 Z" fill="#FBBC04"/>
+    <!-- Green Petal (Bottom) -->
+    <path d="M 240,240 L 240,375 C 198.58,375 165,341.42 165,300 L 165,240 Z" fill="#34A853"/>
+    <!-- Blue Petal (Left) -->
+    <path d="M 240,240 L 105,240 C 105,198.58 138.58,165 180,165 L 240,165 Z" fill="#4285F4"/>
+    
+    <!-- Center Pivot Dot -->
+    <circle cx="240" cy="240" r="10" fill="#ffffff"/>
+
+    <!-- Magnifier Outer Halo (Ensures legibility on dark/colored headers) -->
+    <circle cx="240" cy="240" r="150" fill="none" stroke="#ffffff" stroke-width="44" filter="url(#glass-shadow-transparent)"/>
+    <path d="M 338,338 L 442,442" stroke="#ffffff" stroke-width="50" stroke-linecap="round"/>
+
+    <!-- Lens Ring (High-Contrast Dark Slate Bezel) -->
+    <circle cx="240" cy="240" r="150" fill="none" stroke="#1e293b" stroke-width="30"/>
+
+    <!-- Solid All-Google-Blue Handle (#1a73e8) -->
+    <path d="M 338,338 L 442,442" stroke="#1a73e8" stroke-width="34" stroke-linecap="round"/>
+
+    <!-- Subtle specular highlight accent on the blue handle -->
+    <path d="M 350,350 L 420,420" stroke="#60a5fa" stroke-width="10" stroke-linecap="round" opacity="0.6"/>
+
+    <!-- Glass Specular Reflection Highlight Arc -->
+    <path d="M 134,240 A 106 106 0 0 1 240,134" fill="none" stroke="#ffffff" stroke-width="16" stroke-linecap="round" opacity="0.9"/>
+  </g>
+</svg>
