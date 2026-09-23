@@ -1,10 +1,12 @@
 import { useDataContext } from '../context/DataContext';
+import { useFilterContext } from '../context/FilterContext';
 import PageGuide from '../components/PageGuide';
 
 export default function GoogleActionsPage() {
   const data = useDataContext();
-  const actions = data.google_actions_2026 || [];
-  const painPoints = data.pain_points || [];
+  const { applyFilters } = useFilterContext();
+  const actions = applyFilters(data.google_actions_2026 || []);
+  const painPoints = applyFilters(data.pain_points || []);
 
   const totalPP = painPoints.length;
   const addressedCount = painPoints.filter((p) => p.addressed_by_google).length;

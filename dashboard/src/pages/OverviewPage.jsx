@@ -1,4 +1,5 @@
 import { useDataContext } from '../context/DataContext';
+import { useFilterContext } from '../context/FilterContext';
 import PageGuide from '../components/PageGuide';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, ScatterChart, Scatter, Cell, ZAxis } from 'recharts';
 
@@ -6,9 +7,31 @@ const SEVERITY_COLORS = { critical: '#BA1A1A', high: '#F9AB00', medium: '#FBBC04
 
 export default function OverviewPage() {
   const data = useDataContext();
-  const painPoints = data.pain_points || [];
-  const memoryCues = data.memory_cues || [];
-  const opportunities = data.opportunity_areas || [];
+  const { filters, applyFilters } = useFilterContext();
+  
+  const painPoints = applyFilters(data.pain_points || []);
+  const validPpIds = new Set(painPoints.map(p => p.id));
+  
+  const memoryCueCounts = {};
+  painPoints.forEach(p => {
+    (p.memory_cues || []).forEach(cue => {
+      memoryCueCounts[cue] = (memoryCueCounts[cue] || 0) + 1;
+    });
+  });
+  const memoryCues = Object.entries(memoryCueCounts)
+    .map(([cue, count]) => ({ cue, count }))
+    .sort((a, b) => b.count - a.count);
+  
+  const opportunities = (data.opportunity_areas || []).filter(opp => {
+    const matchesCategorical = opp.supported_by?.some(id => validPpIds.has(id));
+    if (!matchesCategorical && opp.supported_by) return false;
+    if (filters.search) {
+      const q = filters.search.toLowerCase();
+      const textToSearch = [opp.title, opp.problem_statement].join(' ').toLowerCase();
+      if (!textToSearch.includes(q)) return false;
+    }
+    return true;
+  });
   const frameworks = data.frameworks || {};
 
   const severityMatrix = frameworks.severity_matrix || {};

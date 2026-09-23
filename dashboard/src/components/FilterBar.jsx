@@ -1,23 +1,27 @@
 import { useFilterContext } from '../context/FilterContext';
-
-const FILTER_OPTIONS = {
-  geography: ['US', 'India', 'Global', 'unknown'],
-  severity: ['critical', 'high', 'medium', 'low'],
-  source: ['play_store', 'google_actions'],
-  platform: ['android', 'web', 'unknown'],
-  memoryCue: ['location', 'people', 'time', 'visual', 'activity', 'emotion'],
-};
+import { useDataContext } from '../context/DataContext';
+import { useMemo } from 'react';
 
 const FILTER_LABELS = {
-  geography: 'Geography',
   severity: 'Severity',
-  source: 'Source',
-  platform: 'Platform',
   memoryCue: 'Memory Cue',
 };
 
 export default function FilterBar() {
   const { filters, setFilter, resetFilters, activeCount } = useFilterContext();
+  const data = useDataContext();
+
+  const FILTER_OPTIONS = useMemo(() => {
+    const memoryCuesSet = new Set();
+    (data.pain_points || []).forEach(p => {
+      (p.memory_cues || []).forEach(c => memoryCuesSet.add(c));
+    });
+
+    return {
+      severity: ['critical', 'high', 'medium', 'low'],
+      memoryCue: Array.from(memoryCuesSet).sort(),
+    };
+  }, [data.pain_points]);
 
   return (
     <div className="sticky top-14 left-0 right-0 z-30 bg-surface-container-lowest border-b border-outline-variant px-4 lg:px-6 py-2 flex items-center justify-between shadow-[0_1px_4px_rgba(0,0,0,0.02)]">

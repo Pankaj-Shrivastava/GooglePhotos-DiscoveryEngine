@@ -1,9 +1,23 @@
 import { useDataContext } from '../context/DataContext';
+import { useFilterContext } from '../context/FilterContext';
 import PageGuide from '../components/PageGuide';
 
 export default function OpportunitiesPage() {
   const data = useDataContext();
-  const opportunities = data.opportunity_areas || [];
+  const { filters, applyFilters } = useFilterContext();
+  const painPoints = applyFilters(data.pain_points || []);
+  const validPpIds = new Set(painPoints.map(p => p.id));
+  
+  const opportunities = (data.opportunity_areas || []).filter(opp => {
+    const matchesCategorical = opp.supported_by?.some(id => validPpIds.has(id));
+    if (!matchesCategorical && opp.supported_by) return false;
+    if (filters.search) {
+      const q = filters.search.toLowerCase();
+      const textToSearch = [opp.title, opp.problem_statement].join(' ').toLowerCase();
+      if (!textToSearch.includes(q)) return false;
+    }
+    return true;
+  });
 
   return (
     <div className="flex flex-col gap-4">

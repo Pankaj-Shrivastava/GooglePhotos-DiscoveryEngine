@@ -51,6 +51,8 @@ export default function Layout() {
     exportToCsv(dataset, filename);
   };
 
+  const isFilterablePage = !['/segmentation', '/interview-guide', '/references'].includes(location.pathname);
+
   return (
     <div className="bg-background min-h-screen">
       <Sidebar />
@@ -61,22 +63,24 @@ export default function Layout() {
         <header className="print-hide fixed top-0 left-0 md:left-[72px] right-0 h-14 bg-surface-container-lowest border-b border-outline-variant z-40 px-4 lg:px-6 flex items-center justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
           <div className="flex-1"></div>
           <div className="flex items-center gap-2">
-            <button 
-              onClick={() => setShowFilters(!showFilters)}
-              className={`inline-flex items-center gap-1.5 h-9 px-3 rounded-lg border border-outline-variant text-xs font-medium transition-colors ${
-                showFilters || activeCount > 0 
-                  ? 'bg-primary-container text-on-primary-container border-transparent' 
-                  : 'bg-surface-container-lowest hover:bg-surface-container-low text-on-surface-variant'
-              }`}
-            >
-              <span className="material-symbols-outlined text-lg">tune</span>
-              <span className="hidden sm:inline">Filters</span>
-              {activeCount > 0 && (
-                <span className="flex items-center justify-center w-5 h-5 ml-1 rounded-full bg-primary text-on-primary text-[10px] font-bold">
-                  {activeCount}
-                </span>
-              )}
-            </button>
+            {isFilterablePage && (
+              <button 
+                onClick={() => setShowFilters(!showFilters)}
+                className={`inline-flex items-center gap-1.5 h-9 px-3 rounded-lg border border-outline-variant text-xs font-medium transition-colors ${
+                  showFilters || activeCount > 0 
+                    ? 'bg-primary-container text-on-primary-container border-transparent' 
+                    : 'bg-surface-container-lowest hover:bg-surface-container-low text-on-surface-variant'
+                }`}
+              >
+                <span className="material-symbols-outlined text-lg">tune</span>
+                <span className="hidden sm:inline">Filters</span>
+                {activeCount > 0 && (
+                  <span className="flex items-center justify-center w-5 h-5 ml-1 rounded-full bg-primary text-on-primary text-[10px] font-bold">
+                    {activeCount}
+                  </span>
+                )}
+              </button>
+            )}
             
             {/* Export Dropdown */}
             <div className="relative" ref={dropdownRef}>
@@ -115,22 +119,22 @@ export default function Layout() {
               )}
             </div>
 
-            <div className="h-5 w-px bg-outline-variant mx-1 hidden sm:block" />
-            <div className="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container text-sm font-bold cursor-pointer">
-              P
-            </div>
+
           </div>
         </header>
 
+        {/* Spacer for fixed header */}
+        <div className="h-14 print-hide" />
+
         {/* Filter Bar */}
-        {showFilters && (
-          <div className="pt-14 print-hide transition-all">
+        {isFilterablePage && showFilters && (
+          <div className="print-hide transition-all">
             <FilterBar />
           </div>
         )}
 
         {/* Main Content */}
-        <main id="exportable-content" className={`px-4 lg:px-6 py-4 lg:py-6 pb-20 md:pb-6 bg-background ${!showFilters ? 'pt-18' : ''}`}>
+        <main id="exportable-content" className="px-4 lg:px-6 py-4 lg:py-6 pb-20 md:pb-6 bg-background">
           <Outlet />
         </main>
       </div>

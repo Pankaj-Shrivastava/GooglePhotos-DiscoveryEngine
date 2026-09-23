@@ -6,10 +6,7 @@ export function useFilters() {
   
   // Initialize state from URL if present
   const [filters, setFilters] = useState({
-    geography: searchParams.get('geography') || '',
     severity: searchParams.get('severity') || '',
-    source: searchParams.get('source') || '',
-    platform: searchParams.get('platform') || '',
     memoryCue: searchParams.get('memoryCue') || '',
     search: searchParams.get('search') || '',
   });
@@ -28,7 +25,7 @@ export function useFilters() {
   }, []);
 
   const resetFilters = useCallback(() => {
-    setFilters({ geography: '', severity: '', source: '', platform: '', memoryCue: '', search: '' });
+    setFilters({ severity: '', memoryCue: '', search: '' });
   }, []);
 
   // Exclude 'search' from the active dropdown count
@@ -42,10 +39,7 @@ export function useFilters() {
       if (!items || !Array.isArray(items)) return items;
       return items.filter((item) => {
         // Apply categorical filters
-        if (filters.geography && !item.geographies?.includes(filters.geography)) return false;
         if (filters.severity && item.severity !== filters.severity) return false;
-        if (filters.source && item.source !== filters.source) return false;
-        if (filters.platform && item.platform !== filters.platform) return false;
         if (filters.memoryCue && !item.memory_cues?.includes(filters.memoryCue)) return false;
         
         // Apply text search filter

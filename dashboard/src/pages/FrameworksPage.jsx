@@ -1,4 +1,5 @@
 import { useDataContext } from '../context/DataContext';
+import { useFilterContext } from '../context/FilterContext';
 import PageGuide from '../components/PageGuide';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 
@@ -6,11 +7,25 @@ const SEVERITY_COLORS = { critical: '#BA1A1A', high: '#F9AB00', medium: '#FBBC04
 
 export default function FrameworksPage() {
   const data = useDataContext();
+  const { applyFilters } = useFilterContext();
   const frameworks = data.frameworks || {};
-  const memoryCues = data.memory_cues || [];
-  const painPoints = data.pain_points || [];
+  const painPoints = applyFilters(data.pain_points || []);
+  
+  const memoryCueCounts = {};
+  painPoints.forEach(p => {
+    (p.memory_cues || []).forEach(cue => {
+      memoryCueCounts[cue] = (memoryCueCounts[cue] || 0) + 1;
+    });
+  });
+  const memoryCues = Object.entries(memoryCueCounts)
+    .map(([cue, count]) => ({ cue, count }))
+    .sort((a, b) => b.count - a.count);
 
-  const severityData = Object.entries(frameworks.severity_matrix || {}).map(([k, v]) => ({ name: k, count: v }));
+  const severityData = ['critical', 'high', 'medium', 'low'].map(severity => ({
+    name: severity,
+    count: painPoints.filter(p => p.severity === severity).length
+  }));
+  
   const outcomeData = Object.entries(frameworks.retrieval_outcomes || {}).map(([k, v]) => ({ name: k, count: v }));
 
   // Top pain points by frequency
