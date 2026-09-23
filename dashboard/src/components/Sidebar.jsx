@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 const NAV_ITEMS = [
   { path: '/', icon: 'dashboard', label: 'Overview' },
   { path: '/pain-points', icon: 'warning', label: 'Pain Points' },
-  { path: '/opportunities', icon: 'lightbulb', label: 'Opportunities' },
+
   { path: '/frameworks', icon: 'bar_chart', label: 'Frameworks' },
   { path: '/google-actions', icon: 'rocket_launch', label: 'Google Actions' },
   { path: '/segmentation', icon: 'pie_chart', label: 'Segmentation' },

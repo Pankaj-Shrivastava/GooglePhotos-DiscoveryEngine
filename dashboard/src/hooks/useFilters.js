@@ -1,5 +1,6 @@
 import { useState, useCallback, useMemo, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import { getMemoryCueGroup } from '../utils/memoryCueMapper';
 
 export function useFilters() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -40,7 +41,10 @@ export function useFilters() {
       return items.filter((item) => {
         // Apply categorical filters
         if (filters.severity && item.severity !== filters.severity) return false;
-        if (filters.memoryCue && !item.memory_cues?.includes(filters.memoryCue)) return false;
+        if (filters.memoryCue) {
+          const itemCueGroups = (item.memory_cues || []).map(getMemoryCueGroup);
+          if (!itemCueGroups.includes(filters.memoryCue)) return false;
+        }
         
         // Apply text search filter
         if (filters.search) {

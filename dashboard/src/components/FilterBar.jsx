@@ -1,6 +1,7 @@
 import { useFilterContext } from '../context/FilterContext';
 import { useDataContext } from '../context/DataContext';
 import { useMemo } from 'react';
+import { getMemoryCueGroup } from '../utils/memoryCueMapper';
 
 const FILTER_LABELS = {
   severity: 'Severity',
@@ -14,7 +15,7 @@ export default function FilterBar() {
   const FILTER_OPTIONS = useMemo(() => {
     const memoryCuesSet = new Set();
     (data.pain_points || []).forEach(p => {
-      (p.memory_cues || []).forEach(c => memoryCuesSet.add(c));
+      (p.memory_cues || []).forEach(c => memoryCuesSet.add(getMemoryCueGroup(c)));
     });
 
     return {

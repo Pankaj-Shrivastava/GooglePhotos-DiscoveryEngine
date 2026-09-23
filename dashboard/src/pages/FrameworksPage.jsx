@@ -1,5 +1,6 @@
 import { useDataContext } from '../context/DataContext';
 import { useFilterContext } from '../context/FilterContext';
+import { getMemoryCueGroup } from '../utils/memoryCueMapper';
 import PageGuide from '../components/PageGuide';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 
@@ -14,7 +15,8 @@ export default function FrameworksPage() {
   const memoryCueCounts = {};
   painPoints.forEach(p => {
     (p.memory_cues || []).forEach(cue => {
-      memoryCueCounts[cue] = (memoryCueCounts[cue] || 0) + 1;
+      const group = getMemoryCueGroup(cue);
+      memoryCueCounts[group] = (memoryCueCounts[group] || 0) + 1;
     });
   });
   const memoryCues = Object.entries(memoryCueCounts)

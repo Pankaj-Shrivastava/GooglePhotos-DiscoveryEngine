@@ -4,7 +4,7 @@ import { FilterProvider } from './context/FilterContext';
 import Layout from './components/Layout';
 import OverviewPage from './pages/OverviewPage';
 import PainPointsPage from './pages/PainPointsPage';
-import OpportunitiesPage from './pages/OpportunitiesPage';
+
 import FrameworksPage from './pages/FrameworksPage';
 import GoogleActionsPage from './pages/GoogleActionsPage';
 import SegmentationPage from './pages/SegmentationPage';
@@ -17,7 +17,7 @@ export default function App() {
           <Route element={<Layout />}>
             <Route index element={<OverviewPage />} />
             <Route path="pain-points" element={<PainPointsPage />} />
-            <Route path="opportunities" element={<OpportunitiesPage />} />
+
             <Route path="frameworks" element={<FrameworksPage />} />
             <Route path="google-actions" element={<GoogleActionsPage />} />
             <Route path="segmentation" element={<SegmentationPage />} />

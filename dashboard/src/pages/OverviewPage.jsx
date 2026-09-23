@@ -1,5 +1,6 @@
 import { useDataContext } from '../context/DataContext';
 import { useFilterContext } from '../context/FilterContext';
+import { getMemoryCueGroup } from '../utils/memoryCueMapper';
 import PageGuide from '../components/PageGuide';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, ScatterChart, Scatter, Cell, ZAxis } from 'recharts';
 
@@ -10,34 +11,23 @@ export default function OverviewPage() {
   const { filters, applyFilters } = useFilterContext();
   
   const painPoints = applyFilters(data.pain_points || []);
-  const validPpIds = new Set(painPoints.map(p => p.id));
   
   const memoryCueCounts = {};
   painPoints.forEach(p => {
     (p.memory_cues || []).forEach(cue => {
-      memoryCueCounts[cue] = (memoryCueCounts[cue] || 0) + 1;
+      const group = getMemoryCueGroup(cue);
+      memoryCueCounts[group] = (memoryCueCounts[group] || 0) + 1;
     });
   });
   const memoryCues = Object.entries(memoryCueCounts)
     .map(([cue, count]) => ({ cue, count }))
     .sort((a, b) => b.count - a.count);
   
-  const opportunities = (data.opportunity_areas || []).filter(opp => {
-    const matchesCategorical = opp.supported_by?.some(id => validPpIds.has(id));
-    if (!matchesCategorical && opp.supported_by) return false;
-    if (filters.search) {
-      const q = filters.search.toLowerCase();
-      const textToSearch = [opp.title, opp.problem_statement].join(' ').toLowerCase();
-      if (!textToSearch.includes(q)) return false;
-    }
-    return true;
-  });
   const frameworks = data.frameworks || {};
 
   const severityMatrix = frameworks.severity_matrix || {};
   const totalPainPoints = painPoints.length;
   const criticalCount = painPoints.filter((p) => p.severity === 'critical').length;
-  const oppCount = opportunities.length;
 
   // Scatter data: each pain point as a bubble
   const scatterData = painPoints.slice(0, 20).map((pp, i) => ({
@@ -59,10 +49,9 @@ export default function OverviewPage() {
       />
 
       {/* Metric Cards */}
-      <section className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
+      <section className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
         <MetricCard icon="report_problem" iconBg="bg-primary-fixed" iconColor="text-primary" label="Total Pain Points" value={totalPainPoints} sub="+12% MoM" subColor="text-primary" />
         <MetricCard icon="crisis_alert" iconBg="bg-error-container" iconColor="text-error" label="Critical Severity" value={criticalCount} sub={`${criticalCount} critical issues`} subColor="text-error" />
-        <MetricCard icon="lightbulb" iconBg="bg-tertiary-fixed" iconColor="text-tertiary" label="Opportunity Areas" value={oppCount} sub={`${oppCount} synthesized`} subColor="text-tertiary" />
         <MetricCard icon="auto_awesome" iconBg="bg-surface-container-high" iconColor="text-primary" label="Entries Analyzed" value={totalAnalyzed} sub="99.2% confidence" subColor="text-on-surface-variant" />
       </section>
 
@@ -112,38 +101,7 @@ export default function OverviewPage() {
         </div>
       </section>
 
-      {/* Top Opportunities */}
-      <section className="bg-surface-container-lowest rounded-xl p-5 shadow-sm">
-        <div className="flex items-center gap-3 mb-4">
-          <h2 className="text-base font-semibold text-on-surface">Top Opportunities</h2>
-          <span className="text-[11px] font-medium bg-tertiary-fixed text-tertiary-container px-2 py-0.5 rounded-full">
-            High ROI
-          </span>
-        </div>
-        <div className="flex flex-col gap-3">
-          {opportunities.slice(0, 3).map((opp, i) => (
-            <div
-              key={opp.id}
-              className={`flex items-center gap-4 p-4 rounded-xl border transition-all hover:shadow-sm ${
-                i === 0 ? 'bg-primary-fixed/30 border-primary-container/20' : 'border-outline-variant/50'
-              }`}
-            >
-              <div className="w-10 h-10 rounded-full bg-tertiary-fixed-dim/20 text-tertiary-container flex items-center justify-center text-sm font-bold shrink-0">
-                #{i + 1}
-              </div>
-              <div className="flex-1 min-w-0">
-                <p className="text-sm font-semibold text-on-surface truncate">{opp.title}</p>
-                <p className="text-xs text-on-surface-variant mt-0.5 line-clamp-2">{opp.problem_statement}</p>
-              </div>
-              <div className="text-right shrink-0">
-                <p className="text-lg font-bold text-primary-container">{opp.impact_score}</p>
-                <p className="text-[10px] text-on-surface-variant">/10 Impact</p>
-              </div>
-              <span className="material-symbols-outlined text-on-surface-variant">chevron_right</span>
-            </div>
-          ))}
-        </div>
-      </section>
+
     </div>
   );
 }
