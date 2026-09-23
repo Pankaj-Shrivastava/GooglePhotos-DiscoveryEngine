@@ -31,8 +31,8 @@ export default function FrameworksPage() {
   const outcomeData = Object.entries(frameworks.retrieval_outcomes || {}).map(([k, v]) => ({ name: k, count: v }));
 
   // Top pain points by frequency
-  const freqData = [...painPoints].sort((a, b) => (b.frequency || 0) - (a.frequency || 0)).slice(0, 8)
-    .map((p) => ({ name: p.title?.slice(0, 25) + '…', count: p.frequency || 1 }));
+  const freqData = [...painPoints].sort((a, b) => (b.frequency || 0) - (a.frequency || 0)).slice(0, 6)
+    .map((p) => ({ name: p.title, count: p.frequency || 1 }));
 
   return (
     <div className="flex flex-col gap-4">
@@ -97,12 +97,18 @@ export default function FrameworksPage() {
 
         {/* Frequency of Mention */}
         <ChartCard title="Frequency of Mention" subtitle="Most common pain point clusters">
-          <ResponsiveContainer width="100%" height={200}>
-            <BarChart data={freqData} layout="vertical" margin={{ left: 120 }}>
+          <ResponsiveContainer width="100%" height={260}>
+            <BarChart data={freqData} layout="vertical" margin={{ left: 140, right: 20 }}>
               <XAxis type="number" tick={{ fontSize: 11 }} />
-              <YAxis type="category" dataKey="name" tick={{ fontSize: 10 }} width={120} />
-              <Tooltip cursor={{ fill: 'transparent' }} />
-              <Bar dataKey="count" fill="#1A73E8" radius={[0, 6, 6, 0]} />
+              <YAxis 
+                type="category" 
+                dataKey="name" 
+                tick={{ fontSize: 11 }} 
+                width={140} 
+                tickFormatter={(value) => value.length > 25 ? value.substring(0, 25) + '...' : value}
+              />
+              <Tooltip cursor={{ fill: 'transparent' }} contentStyle={{ borderRadius: '8px', fontSize: '12px' }} />
+              <Bar dataKey="count" fill="#00A859" radius={[0, 6, 6, 0]} barSize={20} />
             </BarChart>
           </ResponsiveContainer>
         </ChartCard>

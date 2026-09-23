@@ -6,7 +6,13 @@ export default function SegmentationPage() {
   const data = useDataContext();
   const segmentation = data.segmentation || {};
 
-  const geoData = Object.entries(segmentation.geography || {}).map(([k, v]) => ({ name: k, count: v }));
+  const geoCounts = {};
+  Object.entries(segmentation.geography || {}).forEach(([k, v]) => {
+    const normalized = k.toUpperCase();
+    geoCounts[normalized] = (geoCounts[normalized] || 0) + v;
+  });
+  const geoData = Object.entries(geoCounts).map(([k, v]) => ({ name: k, count: v }));
+  
   const platformData = Object.entries(segmentation.platform || {}).map(([k, v]) => ({ name: k, count: v }));
 
   return (
