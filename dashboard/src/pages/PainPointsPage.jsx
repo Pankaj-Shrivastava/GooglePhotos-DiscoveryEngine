@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useDataContext } from '../context/DataContext';
 import { useFilterContext } from '../context/FilterContext';
 import PageGuide from '../components/PageGuide';
+import CustomDropdown from '../components/CustomDropdown';
 
 const SEVERITY_STYLES = {
   critical: 'bg-error text-on-error',
@@ -50,14 +51,17 @@ export default function PainPointsPage() {
             </button>
           )}
         </div>
-        <select
-          value={sortBy}
-          onChange={(e) => setSortBy(e.target.value)}
-          className="h-8 px-3 rounded-lg text-xs font-medium bg-surface-container-low border border-outline-variant text-on-surface cursor-pointer"
-        >
-          <option value="severity">Sort: Severity</option>
-          <option value="frequency">Sort: Frequency</option>
-        </select>
+        <div className="w-[160px] shrink-0 flex justify-end">
+          <CustomDropdown
+            value={sortBy}
+            onChange={(val) => setSortBy(val)}
+            options={[
+              { value: 'severity', label: 'Sort: Severity' },
+              { value: 'frequency', label: 'Sort: Frequency' }
+            ]}
+            hideClear={true}
+          />
+        </div>
       </div>
 
       <div className="flex flex-col gap-4">

@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 
-export default function CustomDropdown({ value, onChange, options, defaultLabel }) {
+export default function CustomDropdown({ value, onChange, options, defaultLabel, hideClear }) {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
 
@@ -54,20 +54,23 @@ export default function CustomDropdown({ value, onChange, options, defaultLabel 
         <div className="absolute top-full mt-1.5 left-0 min-w-[180px] max-w-[280px] bg-surface-container-lowest border border-outline-variant rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] overflow-hidden z-50 animate-in fade-in slide-in-from-top-2 duration-200">
           <div className="max-h-[300px] overflow-y-auto py-1.5 custom-scrollbar">
             {/* Default clear option */}
-            <button
-              className={`w-full text-left px-4 py-2 text-xs transition-colors flex items-center justify-between ${
-                !value ? 'bg-primary/5 text-primary font-semibold' : 'text-on-surface hover:bg-surface-container-low'
-              }`}
-              onClick={() => {
-                onChange('');
-                setIsOpen(false);
-              }}
-            >
-              <span>{defaultLabel}</span>
-              {!value && <span className="material-symbols-outlined text-[14px]">check</span>}
-            </button>
-            
-            {options.length > 0 && <div className="h-px bg-outline-variant/30 my-1 mx-2" />}
+            {!hideClear && (
+              <>
+                <button
+                  className={`w-full text-left px-4 py-2 text-xs transition-colors flex items-center justify-between ${
+                    !value ? 'bg-primary/5 text-primary font-semibold' : 'text-on-surface hover:bg-surface-container-low'
+                  }`}
+                  onClick={() => {
+                    onChange('');
+                    setIsOpen(false);
+                  }}
+                >
+                  <span>{defaultLabel}</span>
+                  {!value && <span className="material-symbols-outlined text-[14px]">check</span>}
+                </button>
+                {options.length > 0 && <div className="h-px bg-outline-variant/30 my-1 mx-2" />}
+              </>
+            )}
 
             {options.map((opt) => {
               const val = typeof opt === 'object' ? opt.value : opt;
