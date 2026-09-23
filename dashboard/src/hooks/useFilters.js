@@ -1,33 +1,35 @@
 import { useState, useCallback, useMemo, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { getMemoryCueGroup } from '../utils/memoryCueMapper';
+import { useDataContext } from '../context/DataContext';
 
 export function useFilters() {
   const [searchParams, setSearchParams] = useSearchParams();
+  const data = useDataContext();
   
-  // Initialize state from URL if present
-  const [filters, setFilters] = useState({
+  // Derive state directly from URL
+  const filters = useMemo(() => ({
     severity: searchParams.get('severity') || '',
     memoryCue: searchParams.get('memoryCue') || '',
+    opportunity: searchParams.get('opportunity') || '',
     search: searchParams.get('search') || '',
-  });
-
-  // Sync state to URL whenever it changes
-  useEffect(() => {
-    const params = new URLSearchParams();
-    Object.entries(filters).forEach(([key, value]) => {
-      if (value) params.set(key, value);
-    });
-    setSearchParams(params, { replace: true });
-  }, [filters, setSearchParams]);
+  }), [searchParams]);
 
   const setFilter = useCallback((key, value) => {
-    setFilters((prev) => ({ ...prev, [key]: value }));
-  }, []);
+    setSearchParams((prev) => {
+      const next = new URLSearchParams(prev);
+      if (value) {
+        next.set(key, value);
+      } else {
+        next.delete(key);
+      }
+      return next;
+    }, { replace: true });
+  }, [setSearchParams]);
 
   const resetFilters = useCallback(() => {
-    setFilters({ severity: '', memoryCue: '', search: '' });
-  }, []);
+    setSearchParams(new URLSearchParams(), { replace: true });
+  }, [setSearchParams]);
 
   // Exclude 'search' from the active dropdown count
   const activeCount = useMemo(() => {
@@ -44,6 +46,12 @@ export function useFilters() {
         if (filters.memoryCue) {
           const itemCueGroups = (item.memory_cues || []).map(getMemoryCueGroup);
           if (!itemCueGroups.includes(filters.memoryCue)) return false;
+        }
+        if (filters.opportunity) {
+          const opp = (data.opportunity_areas || []).find(o => o.id === filters.opportunity);
+          if (opp && opp.supported_by && !opp.supported_by.includes(item.id)) {
+            return false;
+          }
         }
         
         // Apply text search filter

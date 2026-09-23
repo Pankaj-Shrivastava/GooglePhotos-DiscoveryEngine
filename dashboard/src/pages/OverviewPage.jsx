@@ -1,6 +1,7 @@
 import { useDataContext } from '../context/DataContext';
 import { useFilterContext } from '../context/FilterContext';
 import { getMemoryCueGroup } from '../utils/memoryCueMapper';
+import { useNavigate } from 'react-router-dom';
 import PageGuide from '../components/PageGuide';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, ScatterChart, Scatter, Cell, ZAxis } from 'recharts';
 
@@ -9,6 +10,7 @@ const SEVERITY_COLORS = { critical: '#BA1A1A', high: '#F9AB00', medium: '#FBBC04
 export default function OverviewPage() {
   const data = useDataContext();
   const { filters, applyFilters } = useFilterContext();
+  const navigate = useNavigate();
   
   const painPoints = applyFilters(data.pain_points || []);
   const validPpIds = new Set(painPoints.map(p => p.id));
@@ -127,7 +129,8 @@ export default function OverviewPage() {
           {opportunities.slice(0, 3).map((opp, i) => (
             <div
               key={opp.id}
-              className={`flex items-center gap-4 p-4 rounded-xl border transition-all hover:shadow-sm ${
+              onClick={() => navigate(`/pain-points?opportunity=${opp.id}`)}
+              className={`flex items-center gap-4 p-4 rounded-xl border transition-all cursor-pointer hover:shadow-md ${
                 i === 0 ? 'bg-primary-fixed/30 border-primary-container/20' : 'border-outline-variant/50'
               }`}
             >
