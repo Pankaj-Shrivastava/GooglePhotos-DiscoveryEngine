@@ -12,7 +12,7 @@ const SEVERITY_STYLES = {
 
 export default function PainPointsPage() {
   const data = useDataContext();
-  const { applyFilters } = useFilterContext();
+  const { filters, applyFilters, setFilter } = useFilterContext();
   const [sortBy, setSortBy] = useState('severity');
 
   const allPainPoints = data.pain_points || [];
@@ -33,13 +33,23 @@ export default function PainPointsPage() {
         description="Browse individual user pain points ranked by severity. Each card shows real user quotes, affected geographies, and whether Google has addressed the issue. Use the filters on the left to drill down by severity, geography, or source."
       />
 
-      <div className="flex items-center justify-between">
-        <h1 className="text-xl font-semibold text-on-surface">
-          Active Pain Points Synthesis
-          <span className="ml-2 text-xs font-medium bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full">
-            {sorted.length} Total Issues
-          </span>
-        </h1>
+      <div className="flex items-start justify-between">
+        <div className="flex flex-col gap-1.5">
+          <h1 className="text-xl font-semibold text-on-surface flex items-center">
+            {filters.opportunity ? 'Filtered by Opportunity' : 'Active Pain Points Synthesis'}
+            <span className="ml-2 text-xs font-medium bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full">
+              {sorted.length} {filters.opportunity ? 'Issues' : 'Total Issues'}
+            </span>
+          </h1>
+          {filters.opportunity && (
+            <button
+              onClick={() => setFilter('opportunity', '')}
+              className="text-sm font-medium text-primary hover:text-primary-container hover:underline transition-colors flex items-center gap-1 w-fit"
+            >
+              Click to view all active pain points
+            </button>
+          )}
+        </div>
         <select
           value={sortBy}
           onChange={(e) => setSortBy(e.target.value)}
