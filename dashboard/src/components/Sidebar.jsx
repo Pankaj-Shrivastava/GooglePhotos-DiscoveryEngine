@@ -30,7 +30,7 @@ export default function Sidebar() {
         {NAV_ITEMS.map((item) => (
           <NavLink
             key={item.path}
-            to={{ pathname: item.path, search: location.search }}
+            to={{ pathname: item.path, search: item.path === '/' ? '' : location.search }}
             end={item.path === '/'}
             className={({ isActive }) =>
               `flex items-center h-11 px-3 rounded-xl gap-4 group transition-all ${
@@ -60,7 +60,7 @@ export function MobileTabBar() {
       {NAV_ITEMS.slice(0, 5).map((item) => (
         <NavLink
           key={item.path}
-          to={{ pathname: item.path, search: location.search }}
+          to={{ pathname: item.path, search: item.path === '/' ? '' : location.search }}
           end={item.path === '/'}
           className={({ isActive }) =>
             `flex flex-col items-center gap-0.5 px-3 py-1.5 rounded-xl transition-all ${

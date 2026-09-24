@@ -45,7 +45,7 @@ export default function OverviewPage() {
   const oppCount = opportunities.length;
 
   // Scatter data: each pain point as a bubble
-  const scatterData = painPoints.slice(0, 20).map((pp, i) => ({
+  const scatterData = painPoints.map((pp, i) => ({
     x: pp.frequency || 1,
     y: { critical: 4.5, high: 3.5, medium: 2.5, low: 1.5 }[pp.severity] || 2,
     z: (pp.quotes?.length || 1) * 20,

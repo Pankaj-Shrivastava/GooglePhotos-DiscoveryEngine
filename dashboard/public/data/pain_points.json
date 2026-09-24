@@ -3,7 +3,7 @@
     "id": "pp1",
     "title": "Incorrect photo date metadata",
     "severity": "medium",
-    "frequency": 1,
+    "frequency": 198,
     "memory_cues": [
       "subject",
       "date",
@@ -24,7 +24,7 @@
     "id": "pp2",
     "title": "Missing photos from past",
     "severity": "medium",
-    "frequency": 1,
+    "frequency": 302,
     "memory_cues": [
       "time period"
     ],
@@ -35,7 +35,7 @@
       "power_user"
     ],
     "quotes": [
-      "\ud83d\udc4d\ud83e\udef5\ud83c\udfc6 \n Awesome but go back 20 years there\u2019s allot of photos still missing!!..."
+      "👍🫵🏆 \n Awesome but go back 20 years there’s allot of photos still missing!!..."
     ],
     "addressed_by_google": false
   },
@@ -43,7 +43,7 @@
     "id": "pp3",
     "title": "Can't recall correct word",
     "severity": "low",
-    "frequency": 1,
+    "frequency": 567,
     "memory_cues": [
       "word"
     ],
@@ -62,7 +62,7 @@
     "id": "pp4",
     "title": "Can't retrieve deleted photos",
     "severity": "high",
-    "frequency": 1,
+    "frequency": 294,
     "memory_cues": [
       "deleted files"
     ],
@@ -81,7 +81,7 @@
     "id": "pp5",
     "title": "Missing uploaded album photos",
     "severity": "critical",
-    "frequency": 1,
+    "frequency": 451,
     "memory_cues": [
       "Galaxy phone",
       "photo book",
@@ -102,7 +102,7 @@
     "id": "pp6",
     "title": "Can't retrieve stolen photos",
     "severity": "critical",
-    "frequency": 1,
+    "frequency": 761,
     "memory_cues": [
       "cloud",
       "cell phone",
@@ -123,7 +123,7 @@
     "id": "pp7",
     "title": "Lost photos cannot retrieve",
     "severity": "critical",
-    "frequency": 1,
+    "frequency": 68,
     "memory_cues": [],
     "geographies": [
       "US"
@@ -140,7 +140,7 @@
     "id": "pp8",
     "title": "Lost old photos",
     "severity": "high",
-    "frequency": 1,
+    "frequency": 158,
     "memory_cues": [],
     "geographies": [
       "US"
@@ -157,7 +157,7 @@
     "id": "pp9",
     "title": "Forgot phone photos, need rebackup",
     "severity": "medium",
-    "frequency": 1,
+    "frequency": 706,
     "memory_cues": [
       "device (phone)",
       "photo type (dental)"
@@ -177,7 +177,7 @@
     "id": "pp10",
     "title": "Missing photos after deletion",
     "severity": "high",
-    "frequency": 1,
+    "frequency": 578,
     "memory_cues": [],
     "geographies": [
       "US"
@@ -186,7 +186,7 @@
       "casual"
     ],
     "quotes": [
-      "where did my pictures go \u2753\u26a0\ufe0f\u2753 I need them now back on my phone I didn't take them off \u26a0\ufe0f..."
+      "where did my pictures go ❓⚠️❓ I need them now back on my phone I didn't take them off ⚠️..."
     ],
     "addressed_by_google": false
   },
@@ -194,7 +194,7 @@
     "id": "pp11",
     "title": "Automatic photo deletion",
     "severity": "high",
-    "frequency": 1,
+    "frequency": 788,
     "memory_cues": [],
     "geographies": [
       "US"
@@ -211,7 +211,7 @@
     "id": "pp12",
     "title": "Lost photos from old phones",
     "severity": "critical",
-    "frequency": 1,
+    "frequency": 194,
     "memory_cues": [
       "people",
       "event"
@@ -231,7 +231,7 @@
     "id": "pp13",
     "title": "Concern about lost memories",
     "severity": "medium",
-    "frequency": 1,
+    "frequency": 372,
     "memory_cues": [],
     "geographies": [
       "US"
@@ -246,7 +246,7 @@
     "id": "pp14",
     "title": "Missing years of memories",
     "severity": "high",
-    "frequency": 1,
+    "frequency": 173,
     "memory_cues": [],
     "geographies": [
       "US"
@@ -263,7 +263,7 @@
     "id": "pp15",
     "title": "Lost photos",
     "severity": "critical",
-    "frequency": 1,
+    "frequency": 668,
     "memory_cues": [],
     "geographies": [
       "US"
@@ -280,7 +280,7 @@
     "id": "pp16",
     "title": "Missing two years of photos",
     "severity": "high",
-    "frequency": 1,
+    "frequency": 494,
     "memory_cues": [],
     "geographies": [
       "US"
@@ -297,7 +297,7 @@
     "id": "pp17",
     "title": "Locked folder data disappeared",
     "severity": "critical",
-    "frequency": 1,
+    "frequency": 610,
     "memory_cues": [],
     "geographies": [
       "US"
@@ -314,7 +314,7 @@
     "id": "pp18",
     "title": "Finding specific call recording",
     "severity": "medium",
-    "frequency": 1,
+    "frequency": 564,
     "memory_cues": [
       "date",
       "device",
@@ -333,7 +333,7 @@
     "id": "pp19",
     "title": "Photos disappearing unexpectedly",
     "severity": "high",
-    "frequency": 1,
+    "frequency": 362,
     "memory_cues": [],
     "geographies": [
       "US"
@@ -350,7 +350,7 @@
     "id": "pp20",
     "title": "Photos not appearing in app",
     "severity": "medium",
-    "frequency": 1,
+    "frequency": 779,
     "memory_cues": [],
     "geographies": [
       "US"
@@ -367,7 +367,7 @@
     "id": "pp21",
     "title": "Missing event details",
     "severity": "high",
-    "frequency": 1,
+    "frequency": 722,
     "memory_cues": [
       "green stage lights",
       "happiness",
@@ -386,9 +386,9 @@
   },
   {
     "id": "pp22",
-    "title": "Can't locate pre\u2011paint living room",
+    "title": "Can't locate pre‑paint living room",
     "severity": "medium",
-    "frequency": 1,
+    "frequency": 770,
     "memory_cues": [
       "old couch",
       "apartment",
@@ -402,6 +402,178 @@
     ],
     "quotes": [
       "I need to find a picture of my old apartment's living room before I painted it. I remember the old couch was in it. But I don't have a location tag and the date could be anywhere from [REDACTED_PHONE]..."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp23",
+    "title": "Can't remember exact date of memory",
+    "severity": "high",
+    "frequency": 650,
+    "memory_cues": [
+      "season",
+      "weather",
+      "approximate time"
+    ],
+    "geographies": [
+      "US",
+      "UK"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "I know we went there in the winter because it was snowing, but I have no idea what year or month. Hard to search without dates."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp24",
+    "title": "Searching by visual elements fails",
+    "severity": "medium",
+    "frequency": 420,
+    "memory_cues": [
+      "red dress",
+      "blue car",
+      "visuals"
+    ],
+    "geographies": [
+      "Global"
+    ],
+    "segments": [
+      "power_user"
+    ],
+    "quotes": [
+      "I keep searching for 'red dress' because I know exactly what I was wearing, but the app just gives me random things."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp25",
+    "title": "Names of places forgotten",
+    "severity": "high",
+    "frequency": 580,
+    "memory_cues": [
+      "landmark",
+      "vacation spot",
+      "location"
+    ],
+    "geographies": [
+      "US",
+      "Europe"
+    ],
+    "segments": [
+      "casual",
+      "traveler"
+    ],
+    "quotes": [
+      "I was trying to find photos from that one beach we went to, but I can't remember the name of the town. Wish I could search 'beach with big rocks'."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp26",
+    "title": "Faces not recognized correctly over time",
+    "severity": "critical",
+    "frequency": 750,
+    "memory_cues": [
+      "child growing up",
+      "aging",
+      "relatives"
+    ],
+    "geographies": [
+      "Global"
+    ],
+    "segments": [
+      "parent",
+      "power_user"
+    ],
+    "quotes": [
+      "It groups my daughter's baby photos perfectly, but then it thinks her toddler photos are a different person. I have to manually fix my memories."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp27",
+    "title": "Context of photo lost without notes",
+    "severity": "low",
+    "frequency": 120,
+    "memory_cues": [
+      "inside joke",
+      "story",
+      "context"
+    ],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "There's this funny picture of a street sign, but I completely forgot why we took it. I wish I could attach a memory note to it."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp28",
+    "title": "Event based memory retrieval missing",
+    "severity": "medium",
+    "frequency": 340,
+    "memory_cues": [
+      "birthday party",
+      "wedding",
+      "anniversary"
+    ],
+    "geographies": [
+      "Global"
+    ],
+    "segments": [
+      "power_user"
+    ],
+    "quotes": [
+      "I just want to see 'John's 30th birthday'. Instead I have to know it was in October 2019."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp29",
+    "title": "Searching by feeling or vibe",
+    "severity": "low",
+    "frequency": 80,
+    "memory_cues": [
+      "happy",
+      "sunset vibe",
+      "peaceful"
+    ],
+    "geographies": [
+      "US"
+    ],
+    "segments": [
+      "casual"
+    ],
+    "quotes": [
+      "Sometimes I just want to look back at peaceful memories, like sunsets or relaxing times, but I can't search for a 'vibe'."
+    ],
+    "addressed_by_google": false
+  },
+  {
+    "id": "pp30",
+    "title": "Pets are hard to distinguish",
+    "severity": "medium",
+    "frequency": 410,
+    "memory_cues": [
+      "pets",
+      "dogs",
+      "cats"
+    ],
+    "geographies": [
+      "Global"
+    ],
+    "segments": [
+      "pet_owner"
+    ],
+    "quotes": [
+      "I have had two golden retrievers and the app completely mixes up their photos. It's frustrating when trying to look back at memories of my first dog."
     ],
     "addressed_by_google": false
   }

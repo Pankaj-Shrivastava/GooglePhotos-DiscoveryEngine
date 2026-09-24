@@ -1,5 +1,33 @@
 [
   {
+    "id": "opp_memory_synthesis",
+    "title": "Comprehensive Memory Recall Improvements",
+    "problem_statement": "Users struggle to retrieve memories based on diverse contextual cues like visual details, emotions, events, and rough timeframes.",
+    "impact_score": 9.8,
+    "is_primary_recommendation": true,
+    "supported_by": [
+      "pp1",
+      "pp2",
+      "pp3",
+      "pp4",
+      "pp5",
+      "pp6",
+      "pp9",
+      "pp12",
+      "pp18",
+      "pp21",
+      "pp22",
+      "pp23",
+      "pp24",
+      "pp25",
+      "pp26",
+      "pp27",
+      "pp28",
+      "pp29",
+      "pp30"
+    ]
+  },
+  {
     "id": "opp1",
     "title": "Improve Incorrect photo date metadata",
     "problem_statement": "Users frequently struggle with incorrect photo date metadata.",
