@@ -20,7 +20,9 @@
       "pp17",
       "pp19",
       "pp20"
-    ]
+    ],
+    "definition": "Photos are missing, deleted, or inaccessible. The user's external memory anchor is broken.",
+    "cognitive_note": "High emotional valence. The loss of the digital artifact breaks the memory retrieval process entirely."
   },
   {
     "id": "opp_temporal",
@@ -37,7 +39,9 @@
       "pp18",
       "pp23",
       "pp26"
-    ]
+    ],
+    "definition": "Users know the photo exists from a rough time period (e.g., 'around 2019' or 'winter') but can't narrow down the exact date to find it.",
+    "cognitive_note": "Episodic vs. Semantic memory mismatch. Time is anchored to events, not calendar dates."
   },
   {
     "id": "opp_sensory",
@@ -51,7 +55,9 @@
       "pp22",
       "pp24",
       "pp29"
-    ]
+    ],
+    "definition": "Users remember exactly what a scene looked like (a color, lighting, or specific object) but struggle to translate that into a text query.",
+    "cognitive_note": "Translating rich visual/sensory recall into lexical search terms causes cognitive friction."
   },
   {
     "id": "opp_event",
@@ -64,7 +70,9 @@
       "pp25",
       "pp27",
       "pp28"
-    ]
+    ],
+    "definition": "Users remember the context of the photo (a wedding, a vacation) but not the specific date, location name, or people tagged.",
+    "cognitive_note": "Human memory is heavily event-anchored. Users search by narrative context, not metadata."
   },
   {
     "id": "opp_facial",
@@ -75,7 +83,9 @@
     "icon": "face",
     "supported_by": [
       "pp12"
-    ]
+    ],
+    "definition": "Users want to find all photos of a specific person, but the system fails to connect faces across different ages or lighting conditions.",
+    "cognitive_note": "Failure of AI facial recognition to map to human object permanence concepts."
   },
   {
     "id": "opp_lexical",
@@ -86,7 +96,9 @@
     "icon": "search_off",
     "supported_by": [
       "pp3"
-    ]
+    ],
+    "definition": "The user remembers the photo but can't think of the right word that Google Photos uses to index it.",
+    "cognitive_note": "Vocabulary mismatch between human conversational memory and systemic tagging ontologies."
   },
   {
     "id": "opp_pet",
@@ -97,6 +109,8 @@
     "icon": "pets",
     "supported_by": [
       "pp30"
-    ]
+    ],
+    "definition": "Users cannot easily search for specific non-human subjects because the system lumps similar-looking animals or objects together.",
+    "cognitive_note": "Systemic inability to distinguish subtle identity markers in non-human subjects."
   }
 ]

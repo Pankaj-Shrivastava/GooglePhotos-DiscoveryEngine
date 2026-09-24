@@ -12,6 +12,14 @@ const SEVERITY_STYLES = {
 
 const SEVERITY_WEIGHTS = { critical: 4, high: 3, medium: 2, low: 1 };
 
+const SEGMENT_CONFIG = {
+  parent: { label: 'Parent', icon: 'child_care', bg: 'bg-teal-100', text: 'text-teal-800', border: 'border-teal-200' },
+  traveler: { label: 'Traveler', icon: 'flight', bg: 'bg-blue-100', text: 'text-blue-800', border: 'border-blue-200' },
+  power_user: { label: 'Power User', icon: 'bolt', bg: 'bg-purple-100', text: 'text-purple-800', border: 'border-purple-200' },
+  pet_owner: { label: 'Pet Owner', icon: 'pets', bg: 'bg-orange-100', text: 'text-orange-800', border: 'border-orange-200' },
+  casual: { label: 'Casual', icon: 'sentiment_satisfied', bg: 'bg-surface-container', text: 'text-on-surface-variant', border: 'border-outline-variant/50' }
+};
+
 export default function PainPointsPage() {
   const data = useDataContext();
   const { filters, applyFilters, setFilter } = useFilterContext();
@@ -108,17 +116,9 @@ function MemoryGroupSection({ name, painPoints, initiallyOpen }) {
         </div>
       </button>
 
-      {/* Synthesis line */}
-      {open && (
-        <div className="px-5 py-3 bg-primary-fixed/20 border-y border-outline-variant/30 flex items-center gap-2">
-          <span className="material-symbols-outlined text-sm text-primary">psychology</span>
-          <p className="text-xs font-medium text-on-surface">Synthesis: Users are failing to retrieve memories because of this specific cognitive breakdown.</p>
-        </div>
-      )}
-
       {/* Content */}
       {open && (
-        <div className="p-5 flex flex-col gap-4 bg-background">
+        <div className="p-5 flex flex-col gap-4 bg-background border-t border-outline-variant/30">
           {/* Sort them inside the group by severity */}
           {painPoints
             .sort((a, b) => (SEVERITY_WEIGHTS[b.severity || 'low'] || 0) - (SEVERITY_WEIGHTS[a.severity || 'low'] || 0))
@@ -146,16 +146,31 @@ function PainPointCard({ pp }) {
             </span>
           </div>
           <h3 className="text-sm font-bold text-on-surface leading-snug">{pp.title}</h3>
+          
+          {/* Segment Pills */}
+          {pp.segments?.length > 0 && (
+            <div className="flex flex-wrap gap-2 mt-2">
+              {pp.segments.map(segKey => {
+                const conf = SEGMENT_CONFIG[segKey] || SEGMENT_CONFIG.casual;
+                return (
+                  <span key={segKey} className={`inline-flex items-center gap-1 text-[10px] font-semibold px-2 py-0.5 rounded-full border ${conf.bg} ${conf.text} ${conf.border}`}>
+                    <span className="material-symbols-outlined text-[12px]">{conf.icon}</span>
+                    {conf.label}
+                  </span>
+                );
+              })}
+            </div>
+          )}
         </div>
         
         {/* Status */}
         <div className="shrink-0 flex sm:justify-end">
           {pp.addressed_by_google ? (
-            <span className="text-[11px] font-medium text-green-700 bg-green-100 px-2.5 py-1 rounded-full flex items-center gap-1">
+            <span className="text-[11px] font-medium text-green-700 bg-green-100 px-2.5 py-1 rounded-full flex items-center gap-1 border border-green-200">
               <span className="material-symbols-outlined text-sm">check_circle</span> Addressed
             </span>
           ) : (
-            <span className="text-[11px] font-medium text-error bg-error-container px-2.5 py-1 rounded-full flex items-center gap-1">
+            <span className="text-[11px] font-medium text-error bg-error-container px-2.5 py-1 rounded-full flex items-center gap-1 border border-error-container">
               <span className="material-symbols-outlined text-sm">warning</span> Unaddressed
             </span>
           )}
@@ -168,10 +183,6 @@ function PainPointCard({ pp }) {
           <span className="material-symbols-outlined text-[16px]">bar_chart</span>
           {pp.frequency} mentions
         </span>
-        <span className="flex items-center gap-1.5" title="User Segments">
-          <span className="material-symbols-outlined text-[16px]">group</span>
-          {pp.segments?.join(', ') || 'Any'}
-        </span>
         <span className="flex items-center gap-1.5" title="Geographies">
           <span className="material-symbols-outlined text-[16px]">public</span>
           {pp.geographies?.join(', ') || 'Global'}
@@ -181,7 +192,7 @@ function PainPointCard({ pp }) {
       {/* Memory Cue Tags */}
       {pp.memory_cues?.length > 0 && (
         <div className="flex flex-wrap items-center gap-1.5 mt-3">
-          <span className="text-[10px] text-on-surface-variant font-medium mr-1">Cues attempted:</span>
+          <span className="text-[10px] text-on-surface-variant font-medium mr-1 uppercase tracking-wider">Cues attempted:</span>
           {pp.memory_cues.map((cue) => (
             <span key={cue} className="text-[11px] font-medium bg-secondary-container/50 border border-secondary-container text-on-secondary-container px-2 py-0.5 rounded-md">
               {cue}
@@ -191,12 +202,13 @@ function PainPointCard({ pp }) {
       )}
 
       {/* Quotes (Full untruncated text) */}
-      {pp.quotes?.length > 0 && (
-        <div className="mt-4 pt-4 border-t border-outline-variant/30">
-          <p className="text-[11px] font-semibold text-primary mb-2 flex items-center gap-1.5 uppercase tracking-wider">
-            <span className="material-symbols-outlined text-sm">format_quote</span>
-            User Verbatim
-          </p>
+      <div className="mt-4 pt-4 border-t border-outline-variant/30">
+        <p className="text-[11px] font-semibold text-primary mb-2 flex items-center gap-1.5 uppercase tracking-wider">
+          <span className="material-symbols-outlined text-sm">format_quote</span>
+          User Verbatim
+        </p>
+        
+        {pp.quotes?.length > 0 ? (
           <div className="flex flex-col gap-3">
             {pp.quotes.map((q, i) => (
               <div key={i} className="bg-surface-container-lowest border-l-4 border-primary-container p-3.5 rounded-r-lg shadow-sm">
@@ -206,8 +218,15 @@ function PainPointCard({ pp }) {
               </div>
             ))}
           </div>
-        </div>
-      )}
+        ) : (
+          <div className="bg-surface-container-lowest border-l-4 border-outline-variant p-3.5 rounded-r-lg shadow-sm flex items-center gap-2">
+             <span className="material-symbols-outlined text-on-surface-variant text-lg">speaker_notes_off</span>
+             <p className="text-[12px] text-on-surface-variant italic">
+               No verbatim quote available for this pain point.
+             </p>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

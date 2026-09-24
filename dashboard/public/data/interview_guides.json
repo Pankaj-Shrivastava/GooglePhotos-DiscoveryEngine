@@ -3,77 +3,84 @@
     "opportunity_id": "opp_temporal",
     "title": "User Interview: Temporal Amnesia",
     "questions": [
-      "Can you describe a specific time when you experienced issues related to temporal amnesia?",
-      "What visual or contextual cues did you try to use to find the photo?",
-      "How did the failure to retrieve the memory make you feel?",
-      "What alternative methods (if any) did you use to find it?",
-      "If Google Photos could understand one specific thing about how your memory works, what would it be?"
-    ]
+      "Take me back to the exact moment you realized you couldn't find the photo. What were you thinking?",
+      "How do you usually try to pinpoint the date of a memory? What 'anchors' do you use (like seasons, holidays, etc.)?",
+      "When that failed, what was your backup strategy?",
+      "How did this specific memory failure impact what you were trying to do next?",
+      "If the app could understand one thing about how you remember this event, what would it be?"
+    ],
+    "what_to_watch_for": "Look for signs of frustration or self-blame. Note the exact vocabulary they use when they hit a dead end."
   },
   {
     "opportunity_id": "opp_facial",
     "title": "User Interview: Facial & Identity Recall Failure",
     "questions": [
-      "Can you describe a specific time when you experienced issues related to facial & identity recall failure?",
-      "What visual or contextual cues did you try to use to find the photo?",
-      "How did the failure to retrieve the memory make you feel?",
-      "What alternative methods (if any) did you use to find it?",
-      "If Google Photos could understand one specific thing about how your memory works, what would it be?"
-    ]
+      "Take me back to the exact moment you realized you couldn't find the photo. What were you thinking?",
+      "What was the very first search term or action you tried?",
+      "When that failed, what was your backup strategy?",
+      "How did this specific memory failure impact what you were trying to do next?",
+      "If the app could understand one thing about how you remember this event, what would it be?"
+    ],
+    "what_to_watch_for": "Look for signs of frustration or self-blame. Note the exact vocabulary they use when they hit a dead end."
   },
   {
     "opportunity_id": "opp_sensory",
     "title": "User Interview: Sensory / Visual Cue Search",
     "questions": [
-      "Can you describe a specific time when you experienced issues related to sensory / visual cue search?",
-      "What visual or contextual cues did you try to use to find the photo?",
-      "How did the failure to retrieve the memory make you feel?",
-      "What alternative methods (if any) did you use to find it?",
-      "If Google Photos could understand one specific thing about how your memory works, what would it be?"
-    ]
+      "Take me back to the exact moment you realized you couldn't find the photo. What were you thinking?",
+      "When you picture the photo in your mind, what stands out most? A color, an object, the lighting?",
+      "When that failed, what was your backup strategy?",
+      "How did this specific memory failure impact what you were trying to do next?",
+      "If the app could understand one thing about how you remember this event, what would it be?"
+    ],
+    "what_to_watch_for": "Look for signs of frustration or self-blame. Note the exact vocabulary they use when they hit a dead end."
   },
   {
     "opportunity_id": "opp_event",
     "title": "User Interview: Event & Context Association",
     "questions": [
-      "Can you describe a specific time when you experienced issues related to event & context association?",
-      "What visual or contextual cues did you try to use to find the photo?",
-      "How did the failure to retrieve the memory make you feel?",
-      "What alternative methods (if any) did you use to find it?",
-      "If Google Photos could understand one specific thing about how your memory works, what would it be?"
-    ]
+      "Take me back to the exact moment you realized you couldn't find the photo. What were you thinking?",
+      "What was the very first search term or action you tried?",
+      "When that failed, what was your backup strategy?",
+      "How did this specific memory failure impact what you were trying to do next?",
+      "If the app could understand one thing about how you remember this event, what would it be?"
+    ],
+    "what_to_watch_for": "Look for signs of frustration or self-blame. Note the exact vocabulary they use when they hit a dead end."
   },
   {
     "opportunity_id": "opp_dataloss",
     "title": "User Interview: Data Loss Trauma",
     "questions": [
-      "Can you describe a specific time when you experienced issues related to data loss trauma?",
-      "What visual or contextual cues did you try to use to find the photo?",
-      "How did the failure to retrieve the memory make you feel?",
-      "What alternative methods (if any) did you use to find it?",
-      "If Google Photos could understand one specific thing about how your memory works, what would it be?"
-    ]
+      "Take me back to the exact moment you realized you couldn't find the photo. What were you thinking?",
+      "What was the very first search term or action you tried?",
+      "When that failed, what was your backup strategy?",
+      "How did this specific memory failure impact what you were trying to do next?",
+      "If the app could understand one thing about how you remember this event, what would it be?"
+    ],
+    "what_to_watch_for": "Look for signs of frustration or self-blame. Note the exact vocabulary they use when they hit a dead end."
   },
   {
     "opportunity_id": "opp_lexical",
     "title": "User Interview: Lexical / Search Vocabulary Gap",
     "questions": [
-      "Can you describe a specific time when you experienced issues related to lexical / search vocabulary gap?",
-      "What visual or contextual cues did you try to use to find the photo?",
-      "How did the failure to retrieve the memory make you feel?",
-      "What alternative methods (if any) did you use to find it?",
-      "If Google Photos could understand one specific thing about how your memory works, what would it be?"
-    ]
+      "Take me back to the exact moment you realized you couldn't find the photo. What were you thinking?",
+      "What was the very first search term or action you tried?",
+      "When that failed, what was your backup strategy?",
+      "How did this specific memory failure impact what you were trying to do next?",
+      "If the app could understand one thing about how you remember this event, what would it be?"
+    ],
+    "what_to_watch_for": "Look for signs of frustration or self-blame. Note the exact vocabulary they use when they hit a dead end."
   },
   {
     "opportunity_id": "opp_pet",
     "title": "User Interview: Pet & Object Identity Confusion",
     "questions": [
-      "Can you describe a specific time when you experienced issues related to pet & object identity confusion?",
-      "What visual or contextual cues did you try to use to find the photo?",
-      "How did the failure to retrieve the memory make you feel?",
-      "What alternative methods (if any) did you use to find it?",
-      "If Google Photos could understand one specific thing about how your memory works, what would it be?"
-    ]
+      "Take me back to the exact moment you realized you couldn't find the photo. What were you thinking?",
+      "What was the very first search term or action you tried?",
+      "When that failed, what was your backup strategy?",
+      "How did this specific memory failure impact what you were trying to do next?",
+      "If the app could understand one thing about how you remember this event, what would it be?"
+    ],
+    "what_to_watch_for": "Look for signs of frustration or self-blame. Note the exact vocabulary they use when they hit a dead end."
   }
 ]

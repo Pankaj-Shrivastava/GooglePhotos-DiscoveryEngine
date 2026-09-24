@@ -29,13 +29,14 @@ export default function InterviewGuidePage() {
 
       <div className="flex flex-col gap-4">
         {guides.map((guide) => {
-          // Find pain points for this group to show verbatims
+          // Find pain points for this group to show verbatims and related chips
           const groupName = guide.title.replace('User Interview: ', '');
           const groupPPs = painPoints.filter(p => p.memory_group === groupName);
           const verbatims = groupPPs.flatMap(p => p.quotes || []).slice(0, 3);
+          const relatedPpIds = groupPPs.map(p => p.id);
           
           return (
-            <AccordionCard key={guide.opportunity_id} guide={guide} verbatims={verbatims} groupName={groupName} />
+            <AccordionCard key={guide.opportunity_id} guide={guide} verbatims={verbatims} groupName={groupName} relatedPpIds={relatedPpIds} />
           );
         })}
       </div>
@@ -43,7 +44,7 @@ export default function InterviewGuidePage() {
   );
 }
 
-function AccordionCard({ guide, verbatims, groupName }) {
+function AccordionCard({ guide, verbatims, groupName, relatedPpIds }) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -71,7 +72,22 @@ function AccordionCard({ guide, verbatims, groupName }) {
           
           {/* Left Col: Script */}
           <div className="flex-1">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-primary mb-3">Interview Script</h4>
+            <div className="flex items-center justify-between mb-3">
+               <h4 className="text-xs font-bold uppercase tracking-wider text-primary">Interview Script</h4>
+               {relatedPpIds.length > 0 && (
+                 <div className="flex items-center gap-1.5 flex-wrap justify-end">
+                   <span className="text-[10px] text-on-surface-variant font-medium">Related PP:</span>
+                   {relatedPpIds.slice(0, 5).map(id => (
+                     <span key={id} className="text-[10px] bg-surface-container text-on-surface-variant px-1.5 py-0.5 rounded border border-outline-variant/50">
+                       {id}
+                     </span>
+                   ))}
+                   {relatedPpIds.length > 5 && (
+                     <span className="text-[10px] text-on-surface-variant">+{relatedPpIds.length - 5} more</span>
+                   )}
+                 </div>
+               )}
+            </div>
             
             <div className="mb-4 bg-primary-fixed/30 rounded-lg p-3.5 border border-primary-container/30">
               <div className="flex items-center gap-2 mb-1.5">
@@ -91,20 +107,26 @@ function AccordionCard({ guide, verbatims, groupName }) {
                   </span>
                   <div>
                     <p className="text-sm font-medium text-on-surface leading-snug">{q}</p>
-                    {i === 0 && (
-                      <p className="text-[11px] italic text-on-surface-variant mt-1.5 flex items-center gap-1">
-                        <span className="material-symbols-outlined text-[14px]">psychology_alt</span>
-                        Watch for: Do they blame themselves or the app?
-                      </p>
-                    )}
                   </div>
                 </li>
               ))}
             </ol>
+
+            {guide.what_to_watch_for && (
+              <div className="mt-5 bg-tertiary-fixed/30 border-l-4 border-tertiary p-3 rounded-r-lg">
+                <p className="text-[11px] font-bold uppercase tracking-wider text-tertiary flex items-center gap-1.5 mb-1">
+                  <span className="material-symbols-outlined text-[14px]">visibility</span>
+                  What to watch for
+                </p>
+                <p className="text-xs text-on-surface-variant leading-relaxed">
+                  {guide.what_to_watch_for}
+                </p>
+              </div>
+            )}
           </div>
 
           {/* Right Col: Verbatims */}
-          <div className="xl:w-1/3 bg-surface-container-low/50 rounded-xl p-4 border border-outline-variant/30">
+          <div className="xl:w-1/3 bg-surface-container-low/50 rounded-xl p-4 border border-outline-variant/30 h-fit sticky top-20">
             <h4 className="text-xs font-bold uppercase tracking-wider text-on-surface-variant mb-3">User Verbatim Bank</h4>
             <p className="text-[11px] text-on-surface-variant mb-3 leading-relaxed">
               Use these real quotes to ground yourself in the user's mindset before the interview.

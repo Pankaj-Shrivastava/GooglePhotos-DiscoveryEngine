@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useDataContext } from '../context/DataContext';
 import { useFilterContext } from '../context/FilterContext';
 import { getMemoryCueGroup } from '../utils/memoryCueMapper';
@@ -12,6 +13,7 @@ export default function OverviewPage() {
   const data = useDataContext();
   const { applyFilters } = useFilterContext();
   const navigate = useNavigate();
+  const [expandedGroupId, setExpandedGroupId] = useState(null);
   
   const painPoints = applyFilters(data.pain_points || []);
   const validPpIds = new Set(painPoints.map(p => p.id));
@@ -44,8 +46,10 @@ export default function OverviewPage() {
     groupStats[group][p.severity || 'low']++;
     groupStats[group].score += SEVERITY_WEIGHTS[p.severity || 'low'];
     
-    if (!groupStats[group].topQuote && p.quotes && p.quotes.length > 0) {
-      groupStats[group].topQuote = p.quotes[0];
+    if (p.quotes && p.quotes.length > 0) {
+      if (!groupStats[group].topQuote || p.quotes[0].length > groupStats[group].topQuote.length) {
+         groupStats[group].topQuote = p.quotes[0]; // get the longest quote
+      }
     }
   });
 
@@ -102,36 +106,51 @@ export default function OverviewPage() {
       </section>
 
       {/* Memory Group Opportunities */}
-      <section className="bg-surface-container-lowest rounded-xl p-5 shadow-sm">
-        <div className="flex items-center gap-3 mb-4">
+      <section className="bg-surface-container-lowest rounded-xl p-5 shadow-sm flex flex-col gap-3">
+        <div className="flex items-center gap-3 mb-1">
           <h2 className="text-base font-semibold text-on-surface">Memory Group Breakdown</h2>
           <span className="text-[11px] font-medium bg-tertiary-fixed text-tertiary-container px-2 py-0.5 rounded-full">
             7 Core Groups
           </span>
         </div>
-        <div className="flex flex-col gap-3">
-          {opportunities.map((opp, i) => {
-            const stats = groupStats[opp.title] || { count: 0, topQuote: '' };
-            return (
-              <div
-                key={opp.id}
+        
+        {opportunities.map((opp, i) => {
+          const stats = groupStats[opp.title] || { count: 0, topQuote: '' };
+          const isExpanded = expandedGroupId === opp.id;
+          
+          return (
+            <div key={opp.id} className={`flex flex-col rounded-xl border transition-all ${
+              i === 0 ? 'bg-primary-fixed/30 border-primary-container/20' : 'border-outline-variant/50'
+            }`}>
+              {/* Tile row */}
+              <div 
+                className="flex flex-col sm:flex-row gap-4 p-4 cursor-pointer hover:bg-surface-container-low/50"
                 onClick={() => navigate(`/pain-points?opportunity=${opp.id}`)}
-                className={`flex flex-col sm:flex-row gap-4 p-4 rounded-xl border transition-all cursor-pointer hover:shadow-md ${
-                  i === 0 ? 'bg-primary-fixed/30 border-primary-container/20' : 'border-outline-variant/50'
-                }`}
               >
                 <div className="flex items-center gap-4 sm:w-1/3">
                   <div className="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0">
                     <span className="material-symbols-outlined text-lg">{opp.icon || 'lightbulb'}</span>
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-on-surface leading-tight">{opp.title}</p>
+                    <p className="text-sm font-semibold text-on-surface leading-tight flex items-center gap-2">
+                      {opp.title}
+                      <button 
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setExpandedGroupId(isExpanded ? null : opp.id);
+                        }}
+                        className="w-5 h-5 rounded-full bg-surface-container flex items-center justify-center hover:bg-surface-container-high transition-colors"
+                        title="What does this mean?"
+                      >
+                        <span className="material-symbols-outlined text-[13px] text-on-surface-variant">question_mark</span>
+                      </button>
+                    </p>
                     <p className="text-xs text-on-surface-variant mt-1">{stats.count} Issues</p>
                   </div>
                 </div>
                 
                 <div className="flex-1 border-l border-outline-variant/30 pl-4 flex flex-col justify-center">
-                  <p className="text-xs font-medium text-on-surface-variant italic line-clamp-2">
+                  <p className="text-xs font-medium text-on-surface-variant italic line-clamp-2" title={stats.topQuote || opp.problem_statement}>
                     "{stats.topQuote || opp.problem_statement}"
                   </p>
                 </div>
@@ -141,9 +160,31 @@ export default function OverviewPage() {
                   <p className="text-[10px] text-on-surface-variant">/10 Impact</p>
                 </div>
               </div>
-            );
-          })}
-        </div>
+
+              {/* Definition Expandable Panel */}
+              {isExpanded && (
+                <div className="bg-surface-container-lowest p-4 border-t border-outline-variant/30 text-sm">
+                  <div className="flex items-start gap-2 mb-3">
+                    <span className="material-symbols-outlined text-primary text-[18px]">menu_book</span>
+                    <div>
+                      <span className="font-semibold text-on-surface text-xs uppercase tracking-wider block mb-1">What does this mean?</span>
+                      <p className="text-on-surface-variant leading-relaxed text-[13px]">{opp.definition || opp.problem_statement}</p>
+                    </div>
+                  </div>
+                  {opp.cognitive_note && (
+                    <div className="flex items-start gap-2">
+                      <span className="material-symbols-outlined text-tertiary text-[18px]">psychology</span>
+                      <div>
+                        <span className="font-semibold text-on-surface text-xs uppercase tracking-wider block mb-1">Cognitive Mechanism</span>
+                        <p className="text-on-surface-variant leading-relaxed text-[13px] italic">{opp.cognitive_note}</p>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+          );
+        })}
       </section>
     </div>
   );

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useDataContext } from '../context/DataContext';
 import { useFilterContext } from '../context/FilterContext';
 import PageGuide from '../components/PageGuide';
@@ -86,38 +87,73 @@ export default function GoogleActionsPage() {
           });
           
           return (
-            <div key={i} className="relative mb-6 last:mb-0">
-              <div className="absolute left-[-20px] top-2 w-3 h-3 rounded-full bg-primary-container border-2 border-surface-container-lowest" />
-              <div className="bg-surface-container-lowest rounded-xl p-5 shadow-sm border border-outline-variant/40 ml-2 hover:shadow-md transition-all">
-                <div className="flex items-start justify-between gap-3">
-                  <div>
-                    <h3 className="text-sm font-semibold text-on-surface">{action.title}</h3>
-                    <p className="text-xs text-primary font-medium mt-0.5">{action.date}</p>
-                  </div>
-                  {action.url && (
-                    <a href={action.url} target="_blank" rel="noopener noreferrer" className="text-on-surface-variant hover:text-primary transition-colors text-xs font-medium flex items-center gap-1 shrink-0 bg-surface-container px-2 py-1 rounded-md">
-                      <span className="material-symbols-outlined text-sm">open_in_new</span> Source
-                    </a>
-                  )}
-                </div>
-                <p className="text-xs text-on-surface-variant mt-3 leading-relaxed">{action.description}</p>
-                
-                {addressedGroups.size > 0 && (
-                  <div className="mt-4 pt-3 border-t border-outline-variant/30 flex items-center gap-2">
-                    <span className="text-[10px] text-on-surface-variant font-medium uppercase tracking-wider">Targets Memory Group:</span>
-                    <div className="flex flex-wrap gap-1.5">
-                      {Array.from(addressedGroups).map(g => (
-                        <span key={g} className="text-[11px] font-semibold bg-tertiary-fixed text-tertiary-container border border-tertiary-container/20 px-2 py-0.5 rounded-md">
-                          {g}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </div>
-            </div>
+            <ActionCard key={i} action={action} addressedGroups={Array.from(addressedGroups)} />
           );
         })}
+      </div>
+    </div>
+  );
+}
+
+function ActionCard({ action, addressedGroups }) {
+  const [expanded, setExpanded] = useState(false);
+  const needsToggle = action.description && action.description.length > 150;
+
+  return (
+    <div className="relative mb-6 last:mb-0">
+      <div className="absolute left-[-20px] top-2 w-3 h-3 rounded-full bg-primary-container border-2 border-surface-container-lowest" />
+      <div className="bg-surface-container-lowest rounded-xl p-5 shadow-sm border border-outline-variant/40 ml-2 hover:shadow-md transition-all">
+        <div className="flex items-start justify-between gap-3">
+          <div>
+            <h3 className="text-sm font-bold text-on-surface">{action.title}</h3>
+            <p className="text-xs text-primary font-semibold mt-1">{action.date}</p>
+          </div>
+          {action.url && (
+            <a href={action.url} target="_blank" rel="noopener noreferrer" className="text-on-surface-variant hover:text-primary transition-colors text-xs font-medium flex items-center gap-1 shrink-0 bg-surface-container px-2 py-1 rounded-md border border-outline-variant/50">
+              <span className="material-symbols-outlined text-sm">open_in_new</span> Source
+            </a>
+          )}
+        </div>
+        
+        {/* Description with Expand Toggle */}
+        <div className="mt-3">
+          <p className={`text-[13px] text-on-surface-variant leading-relaxed ${!expanded && needsToggle ? 'line-clamp-2' : ''}`}>
+            {action.description}
+          </p>
+          {needsToggle && (
+            <button 
+              onClick={() => setExpanded(!expanded)} 
+              className="text-xs font-semibold text-primary mt-1 hover:underline"
+            >
+              {expanded ? 'Read less' : 'Read more'}
+            </button>
+          )}
+        </div>
+
+        {/* Memory Relevance Note */}
+        {action.memory_relevance && (
+           <div className="mt-3 bg-tertiary-fixed/30 border border-tertiary-container/30 p-2.5 rounded-lg flex items-start gap-2">
+             <span className="material-symbols-outlined text-tertiary text-[16px] mt-0.5">psychology</span>
+             <div>
+               <p className="text-[11px] font-bold uppercase tracking-wider text-tertiary">Memory Relevance</p>
+               <p className="text-[12px] text-on-surface-variant leading-snug">{action.memory_relevance}</p>
+             </div>
+           </div>
+        )}
+        
+        {/* Target Memory Groups */}
+        {addressedGroups.length > 0 && (
+          <div className="mt-4 pt-3 border-t border-outline-variant/30 flex items-center gap-2">
+            <span className="text-[10px] text-on-surface-variant font-bold uppercase tracking-wider">Targets Memory Group:</span>
+            <div className="flex flex-wrap gap-1.5">
+              {addressedGroups.map(g => (
+                <span key={g} className="text-[11px] font-semibold bg-primary-fixed/50 text-on-primary-fixed border border-primary-container/30 px-2 py-0.5 rounded-md">
+                  {g}
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

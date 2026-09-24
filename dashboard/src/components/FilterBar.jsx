@@ -1,13 +1,13 @@
 import { useFilterContext } from '../context/FilterContext';
 import { useDataContext } from '../context/DataContext';
 import { useMemo } from 'react';
-import { useLocation } from 'react-router-dom';
 import { getMemoryCueGroup } from '../utils/memoryCueMapper';
 import CustomDropdown from './CustomDropdown';
 
 const FILTER_LABELS = {
   severity: 'Severity',
-  memoryCue: 'Memory Cue',
+  memoryCue: 'Memory Cue Type',
+  memoryGroup: 'Memory Group'
 };
 
 export default function FilterBar() {
@@ -16,11 +16,15 @@ export default function FilterBar() {
 
   const FILTER_OPTIONS = useMemo(() => {
     const memoryCuesSet = new Set();
+    const memoryGroupSet = new Set();
+    
     (data.pain_points || []).forEach(p => {
       (p.memory_cues || []).forEach(c => memoryCuesSet.add(getMemoryCueGroup(c)));
+      if (p.memory_group) memoryGroupSet.add(p.memory_group);
     });
 
     return {
+      memoryGroup: Array.from(memoryGroupSet).sort(),
       severity: ['critical', 'high', 'medium', 'low'],
       memoryCue: Array.from(memoryCuesSet).sort(),
     };
@@ -30,7 +34,6 @@ export default function FilterBar() {
     <div className="sticky top-14 left-0 right-0 z-30 bg-surface-container-lowest border-b border-outline-variant px-4 lg:px-6 py-2 flex items-center justify-between shadow-[0_1px_4px_rgba(0,0,0,0.02)]">
       <div className="flex items-center gap-2 flex-wrap">
         {Object.entries(FILTER_OPTIONS).map(([key, options]) => {
-          const isActive = !!filters[key];
           return (
             <CustomDropdown
               key={key}

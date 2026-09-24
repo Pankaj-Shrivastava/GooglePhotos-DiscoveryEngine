@@ -11,49 +11,27 @@
   },
   "group_by_segment": {
     "casual": {
-      "Temporal Amnesia": 3,
-      "Facial & Identity Recall Failure": 2,
-      "Sensory / Visual Cue Search": 3,
-      "Event & Context Association": 4,
-      "Data Loss Trauma": 0,
+      "Temporal Amnesia": 7,
       "Lexical / Search Vocabulary Gap": 1,
-      "Pet & Object Identity Confusion": 1
+      "Data Loss Trauma": 13,
+      "Sensory / Visual Cue Search": 4
     },
     "power_user": {
-      "Temporal Amnesia": 0,
-      "Facial & Identity Recall Failure": 0,
-      "Sensory / Visual Cue Search": 1,
-      "Event & Context Association": 0,
-      "Data Loss Trauma": 4,
-      "Lexical / Search Vocabulary Gap": 0,
-      "Pet & Object Identity Confusion": 2
+      "Temporal Amnesia": 7,
+      "Facial & Identity Recall Failure": 1,
+      "Sensory / Visual Cue Search": 4
     },
     "parent": {
-      "Temporal Amnesia": 1,
-      "Facial & Identity Recall Failure": 4,
-      "Sensory / Visual Cue Search": 3,
-      "Event & Context Association": 0,
-      "Data Loss Trauma": 1,
-      "Lexical / Search Vocabulary Gap": 1,
-      "Pet & Object Identity Confusion": 4
+      "Facial & Identity Recall Failure": 1,
+      "Event & Context Association": 3
     },
     "traveler": {
-      "Temporal Amnesia": 2,
-      "Facial & Identity Recall Failure": 2,
-      "Sensory / Visual Cue Search": 4,
-      "Event & Context Association": 2,
-      "Data Loss Trauma": 2,
-      "Lexical / Search Vocabulary Gap": 2,
-      "Pet & Object Identity Confusion": 0
+      "Lexical / Search Vocabulary Gap": 1,
+      "Event & Context Association": 3
     },
     "pet_owner": {
-      "Temporal Amnesia": 3,
-      "Facial & Identity Recall Failure": 0,
-      "Sensory / Visual Cue Search": 3,
-      "Event & Context Association": 1,
-      "Data Loss Trauma": 1,
-      "Lexical / Search Vocabulary Gap": 2,
-      "Pet & Object Identity Confusion": 0
+      "Data Loss Trauma": 13,
+      "Pet & Object Identity Confusion": 1
     }
   }
 }

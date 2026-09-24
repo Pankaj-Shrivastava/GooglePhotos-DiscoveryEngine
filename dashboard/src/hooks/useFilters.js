@@ -12,6 +12,7 @@ export function useFilters() {
     severity: searchParams.get('severity') || '',
     memoryCue: searchParams.get('memoryCue') || '',
     opportunity: searchParams.get('opportunity') || '',
+    memoryGroup: searchParams.get('memoryGroup') || '',
     search: searchParams.get('search') || '',
   }), [searchParams]);
 
@@ -31,9 +32,9 @@ export function useFilters() {
     setSearchParams(new URLSearchParams(), { replace: true });
   }, [setSearchParams]);
 
-  // Exclude 'search' from the active dropdown count
+  // Exclude 'search' and 'opportunity' from the active dropdown count, if needed, but here we exclude 'search'
   const activeCount = useMemo(() => {
-    const { search, ...dropdownFilters } = filters;
+    const { search, opportunity, ...dropdownFilters } = filters;
     return Object.values(dropdownFilters).filter(Boolean).length;
   }, [filters]);
 
@@ -43,6 +44,7 @@ export function useFilters() {
       return items.filter((item) => {
         // Apply categorical filters
         if (filters.severity && item.severity !== filters.severity) return false;
+        if (filters.memoryGroup && item.memory_group !== filters.memoryGroup) return false;
         if (filters.memoryCue) {
           const itemCueGroups = (item.memory_cues || []).map(getMemoryCueGroup);
           if (!itemCueGroups.includes(filters.memoryCue)) return false;
@@ -73,7 +75,7 @@ export function useFilters() {
         return true;
       });
     },
-    [filters]
+    [filters, data.opportunity_areas]
   );
 
   return { filters, setFilter, resetFilters, activeCount, applyFilters };
