@@ -1,12 +1,59 @@
 {
   "geography": {
-    "us": 3,
     "US": 17,
+    "IN": 5,
     "unknown": 2
   },
   "platform": {
-    "ios": 3,
-    "android": 17,
+    "ios": 8,
+    "android": 14,
     "unknown": 2
+  },
+  "group_by_segment": {
+    "casual": {
+      "Temporal Amnesia": 3,
+      "Facial & Identity Recall Failure": 2,
+      "Sensory / Visual Cue Search": 3,
+      "Event & Context Association": 4,
+      "Data Loss Trauma": 0,
+      "Lexical / Search Vocabulary Gap": 1,
+      "Pet & Object Identity Confusion": 1
+    },
+    "power_user": {
+      "Temporal Amnesia": 0,
+      "Facial & Identity Recall Failure": 0,
+      "Sensory / Visual Cue Search": 1,
+      "Event & Context Association": 0,
+      "Data Loss Trauma": 4,
+      "Lexical / Search Vocabulary Gap": 0,
+      "Pet & Object Identity Confusion": 2
+    },
+    "parent": {
+      "Temporal Amnesia": 1,
+      "Facial & Identity Recall Failure": 4,
+      "Sensory / Visual Cue Search": 3,
+      "Event & Context Association": 0,
+      "Data Loss Trauma": 1,
+      "Lexical / Search Vocabulary Gap": 1,
+      "Pet & Object Identity Confusion": 4
+    },
+    "traveler": {
+      "Temporal Amnesia": 2,
+      "Facial & Identity Recall Failure": 2,
+      "Sensory / Visual Cue Search": 4,
+      "Event & Context Association": 2,
+      "Data Loss Trauma": 2,
+      "Lexical / Search Vocabulary Gap": 2,
+      "Pet & Object Identity Confusion": 0
+    },
+    "pet_owner": {
+      "Temporal Amnesia": 3,
+      "Facial & Identity Recall Failure": 0,
+      "Sensory / Visual Cue Search": 3,
+      "Event & Context Association": 1,
+      "Data Loss Trauma": 1,
+      "Lexical / Search Vocabulary Gap": 2,
+      "Pet & Object Identity Confusion": 0
+    }
   }
 }

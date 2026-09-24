@@ -11,5 +11,14 @@
     "failure": 22,
     "abandonment": 4
   },
-  "total_analyzed_entries": 924
+  "total_analyzed_entries": 924,
+  "group_distribution": {
+    "Temporal Amnesia": 7,
+    "Facial & Identity Recall Failure": 1,
+    "Sensory / Visual Cue Search": 4,
+    "Event & Context Association": 3,
+    "Data Loss Trauma": 13,
+    "Lexical / Search Vocabulary Gap": 1,
+    "Pet & Object Identity Confusion": 1
+  }
 }

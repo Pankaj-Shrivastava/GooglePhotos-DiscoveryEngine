@@ -1,20 +1,79 @@
 [
   {
-    "opportunity_id": "opp1",
-    "title": "User Interview: Improve Incorrect photo date metadata",
+    "opportunity_id": "opp_temporal",
+    "title": "User Interview: Temporal Amnesia",
     "questions": [
-      "Can you walk me through the last time you experienced this?",
-      "What workarounds did you use?",
-      "How did this failure impact you?"
+      "Can you describe a specific time when you experienced issues related to temporal amnesia?",
+      "What visual or contextual cues did you try to use to find the photo?",
+      "How did the failure to retrieve the memory make you feel?",
+      "What alternative methods (if any) did you use to find it?",
+      "If Google Photos could understand one specific thing about how your memory works, what would it be?"
     ]
   },
   {
-    "opportunity_id": "opp2",
-    "title": "User Interview: Improve Missing photos from past",
+    "opportunity_id": "opp_facial",
+    "title": "User Interview: Facial & Identity Recall Failure",
     "questions": [
-      "Can you walk me through the last time you experienced this?",
-      "What workarounds did you use?",
-      "How did this failure impact you?"
+      "Can you describe a specific time when you experienced issues related to facial & identity recall failure?",
+      "What visual or contextual cues did you try to use to find the photo?",
+      "How did the failure to retrieve the memory make you feel?",
+      "What alternative methods (if any) did you use to find it?",
+      "If Google Photos could understand one specific thing about how your memory works, what would it be?"
+    ]
+  },
+  {
+    "opportunity_id": "opp_sensory",
+    "title": "User Interview: Sensory / Visual Cue Search",
+    "questions": [
+      "Can you describe a specific time when you experienced issues related to sensory / visual cue search?",
+      "What visual or contextual cues did you try to use to find the photo?",
+      "How did the failure to retrieve the memory make you feel?",
+      "What alternative methods (if any) did you use to find it?",
+      "If Google Photos could understand one specific thing about how your memory works, what would it be?"
+    ]
+  },
+  {
+    "opportunity_id": "opp_event",
+    "title": "User Interview: Event & Context Association",
+    "questions": [
+      "Can you describe a specific time when you experienced issues related to event & context association?",
+      "What visual or contextual cues did you try to use to find the photo?",
+      "How did the failure to retrieve the memory make you feel?",
+      "What alternative methods (if any) did you use to find it?",
+      "If Google Photos could understand one specific thing about how your memory works, what would it be?"
+    ]
+  },
+  {
+    "opportunity_id": "opp_dataloss",
+    "title": "User Interview: Data Loss Trauma",
+    "questions": [
+      "Can you describe a specific time when you experienced issues related to data loss trauma?",
+      "What visual or contextual cues did you try to use to find the photo?",
+      "How did the failure to retrieve the memory make you feel?",
+      "What alternative methods (if any) did you use to find it?",
+      "If Google Photos could understand one specific thing about how your memory works, what would it be?"
+    ]
+  },
+  {
+    "opportunity_id": "opp_lexical",
+    "title": "User Interview: Lexical / Search Vocabulary Gap",
+    "questions": [
+      "Can you describe a specific time when you experienced issues related to lexical / search vocabulary gap?",
+      "What visual or contextual cues did you try to use to find the photo?",
+      "How did the failure to retrieve the memory make you feel?",
+      "What alternative methods (if any) did you use to find it?",
+      "If Google Photos could understand one specific thing about how your memory works, what would it be?"
+    ]
+  },
+  {
+    "opportunity_id": "opp_pet",
+    "title": "User Interview: Pet & Object Identity Confusion",
+    "questions": [
+      "Can you describe a specific time when you experienced issues related to pet & object identity confusion?",
+      "What visual or contextual cues did you try to use to find the photo?",
+      "How did the failure to retrieve the memory make you feel?",
+      "What alternative methods (if any) did you use to find it?",
+      "If Google Photos could understand one specific thing about how your memory works, what would it be?"
     ]
   }
 ]

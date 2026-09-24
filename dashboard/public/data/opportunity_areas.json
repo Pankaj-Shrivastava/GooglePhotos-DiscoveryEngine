@@ -1,60 +1,102 @@
 [
   {
-    "id": "opp_memory_synthesis",
-    "title": "Comprehensive Memory Recall Improvements",
-    "problem_statement": "Users struggle to retrieve memories based on diverse contextual cues like visual details, emotions, events, and rough timeframes.",
-    "impact_score": 9.8,
-    "is_primary_recommendation": true,
+    "id": "opp_dataloss",
+    "title": "Data Loss Trauma",
+    "problem_statement": "Photos are gone — deleted, lost, disappeared — breaking the memory anchor",
+    "impact_score": 10,
+    "is_primary_recommendation": false,
+    "icon": "cloud_off",
     "supported_by": [
-      "pp1",
-      "pp2",
-      "pp3",
       "pp4",
       "pp5",
       "pp6",
+      "pp7",
+      "pp8",
       "pp9",
-      "pp12",
+      "pp10",
+      "pp11",
+      "pp13",
+      "pp15",
+      "pp17",
+      "pp19",
+      "pp20"
+    ]
+  },
+  {
+    "id": "opp_temporal",
+    "title": "Temporal Amnesia",
+    "problem_statement": "Users remember roughly when something happened but can't recall the exact date/year",
+    "impact_score": 9.5,
+    "is_primary_recommendation": true,
+    "icon": "schedule",
+    "supported_by": [
+      "pp1",
+      "pp2",
+      "pp14",
+      "pp16",
       "pp18",
+      "pp23",
+      "pp26"
+    ]
+  },
+  {
+    "id": "opp_sensory",
+    "title": "Sensory / Visual Cue Search",
+    "problem_statement": "Users remember what something looked like (color, object, light) but can't describe it in text",
+    "impact_score": 9,
+    "is_primary_recommendation": true,
+    "icon": "palette",
+    "supported_by": [
       "pp21",
       "pp22",
-      "pp23",
       "pp24",
+      "pp29"
+    ]
+  },
+  {
+    "id": "opp_event",
+    "title": "Event & Context Association",
+    "problem_statement": "Users remember the occasion but not the date or name",
+    "impact_score": 8.8,
+    "is_primary_recommendation": false,
+    "icon": "celebration",
+    "supported_by": [
       "pp25",
-      "pp26",
       "pp27",
-      "pp28",
-      "pp29",
-      "pp30"
+      "pp28"
     ]
   },
   {
-    "id": "opp1",
-    "title": "Improve Incorrect photo date metadata",
-    "problem_statement": "Users frequently struggle with incorrect photo date metadata.",
-    "impact_score": 10,
+    "id": "opp_facial",
+    "title": "Facial & Identity Recall Failure",
+    "problem_statement": "Face recognition breaks as people age or changes lighting",
+    "impact_score": 8.5,
     "is_primary_recommendation": true,
+    "icon": "face",
     "supported_by": [
-      "pp1"
+      "pp12"
     ]
   },
   {
-    "id": "opp2",
-    "title": "Improve Missing photos from past",
-    "problem_statement": "Users frequently struggle with missing photos from past.",
-    "impact_score": 9,
+    "id": "opp_lexical",
+    "title": "Lexical / Search Vocabulary Gap",
+    "problem_statement": "Right memory, wrong words; users can't find the right search vocabulary",
+    "impact_score": 7.5,
     "is_primary_recommendation": false,
-    "supported_by": [
-      "pp2"
-    ]
-  },
-  {
-    "id": "opp3",
-    "title": "Improve Can't recall correct word",
-    "problem_statement": "Users frequently struggle with can't recall correct word.",
-    "impact_score": 8,
-    "is_primary_recommendation": false,
+    "icon": "search_off",
     "supported_by": [
       "pp3"
+    ]
+  },
+  {
+    "id": "opp_pet",
+    "title": "Pet & Object Identity Confusion",
+    "problem_statement": "Users can't distinguish between similar-looking animals or objects; AI fails",
+    "impact_score": 6.5,
+    "is_primary_recommendation": false,
+    "icon": "pets",
+    "supported_by": [
+      "pp30"
     ]
   }
 ]

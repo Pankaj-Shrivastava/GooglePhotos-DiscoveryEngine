@@ -3,151 +3,146 @@ import { useFilterContext } from '../context/FilterContext';
 import { getMemoryCueGroup } from '../utils/memoryCueMapper';
 import { useNavigate } from 'react-router-dom';
 import PageGuide from '../components/PageGuide';
-import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, ScatterChart, Scatter, Cell, ZAxis } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell, Legend } from 'recharts';
 
 const SEVERITY_COLORS = { critical: '#BA1A1A', high: '#F9AB00', medium: '#FBBC04', low: '#727785' };
+const SEVERITY_WEIGHTS = { critical: 4, high: 3, medium: 2, low: 1 };
 
 export default function OverviewPage() {
   const data = useDataContext();
-  const { filters, applyFilters } = useFilterContext();
+  const { applyFilters } = useFilterContext();
   const navigate = useNavigate();
   
   const painPoints = applyFilters(data.pain_points || []);
   const validPpIds = new Set(painPoints.map(p => p.id));
   
-  const memoryCueCounts = {};
-  painPoints.forEach(p => {
-    (p.memory_cues || []).forEach(cue => {
-      const group = getMemoryCueGroup(cue);
-      memoryCueCounts[group] = (memoryCueCounts[group] || 0) + 1;
-    });
-  });
-  const memoryCues = Object.entries(memoryCueCounts)
-    .map(([cue, count]) => ({ cue, count }))
-    .sort((a, b) => b.count - a.count);
-  
   const opportunities = (data.opportunity_areas || []).filter(opp => {
     const matchesCategorical = opp.supported_by?.some(id => validPpIds.has(id));
-    if (!matchesCategorical && opp.supported_by) return false;
-    if (filters.search) {
-      const q = filters.search.toLowerCase();
-      const textToSearch = [opp.title, opp.problem_statement].join(' ').toLowerCase();
-      if (!textToSearch.includes(q)) return false;
-    }
-    return true;
+    return matchesCategorical || (opp.supported_by && opp.supported_by.length === 0);
   });
+
+  // Calculate stats
+  const totalFailures = painPoints.length;
   
-  const frameworks = data.frameworks || {};
+  // Group pain points by memory group
+  const groupStats = {};
+  painPoints.forEach(p => {
+    const group = p.memory_group || 'Other';
+    if (!groupStats[group]) {
+      groupStats[group] = {
+        name: group,
+        count: 0,
+        critical: 0,
+        high: 0,
+        medium: 0,
+        low: 0,
+        score: 0,
+        topQuote: ''
+      };
+    }
+    groupStats[group].count++;
+    groupStats[group][p.severity || 'low']++;
+    groupStats[group].score += SEVERITY_WEIGHTS[p.severity || 'low'];
+    
+    if (!groupStats[group].topQuote && p.quotes && p.quotes.length > 0) {
+      groupStats[group].topQuote = p.quotes[0];
+    }
+  });
 
-  const severityMatrix = frameworks.severity_matrix || {};
-  const totalPainPoints = painPoints.length;
-  const criticalCount = painPoints.filter((p) => p.severity === 'critical').length;
-  const oppCount = opportunities.length;
+  const groupsArray = Object.values(groupStats);
+  const groupsWithCritical = groupsArray.filter(g => g.critical > 0).length;
+  
+  // Highest volume group
+  let highestVolumeGroup = { name: 'N/A', count: 0 };
+  groupsArray.forEach(g => {
+    if (g.count > highestVolumeGroup.count) highestVolumeGroup = g;
+  });
 
-  // Scatter data: each pain point as a bubble
-  const scatterData = painPoints.map((pp, i) => ({
-    x: pp.frequency || 1,
-    y: { critical: 4.5, high: 3.5, medium: 2.5, low: 1.5 }[pp.severity] || 2,
-    z: (pp.quotes?.length || 1) * 20,
-    name: pp.title,
-    severity: pp.severity,
-  }));
+  // % Unaddressed
+  const unaddressedCount = painPoints.filter(p => !p.addressed_by_google).length;
+  const unaddressedPct = totalFailures ? Math.round((unaddressedCount / totalFailures) * 100) : 0;
 
-  const totalAnalyzed = frameworks.total_analyzed_entries || 837;
+  // Chart data: stacked bar for groups
+  const chartData = groupsArray.sort((a, b) => b.score - a.score);
 
   return (
     <div className="flex flex-col gap-6">
       <PageGuide
         pageKey="overview"
-        title="Executive Overview"
-        description="This page gives you a bird's-eye view of all identified UX issues in Google Photos. Look at the scatter plot to find high-severity, high-frequency problems — those are your top priorities. The memory cue distribution shows how users naturally remember their photos."
+        title="Memory Failure Command Center"
+        description="This dashboard categorizes user struggles into 7 canonical human memory failure groups. Use the charts below to see which memory mechanisms fail most often, and click any group to see the raw user verbatims."
       />
 
       {/* Metric Cards */}
       <section className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
-        <MetricCard icon="report_problem" iconBg="bg-primary-fixed" iconColor="text-primary" label="Total Pain Points" value={totalPainPoints} sub="+12% MoM" subColor="text-primary" />
-        <MetricCard icon="crisis_alert" iconBg="bg-error-container" iconColor="text-error" label="Critical Severity" value={criticalCount} sub={`${criticalCount} critical issues`} subColor="text-error" />
-        <MetricCard icon="lightbulb" iconBg="bg-tertiary-fixed" iconColor="text-tertiary" label="Opportunity Areas" value={oppCount} sub={`${oppCount} synthesized`} subColor="text-tertiary" />
-        <MetricCard icon="auto_awesome" iconBg="bg-surface-container-high" iconColor="text-primary" label="Entries Analyzed" value={totalAnalyzed} sub="99.2% confidence" subColor="text-on-surface-variant" />
+        <MetricCard icon="memory" iconBg="bg-primary-fixed" iconColor="text-primary" label="Total Retrieval Failures" value={totalFailures} sub="Analyzed Pain Points" subColor="text-on-surface-variant" />
+        <MetricCard icon="crisis_alert" iconBg="bg-error-container" iconColor="text-error" label="Critical Memory Groups" value={groupsWithCritical} sub="Groups with critical issues" subColor="text-error" />
+        <MetricCard icon="trending_up" iconBg="bg-tertiary-fixed" iconColor="text-tertiary" label="Top Failure Mode" value={highestVolumeGroup.name} sub={`${highestVolumeGroup.count} issues`} subColor="text-tertiary" />
+        <MetricCard icon="warning" iconBg="bg-surface-container-high" iconColor="text-primary" label="Unaddressed by Google" value={`${unaddressedPct}%`} sub={`${unaddressedCount} open issues`} subColor="text-on-surface-variant" />
       </section>
 
-      {/* Charts Row */}
-      <section className="grid grid-cols-1 lg:grid-cols-5 gap-4">
-        {/* Scatter Chart */}
-        <div className="lg:col-span-3 bg-surface-container-lowest rounded-xl p-5 shadow-sm">
-          <div className="flex items-center justify-between mb-4">
-            <div>
-              <h2 className="text-base font-semibold text-on-surface">Pain Point Landscape</h2>
-              <p className="text-xs text-on-surface-variant mt-0.5">Severity vs. Frequency of Mention</p>
-            </div>
-          </div>
-          <ResponsiveContainer width="100%" height={280}>
-            <ScatterChart margin={{ top: 10, right: 10, bottom: 20, left: 0 }}>
-              <XAxis type="number" dataKey="x" name="Frequency" tick={{ fontSize: 11 }} label={{ value: 'Frequency', position: 'bottom', fontSize: 11 }} />
-              <YAxis type="number" dataKey="y" name="Severity" domain={[0, 5]} tick={{ fontSize: 11 }} label={{ value: 'Severity', angle: -90, position: 'insideLeft', fontSize: 11 }} />
-              <ZAxis type="number" dataKey="z" range={[40, 200]} />
-              <Tooltip content={<CustomTooltip />} />
-              <Scatter data={scatterData}>
-                {scatterData.map((entry, i) => (
-                  <Cell key={i} fill={SEVERITY_COLORS[entry.severity] || '#1A73E8'} fillOpacity={0.7} />
-                ))}
-              </Scatter>
-            </ScatterChart>
-          </ResponsiveContainer>
+      {/* Chart Row */}
+      <section className="bg-surface-container-lowest rounded-xl p-5 shadow-sm">
+        <div className="mb-4">
+          <h2 className="text-base font-semibold text-on-surface">Grouped Severity Landscape</h2>
+          <p className="text-xs text-on-surface-variant mt-0.5">Which memory failure groups have the most critical mass?</p>
         </div>
-
-        {/* Memory Cue Distribution */}
-        <div className="lg:col-span-2 bg-surface-container-lowest rounded-xl p-5 shadow-sm">
-          <h2 className="text-base font-semibold text-on-surface">Memory Cue Distribution</h2>
-          <p className="text-xs text-on-surface-variant mt-0.5 mb-4">How users remember their photos</p>
-          <div className="flex flex-col gap-3">
-            {memoryCues.slice(0, 8).map((cue) => (
-              <div key={cue.cue} className="flex items-center gap-3">
-                <span className="text-xs text-on-surface w-20 shrink-0 capitalize">{cue.cue}</span>
-                <div className="flex-1 h-2.5 bg-surface-container-high rounded-full overflow-hidden">
-                  <div
-                    className="h-full bg-primary-container rounded-full transition-all"
-                    style={{ width: `${Math.min(100, (cue.count / (memoryCues[0]?.count || 1)) * 100)}%` }}
-                  />
-                </div>
-                <span className="text-xs text-on-surface-variant font-medium w-8 text-right">{cue.count}</span>
-              </div>
-            ))}
-          </div>
-        </div>
+        <ResponsiveContainer width="100%" height={320}>
+          <BarChart data={chartData} margin={{ top: 10, right: 10, bottom: 40, left: 0 }}>
+            <XAxis dataKey="name" tick={{ fontSize: 11 }} angle={-25} textAnchor="end" height={60} />
+            <YAxis tick={{ fontSize: 11 }} />
+            <Tooltip contentStyle={{ borderRadius: '8px', fontSize: '12px', border: '1px solid #e0e2e5' }} />
+            <Legend verticalAlign="top" height={36} iconType="circle" />
+            <Bar dataKey="critical" stackId="a" fill={SEVERITY_COLORS.critical} name="Critical" />
+            <Bar dataKey="high" stackId="a" fill={SEVERITY_COLORS.high} name="High" />
+            <Bar dataKey="medium" stackId="a" fill={SEVERITY_COLORS.medium} name="Medium" />
+            <Bar dataKey="low" stackId="a" fill={SEVERITY_COLORS.low} name="Low" radius={[4, 4, 0, 0]} />
+          </BarChart>
+        </ResponsiveContainer>
       </section>
 
-      {/* Top Opportunities */}
+      {/* Memory Group Opportunities */}
       <section className="bg-surface-container-lowest rounded-xl p-5 shadow-sm">
         <div className="flex items-center gap-3 mb-4">
-          <h2 className="text-base font-semibold text-on-surface">Top Opportunities</h2>
+          <h2 className="text-base font-semibold text-on-surface">Memory Group Breakdown</h2>
           <span className="text-[11px] font-medium bg-tertiary-fixed text-tertiary-container px-2 py-0.5 rounded-full">
-            High ROI
+            7 Core Groups
           </span>
         </div>
         <div className="flex flex-col gap-3">
-          {opportunities.slice(0, 3).map((opp, i) => (
-            <div
-              key={opp.id}
-              onClick={() => navigate(`/pain-points?opportunity=${opp.id}`)}
-              className={`flex items-center gap-4 p-4 rounded-xl border transition-all cursor-pointer hover:shadow-md ${
-                i === 0 ? 'bg-primary-fixed/30 border-primary-container/20' : 'border-outline-variant/50'
-              }`}
-            >
-              <div className="w-10 h-10 rounded-full bg-tertiary-fixed-dim/20 text-tertiary-container flex items-center justify-center text-sm font-bold shrink-0">
-                #{i + 1}
+          {opportunities.map((opp, i) => {
+            const stats = groupStats[opp.title] || { count: 0, topQuote: '' };
+            return (
+              <div
+                key={opp.id}
+                onClick={() => navigate(`/pain-points?opportunity=${opp.id}`)}
+                className={`flex flex-col sm:flex-row gap-4 p-4 rounded-xl border transition-all cursor-pointer hover:shadow-md ${
+                  i === 0 ? 'bg-primary-fixed/30 border-primary-container/20' : 'border-outline-variant/50'
+                }`}
+              >
+                <div className="flex items-center gap-4 sm:w-1/3">
+                  <div className="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0">
+                    <span className="material-symbols-outlined text-lg">{opp.icon || 'lightbulb'}</span>
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-on-surface leading-tight">{opp.title}</p>
+                    <p className="text-xs text-on-surface-variant mt-1">{stats.count} Issues</p>
+                  </div>
+                </div>
+                
+                <div className="flex-1 border-l border-outline-variant/30 pl-4 flex flex-col justify-center">
+                  <p className="text-xs font-medium text-on-surface-variant italic line-clamp-2">
+                    "{stats.topQuote || opp.problem_statement}"
+                  </p>
+                </div>
+                
+                <div className="text-right shrink-0 flex flex-col justify-center items-end sm:w-24">
+                  <p className="text-lg font-bold text-primary-container">{opp.impact_score}</p>
+                  <p className="text-[10px] text-on-surface-variant">/10 Impact</p>
+                </div>
               </div>
-              <div className="flex-1 min-w-0">
-                <p className="text-sm font-semibold text-on-surface truncate">{opp.title}</p>
-                <p className="text-xs text-on-surface-variant mt-0.5 line-clamp-2">{opp.problem_statement}</p>
-              </div>
-              <div className="text-right shrink-0">
-                <p className="text-lg font-bold text-primary-container">{opp.impact_score}</p>
-                <p className="text-[10px] text-on-surface-variant">/10 Impact</p>
-              </div>
-              <span className="material-symbols-outlined text-on-surface-variant">chevron_right</span>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
     </div>
@@ -156,7 +151,7 @@ export default function OverviewPage() {
 
 function MetricCard({ icon, iconBg, iconColor, label, value, sub, subColor }) {
   return (
-    <div className="bg-surface-container-lowest rounded-xl p-4 shadow-sm hover:shadow-md transition-all group">
+    <div className="bg-surface-container-lowest rounded-xl p-4 shadow-sm hover:shadow-md transition-all group border border-outline-variant/30">
       <div className="flex items-center justify-between">
         <span className="text-xs font-medium text-on-surface-variant">{label}</span>
         <div className={`w-9 h-9 rounded-full ${iconBg} flex items-center justify-center ${iconColor} transition-transform group-hover:scale-105`}>
@@ -164,20 +159,9 @@ function MetricCard({ icon, iconBg, iconColor, label, value, sub, subColor }) {
         </div>
       </div>
       <div className="mt-3">
-        <div className="text-[28px] font-semibold text-on-surface tracking-tight leading-none">{value}</div>
+        <div className="text-[24px] font-semibold text-on-surface tracking-tight leading-none truncate">{value}</div>
         <div className={`text-[11px] font-medium mt-1 ${subColor}`}>{sub}</div>
       </div>
-    </div>
-  );
-}
-
-function CustomTooltip({ active, payload }) {
-  if (!active || !payload?.length) return null;
-  const d = payload[0]?.payload;
-  return (
-    <div className="bg-surface-container-lowest border border-outline-variant rounded-lg p-2.5 shadow-lg text-xs">
-      <p className="font-semibold text-on-surface">{d?.name}</p>
-      <p className="text-on-surface-variant mt-0.5">Severity: {d?.severity} | Freq: {d?.x}</p>
     </div>
   );
 }
