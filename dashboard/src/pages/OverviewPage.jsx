@@ -95,7 +95,7 @@ export default function OverviewPage() {
           <BarChart data={chartData} margin={{ top: 10, right: 10, bottom: 40, left: 0 }}>
             <XAxis dataKey="name" tick={{ fontSize: 11 }} angle={-25} textAnchor="end" height={60} />
             <YAxis tick={{ fontSize: 11 }} />
-            <Tooltip contentStyle={{ borderRadius: '8px', fontSize: '12px', border: '1px solid #e0e2e5' }} />
+            <Tooltip cursor={{ fill: 'transparent' }} contentStyle={{ borderRadius: '8px', fontSize: '12px', border: '1px solid #e0e2e5' }} />
             <Legend verticalAlign="top" height={36} iconType="circle" />
             <Bar dataKey="critical" stackId="a" fill={SEVERITY_COLORS.critical} name="Critical" />
             <Bar dataKey="high" stackId="a" fill={SEVERITY_COLORS.high} name="High" />
@@ -139,10 +139,15 @@ export default function OverviewPage() {
                           e.stopPropagation();
                           setExpandedGroupId(isExpanded ? null : opp.id);
                         }}
-                        className="w-5 h-5 rounded-full bg-surface-container flex items-center justify-center hover:bg-surface-container-high transition-colors"
+                        className={`px-2 py-1 rounded-full border transition-colors flex items-center gap-1 ${isExpanded ? 'bg-primary-container text-on-primary-container border-primary-container' : 'bg-surface-container-low border-outline-variant text-on-surface-variant hover:bg-surface-container-high'}`}
                         title="What does this mean?"
                       >
-                        <span className="material-symbols-outlined text-[13px] text-on-surface-variant">question_mark</span>
+                        <span className="material-symbols-outlined text-[14px]">
+                          {isExpanded ? 'keyboard_arrow_up' : 'info'}
+                        </span>
+                        <span className="text-[10px] font-semibold uppercase tracking-wider">
+                          {isExpanded ? 'Close' : 'Definition'}
+                        </span>
                       </button>
                     </p>
                     <p className="text-xs text-on-surface-variant mt-1">{stats.count} Issues</p>

@@ -72,7 +72,7 @@ export default function SegmentationPage() {
           <BarChart data={matrixChartData} margin={{ top: 10, right: 10, bottom: 20, left: 0 }}>
             <XAxis dataKey="name" tick={{ fontSize: 11 }} textAnchor="middle" height={30} tickFormatter={v => v.replace('_', ' ').toUpperCase()} />
             <YAxis tick={{ fontSize: 11 }} />
-            <Tooltip cursor={{ fill: '#f1f3f4' }} contentStyle={{ fontSize: '12px', borderRadius: '8px' }} />
+            <Tooltip cursor={{ fill: 'transparent' }} contentStyle={{ fontSize: '12px', borderRadius: '8px' }} />
             <Legend verticalAlign="top" height={60} wrapperStyle={{ fontSize: '11px', paddingBottom: '10px' }} />
             {groups.map((g, i) => (
               <Bar key={g} dataKey={g} stackId="a" fill={COLORS[i % COLORS.length]} />

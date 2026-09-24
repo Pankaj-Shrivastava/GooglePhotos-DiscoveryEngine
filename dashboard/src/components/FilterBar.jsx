@@ -17,7 +17,7 @@ export default function FilterBar() {
   const FILTER_OPTIONS = useMemo(() => {
     const memoryCuesSet = new Set();
     const memoryGroupSet = new Set();
-    
+
     (data.pain_points || []).forEach(p => {
       (p.memory_cues || []).forEach(c => memoryCuesSet.add(getMemoryCueGroup(c)));
       if (p.memory_group) memoryGroupSet.add(p.memory_group);

@@ -1,13 +1,12 @@
 import { NavLink, useLocation } from 'react-router-dom';
 
 const NAV_ITEMS = [
-  { path: '/', icon: 'dashboard', label: 'Overview' },
-  { path: '/pain-points', icon: 'warning', label: 'Pain Points' },
-
-  { path: '/frameworks', icon: 'bar_chart', label: 'Frameworks' },
-  { path: '/google-actions', icon: 'rocket_launch', label: 'Google Actions' },
-  { path: '/segmentation', icon: 'pie_chart', label: 'Segmentation' },
-  { path: '/interview-guide', icon: 'assignment', label: 'Interview Guide' },
+  { path: '/', icon: 'dashboard', label: 'Overview', shortLabel: 'Overview' },
+  { path: '/pain-points', icon: 'warning', label: 'Pain Points', shortLabel: 'Issues' },
+  { path: '/frameworks', icon: 'bar_chart', label: 'Frameworks', shortLabel: 'Charts' },
+  { path: '/google-actions', icon: 'rocket_launch', label: 'Google Actions', shortLabel: 'Actions' },
+  { path: '/segmentation', icon: 'pie_chart', label: 'Segmentation', shortLabel: 'Segments' },
+  { path: '/interview-guide', icon: 'assignment', label: 'Interview Guide', shortLabel: 'Guides' },
 ];
 
 export default function Sidebar() {
@@ -56,20 +55,28 @@ export default function Sidebar() {
 export function MobileTabBar() {
   const location = useLocation();
   return (
-    <nav className="md:hidden fixed bottom-0 left-0 right-0 h-14 bg-surface-container-lowest border-t border-outline-variant z-50 flex items-center justify-around px-2">
+    <nav className="md:hidden fixed bottom-0 left-0 right-0 h-16 bg-surface-container-lowest border-t border-outline-variant z-50 flex items-center justify-between px-1 pb-safe">
       {NAV_ITEMS.slice(0, 5).map((item) => (
         <NavLink
           key={item.path}
           to={{ pathname: item.path, search: item.path === '/' ? '' : location.search }}
           end={item.path === '/'}
           className={({ isActive }) =>
-            `flex flex-col items-center gap-0.5 px-3 py-1.5 rounded-xl transition-all ${
-              isActive ? 'text-primary' : 'text-on-surface-variant'
+            `flex flex-col items-center justify-center flex-1 min-w-0 h-full transition-all ${
+              isActive ? 'text-primary' : 'text-on-surface-variant hover:text-on-surface'
             }`
           }
         >
-          <span className="material-symbols-outlined text-xl">{item.icon}</span>
-          <span className="text-[10px] font-medium">{item.label}</span>
+          {({ isActive }) => (
+            <>
+              <span className={`material-symbols-outlined text-[22px] mb-1 transition-all ${isActive ? 'font-semibold' : ''}`}>
+                {item.icon}
+              </span>
+              <span className={`text-[10px] leading-none whitespace-nowrap truncate w-full text-center px-1 ${isActive ? 'font-bold' : 'font-medium'}`}>
+                {item.shortLabel}
+              </span>
+            </>
+          )}
         </NavLink>
       ))}
     </nav>
