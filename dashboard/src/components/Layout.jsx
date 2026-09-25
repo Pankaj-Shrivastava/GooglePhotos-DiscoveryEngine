@@ -41,7 +41,6 @@ export default function Layout() {
     
     if (location.pathname === '/pain-points') { dataset = data.pain_points; filename = 'pain_points.csv'; }
     else if (location.pathname === '/opportunities') { dataset = data.opportunity_areas; filename = 'opportunities.csv'; }
-    else if (location.pathname === '/google-actions') { dataset = data.google_actions_2026; filename = 'google_actions.csv'; }
     else if (location.pathname === '/references') { dataset = data.references; filename = 'references.csv'; }
     else {
       dataset = data.pain_points; 

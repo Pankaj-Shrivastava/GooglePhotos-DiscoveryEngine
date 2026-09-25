@@ -62,9 +62,6 @@ export default function OverviewPage() {
     if (g.count > highestVolumeGroup.count) highestVolumeGroup = g;
   });
 
-  // % Unaddressed
-  const unaddressedCount = painPoints.filter(p => !p.addressed_by_google).length;
-  const unaddressedPct = totalFailures ? Math.round((unaddressedCount / totalFailures) * 100) : 0;
 
   // Chart data: stacked bar for groups
   const chartData = groupsArray.sort((a, b) => b.score - a.score);
@@ -78,11 +75,10 @@ export default function OverviewPage() {
       />
 
       {/* Metric Cards */}
-      <section className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
+      <section className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <MetricCard icon="memory" iconBg="bg-primary-fixed" iconColor="text-primary" label="Total Retrieval Failures" value={totalFailures} sub="Analyzed Pain Points" subColor="text-on-surface-variant" />
         <MetricCard icon="crisis_alert" iconBg="bg-error-container" iconColor="text-error" label="Critical Memory Groups" value={groupsWithCritical} sub="Groups with critical issues" subColor="text-error" />
         <MetricCard icon="trending_up" iconBg="bg-tertiary-fixed" iconColor="text-tertiary" label="Top Failure Mode" value={highestVolumeGroup.name} sub={`${highestVolumeGroup.count} issues`} subColor="text-tertiary" />
-        <MetricCard icon="warning" iconBg="bg-surface-container-high" iconColor="text-primary" label="Unaddressed by Google" value={`${unaddressedPct}%`} sub={`${unaddressedCount} open issues`} subColor="text-on-surface-variant" />
       </section>
 
       {/* Chart Row */}

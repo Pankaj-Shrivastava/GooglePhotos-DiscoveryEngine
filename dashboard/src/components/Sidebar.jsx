@@ -4,7 +4,6 @@ const NAV_ITEMS = [
   { path: '/', icon: 'dashboard', label: 'Overview', shortLabel: 'Overview' },
   { path: '/pain-points', icon: 'warning', label: 'Pain Points', shortLabel: 'Issues' },
   { path: '/frameworks', icon: 'bar_chart', label: 'Frameworks', shortLabel: 'Charts' },
-  { path: '/google-actions', icon: 'rocket_launch', label: 'Google Actions', shortLabel: 'Actions' },
   { path: '/segmentation', icon: 'pie_chart', label: 'Segmentation', shortLabel: 'Segments' },
   { path: '/interview-guide', icon: 'assignment', label: 'Interview Guide', shortLabel: 'Guides' },
 ];

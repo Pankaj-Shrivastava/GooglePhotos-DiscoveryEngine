@@ -1,14 +1,13 @@
 import { useDataContext } from '../context/DataContext';
 import { useFilterContext } from '../context/FilterContext';
 import PageGuide from '../components/PageGuide';
-import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, Cell, Legend } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, Legend } from 'recharts';
 
 const SEVERITY_COLORS = { critical: '#BA1A1A', high: '#F9AB00', medium: '#FBBC04', low: '#727785' };
 
 export default function FrameworksPage() {
   const data = useDataContext();
   const { applyFilters } = useFilterContext();
-  const frameworks = data.frameworks || {};
   const painPoints = applyFilters(data.pain_points || []);
   
   // Aggregate data by memory group
@@ -30,14 +29,12 @@ export default function FrameworksPage() {
     volume: g.freq
   }));
 
-  const outcomeData = Object.entries(frameworks.retrieval_outcomes || {}).map(([k, v]) => ({ name: k, count: v }));
-
   return (
     <div className="flex flex-col gap-6">
       <PageGuide
         pageKey="frameworks"
         title="Memory Failure Frameworks"
-        description="Deep analytical frameworks focusing on memory group patterns. See which groups have the most critical mass, how they shape overall failure volume, and where the biggest gaps are."
+        description="Deep analytical frameworks focusing on memory group patterns. See which groups have the most critical mass, and how they shape overall failure volume."
       />
 
       <h1 className="text-xl font-semibold text-on-surface">Analytical Frameworks</h1>
@@ -76,22 +73,18 @@ export default function FrameworksPage() {
 
         {/* Gap Matrix */}
         <div className="lg:col-span-2 bg-surface-container-lowest rounded-xl p-5 shadow-sm border border-outline-variant/30 overflow-x-auto">
-          <h3 className="text-sm font-semibold text-on-surface mb-1">Memory Group Gap Matrix</h3>
-          <p className="text-xs text-on-surface-variant mb-4">Detailed breakdown of issues and Google's current coverage</p>
+          <h3 className="text-sm font-semibold text-on-surface mb-1">Memory Group Matrix</h3>
+          <p className="text-xs text-on-surface-variant mb-4">Detailed breakdown of issues by memory group</p>
           <table className="w-full text-left border-collapse min-w-[600px]">
             <thead>
               <tr className="border-b border-outline-variant/40 text-xs text-on-surface-variant uppercase tracking-wider">
                 <th className="pb-3 font-medium px-2">Memory Group</th>
                 <th className="pb-3 font-medium px-2 text-center">Total Issues</th>
                 <th className="pb-3 font-medium px-2 text-center">Critical/High</th>
-                <th className="pb-3 font-medium px-2 text-center">Addressed by Google</th>
-                <th className="pb-3 font-medium px-2 text-center">Open Gaps</th>
               </tr>
             </thead>
             <tbody>
               {groupData.map(g => {
-                const addressed = painPoints.filter(p => p.memory_group === g.name && p.addressed_by_google).length;
-                const openGaps = g.count - addressed;
                 const critHigh = g.critical + g.high;
                 return (
                   <tr key={g.name} className="border-b border-outline-variant/20 hover:bg-surface-container-lowest/50">
@@ -102,8 +95,6 @@ export default function FrameworksPage() {
                         {critHigh}
                       </span>
                     </td>
-                    <td className="py-3 px-2 text-sm text-center text-primary font-medium">{addressed}</td>
-                    <td className="py-3 px-2 text-sm text-center text-error font-bold">{openGaps}</td>
                   </tr>
                 );
               })}

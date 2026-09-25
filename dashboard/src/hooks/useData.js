@@ -6,9 +6,7 @@ const DATA_FILES = [
   'opportunity_areas',
   'journey_maps',
   'segmentation',
-  'google_actions_2026',
   'references',
-  'frameworks',
   'interview_guides',
 ];
 

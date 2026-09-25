@@ -6,7 +6,6 @@ import OverviewPage from './pages/OverviewPage';
 import PainPointsPage from './pages/PainPointsPage';
 
 import FrameworksPage from './pages/FrameworksPage';
-import GoogleActionsPage from './pages/GoogleActionsPage';
 import SegmentationPage from './pages/SegmentationPage';
 import InterviewGuidePage from './pages/InterviewGuidePage';
 export default function App() {
@@ -19,7 +18,6 @@ export default function App() {
             <Route path="pain-points" element={<PainPointsPage />} />
 
             <Route path="frameworks" element={<FrameworksPage />} />
-            <Route path="google-actions" element={<GoogleActionsPage />} />
             <Route path="segmentation" element={<SegmentationPage />} />
             <Route path="interview-guide" element={<InterviewGuidePage />} />
             <Route path="*" element={<Navigate to="/" replace />} />
