@@ -3,84 +3,84 @@
     "opportunity_id": "opp_temporal",
     "title": "User Interview: Temporal Amnesia",
     "questions": [
-      "Take me back to the exact moment you realized you couldn't find the photo. What were you thinking?",
-      "How do you usually try to pinpoint the date of a memory? What 'anchors' do you use (like seasons, holidays, etc.)?",
-      "When that failed, what was your backup strategy?",
-      "How did this specific memory failure impact what you were trying to do next?",
-      "If the app could understand one thing about how you remember this event, what would it be?"
+      "Think of a specific photo you wanted to find recently but struggled with because you couldn't remember when it was taken. Walk me through everything you tried.",
+      "When you think back to that memory, what comes to mind first — a season, a life event, someone's age, or something else entirely?",
+      "How do you normally anchor memories in time? For example, do you think in terms of school years, jobs, relationships, holidays?",
+      "Describe a time when you scrolled through months or years of photos trying to find one specific image. How long did you spend, and what made you stop?",
+      "If you could search your photos the way your brain actually remembers time — not by exact dates — what would that look like for you?"
     ],
-    "what_to_watch_for": "Look for signs of frustration or self-blame. Note the exact vocabulary they use when they hit a dead end."
+    "what_to_watch_for": "Notice how participants express time — do they say 'around 2019' or 'when my son started school' or 'that summer'? Document the exact temporal anchors they use. Watch for scroll fatigue: how long before they give up? Note if they blame themselves ('I should have organized better') versus the app ('Why can't it just know?'). Pay attention to emotional weight — are these casual photos or irreplaceable milestones?"
   },
   {
     "opportunity_id": "opp_facial",
     "title": "User Interview: Facial & Identity Recall Failure",
     "questions": [
-      "Take me back to the exact moment you realized you couldn't find the photo. What were you thinking?",
-      "What was the very first search term or action you tried?",
-      "When that failed, what was your backup strategy?",
-      "How did this specific memory failure impact what you were trying to do next?",
-      "If the app could understand one thing about how you remember this event, what would it be?"
+      "Tell me about a time you tried to find all photos of a specific person — maybe a child growing up, or a relative. What happened?",
+      "When the app groups faces, how well does it match what you'd expect? Where does it break down?",
+      "How do you think about a person's identity across photos — is it their face, their build, what they typically wear, or something else?",
+      "If you had photos of someone as a baby, a toddler, and a teenager, how would you want the app to understand that they're all the same person?",
+      "Have you ever manually corrected face groupings? Walk me through that experience — what was it like, and how did it feel?"
     ],
-    "what_to_watch_for": "Look for signs of frustration or self-blame. Note the exact vocabulary they use when they hit a dead end."
+    "what_to_watch_for": "Listen for how participants define identity beyond facial features — do they mention clothing, context, who the person is standing next to? Watch for emotional intensity when discussing deceased family members or children growing up, as these are the highest-stakes retrieval scenarios. Note whether they've given up on face search entirely and developed manual workarounds (albums, favorites, etc.)."
   },
   {
     "opportunity_id": "opp_sensory",
     "title": "User Interview: Sensory / Visual Cue Search",
     "questions": [
-      "Take me back to the exact moment you realized you couldn't find the photo. What were you thinking?",
-      "When you picture the photo in your mind, what stands out most? A color, an object, the lighting?",
-      "When that failed, what was your backup strategy?",
-      "How did this specific memory failure impact what you were trying to do next?",
-      "If the app could understand one thing about how you remember this event, what would it be?"
+      "Think of a photo you can picture vividly in your mind right now but have struggled to find. Describe what you see in your mind's eye.",
+      "When you tried to search for it, what words or terms did you type? How close were the results to what you were imagining?",
+      "Beyond the subject of the photo, what visual details stand out to you — colors, lighting, the mood of the scene, background objects?",
+      "Have you ever wished you could search for a photo by describing what it looks like rather than what's in it — like 'golden hour' or 'that blue wall'? Tell me more about that.",
+      "If you could sketch or describe the photo to someone and they could find it instantly, what details would you give them that you can't give to the search bar today?"
     ],
-    "what_to_watch_for": "Look for signs of frustration or self-blame. Note the exact vocabulary they use when they hit a dead end."
+    "what_to_watch_for": "Pay close attention to the sensory vocabulary participants use — colors, spatial descriptions, lighting conditions, emotional atmosphere. These are the cues their memory stores but the search system can't process. Note the gap between the richness of their mental image and the poverty of the text query they're forced to type. Watch for gestures — do they point, draw shapes in the air, or describe spatial relationships?"
   },
   {
     "opportunity_id": "opp_event",
     "title": "User Interview: Event & Context Association",
     "questions": [
-      "Take me back to the exact moment you realized you couldn't find the photo. What were you thinking?",
-      "What was the very first search term or action you tried?",
-      "When that failed, what was your backup strategy?",
-      "How did this specific memory failure impact what you were trying to do next?",
-      "If the app could understand one thing about how you remember this event, what would it be?"
+      "Tell me about the last time you wanted to find photos from a specific event — a birthday, a trip, a gathering. How did you go about it?",
+      "When you think about that event, what do you remember most — who was there, where it was, what happened, or how it felt?",
+      "How do you currently organize photos around events or occasions? Do you create albums, or rely on the app to group them?",
+      "Describe a moment where you wanted to revisit a complete story — not just one photo, but the entire sequence of an experience. How easy or hard was that?",
+      "If the app could understand the story behind your photos the way you tell it to a friend — 'remember that road trip where the car broke down?' — how would that change the way you use it?"
     ],
-    "what_to_watch_for": "Look for signs of frustration or self-blame. Note the exact vocabulary they use when they hit a dead end."
+    "what_to_watch_for": "Listen for narrative structure — participants will describe events as stories with characters, settings, and plot points, not as metadata. Note whether they mention wanting to search by 'who was there' or 'what happened' rather than dates and locations. Watch for frustration around photos being scattered across time when they belong to one coherent event in the user's mind. Do they create albums proactively, or only when they can't find things?"
   },
   {
     "opportunity_id": "opp_dataloss",
     "title": "User Interview: Data Loss Trauma",
     "questions": [
-      "Take me back to the exact moment you realized you couldn't find the photo. What were you thinking?",
-      "What was the very first search term or action you tried?",
-      "When that failed, what was your backup strategy?",
-      "How did this specific memory failure impact what you were trying to do next?",
-      "If the app could understand one thing about how you remember this event, what would it be?"
+      "Have you ever opened your photos app and realized that photos you expected to be there were missing? Take me back to that moment — what was going through your mind?",
+      "Walk me through what you did next. Who did you contact, what did you try, and how long did you spend trying to recover them?",
+      "How has that experience changed the way you think about storing or backing up your photos today?",
+      "When photos disappear, what's the hardest part — losing the photo itself, or losing the memory it represents? Can you give me an example?",
+      "What would need to be true for you to fully trust a cloud service with your most important memories? What's missing today?"
     ],
-    "what_to_watch_for": "Look for signs of frustration or self-blame. Note the exact vocabulary they use when they hit a dead end."
+    "what_to_watch_for": "This is the most emotionally charged interview. Watch for grief responses — participants may describe lost photos of deceased relatives, pets, or milestone events. Note the trust arc: what was their trust level before vs. after the data loss? Listen for whether they distinguish between 'the photo is gone' and 'the memory is gone' — this reveals how deeply digital photos have become external memory. Document any workaround behaviors (multiple backups, printing photos, emailing to themselves) as signals of broken trust."
   },
   {
     "opportunity_id": "opp_lexical",
     "title": "User Interview: Lexical / Search Vocabulary Gap",
     "questions": [
-      "Take me back to the exact moment you realized you couldn't find the photo. What were you thinking?",
-      "What was the very first search term or action you tried?",
-      "When that failed, what was your backup strategy?",
-      "How did this specific memory failure impact what you were trying to do next?",
-      "If the app could understand one thing about how you remember this event, what would it be?"
+      "Tell me about a time you knew exactly what photo you wanted but couldn't figure out the right words to search for it. What did you try?",
+      "When search results don't match what you expected, how do you decide what to try next? Walk me through your thought process.",
+      "Have you ever discovered that the app uses a different word for something than what you'd naturally call it? What was that like?",
+      "Think about how you'd describe a photo to a friend versus how you'd search for it in the app. What's different about those two descriptions?",
+      "If the app could understand your intent even when your words aren't a perfect match — the way a person would — what kinds of searches would you try that you don't bother with today?"
     ],
-    "what_to_watch_for": "Look for signs of frustration or self-blame. Note the exact vocabulary they use when they hit a dead end."
+    "what_to_watch_for": "Document every search term the participant mentions — both the ones they tried and the ones they wish they could use. Watch for the moment they 'give up on search' and switch to manual scrolling, which signals the vocabulary gap has become impassable. Note cultural or regional language differences that might cause mismatches. Listen for whether they feel the app 'doesn't understand me' versus 'I don't know the right term' — this reveals who they assign blame to."
   },
   {
     "opportunity_id": "opp_pet",
     "title": "User Interview: Pet & Object Identity Confusion",
     "questions": [
-      "Take me back to the exact moment you realized you couldn't find the photo. What were you thinking?",
-      "What was the very first search term or action you tried?",
-      "When that failed, what was your backup strategy?",
-      "How did this specific memory failure impact what you were trying to do next?",
-      "If the app could understand one thing about how you remember this event, what would it be?"
+      "If you have or had multiple pets, tell me about trying to find photos of one specific pet. What was that experience like?",
+      "How do you tell your pets apart in photos — is it by markings, size, the time period, or context clues like the background or who else is in the photo?",
+      "Beyond pets, have you ever struggled to find photos of a specific object — a car, a home, a piece of furniture? Walk me through what happened.",
+      "When the app groups your pet's photos, does it get it right? Where does it go wrong, and how does that make you feel?",
+      "If you could teach the app to recognize your individual pets or objects the way you do, what information would you give it?"
     ],
-    "what_to_watch_for": "Look for signs of frustration or self-blame. Note the exact vocabulary they use when they hit a dead end."
+    "what_to_watch_for": "Listen for the identity markers participants use that go beyond visual similarity — names, personality traits, the era they had the pet, who the pet was usually photographed with. Note emotional weight: pets that have passed away carry the same memorial significance as deceased family members. Watch for whether they've given up on search and resort to scrolling through entire timelines. Document any creative workarounds they've developed (naming albums, adding descriptions manually)."
   }
 ]
